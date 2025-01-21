@@ -1,0 +1,12 @@
+[submodule "1_Ano/LI1/Projeto/2023li1g046"]
+	path = 1_Ano/LI1/Projeto/2023li1g046
+	url = https://gitlab.com/uminho-di/li1/2324/projetos/2023li1g046.git
+[submodule "1_Ano/LI1/Projeto"]
+	path = 1_Ano/LI1/Projeto
+	url = https://gitlab.com/uminho-di/li1/2324/projetos/2023li1g046.git
+[submodule "1_Ano/LI2/Projeto/LI2"]
+	path = 1_Ano/LI2/Projeto/LI2
+	url = git@github.com:AfonsoMartins26/LI2.git
+[submodule "2_Ano/LI3/Projeto/2425-G34"]
+	path = 2_Ano/LI3/Projeto/2425-G34
+	url = git@github.com:dium-li3/2425-G34.git
