@@ -10,3 +10,9 @@
 [submodule "2_Ano/LI3/Projeto/2425-G34"]
 	path = 2_Ano/LI3/Projeto/2425-G34
 	url = git@github.com:dium-li3/2425-G34.git
+[submodule "2_Ano/POO/Projeto/GrupoTP-26"]
+	path = 2_Ano/POO/Projeto/GrupoTP-26
+	url = git@github.com:dium-li3/2425-G34.git
+[submodule "2_Ano/SO/Projeto/SO"]
+	path = 2_Ano/SO/Projeto/SO
+	url = git@github.com:goncalo122016/SO.git

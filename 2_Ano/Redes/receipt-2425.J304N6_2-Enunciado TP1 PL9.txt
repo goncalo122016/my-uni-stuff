@@ -1,0 +1,8 @@
+A sua entrega foi efetuada com êxito!
+Curso: 2425.J304N6_2, [24-25] Redes de Computadores
+Avaliação: Enunciado TP1 (PL9)
+
+Data de entrega: 18/02/25, 22:10
+Tamanho da entrega: 1,6 MB
+Requerente: Gonçalo José Vieira de Castro .
+Número de confirmação: f9860de55a80493d9481a3d4da854120
