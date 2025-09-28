@@ -1,0 +1,11 @@
+{
+    "funcionario": [
+        {
+            "ID": 1,
+            "Departamento": "Vendas",
+            "Nome": "Carlos Mendes",
+            "Funcao":"Vendedor",
+            "ID_Stand": 1
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "aluguer": [
+        {
+            "ID": 1,
+            "Matricula": "AA-11-BB",
+            "MetodoPagamento": "Cartão Crédito",
+            "ID_Cliente": 1,
+            "DataInicio": "2024-05-01",
+            "DataFim": "2024-05-10",
+            "ID_Funcionario": 1,
+            "Valor": 500.0
+        }
+    ]
+}

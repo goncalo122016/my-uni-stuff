@@ -1,0 +1,9 @@
+{
+    "contatos_funcionario": [
+        {
+            "ID_Funcionario": 1,
+            "Email": "carlos@empresa.com",
+            "Telefone": "912341234"
+        }
+    ]
+}

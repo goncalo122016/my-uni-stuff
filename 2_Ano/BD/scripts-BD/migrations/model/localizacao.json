@@ -1,0 +1,9 @@
+{
+    "localizacao": [
+        {
+            "Id": 1,
+            "Endereco": "Rua das Laranjeiras, 10",
+            "CodigoPostal": "1000-001"
+        }
+    ]
+}

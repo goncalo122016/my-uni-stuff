@@ -1,0 +1,10 @@
+{
+    "stand": [
+        {
+            "Id": 1,
+            "Nome": "Stand Auto Lux",
+            "NIF": "123456789",
+            "ID_Localizacao": 1
+        }
+    ]
+}

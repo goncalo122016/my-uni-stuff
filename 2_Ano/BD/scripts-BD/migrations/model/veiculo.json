@@ -1,0 +1,20 @@
+{
+    "veiculo": [
+        {
+            "Matricula": "AA-11-BB",
+            "NPassageiros": 5,
+            "Tara": 1500,
+            "CargaMaxima": 500,
+            "Transmissao": "M",
+            "Combustivel": "G",
+            "Consumo": 6.5,
+            "Modelo": "Civic",
+            "Ano": 2020,
+            "Marca": "Honda",
+            "Disponivel": true,
+            "PrecoDiario": 50.0,
+            "Tipo": "P",
+            "ID_Stand": 1
+        }
+    ]
+}

@@ -1,0 +1,4 @@
+﻿Matricula,NPassageiros,Tara,CargaMaxima,Transmissao,Combustivel,Consumo,Modelo,Ano,Marca,Disponivel,PrecoDiario,Tipo,ID_Stand
+33-AA-11,5,1200,400,M,G,6.5,Civic,2020,Honda,True,45.0,P,21
+12-BB-22,2,800,200,A,E,4.2,Twizy,2022,Renault,False,30.0,P,22
+23-CC-33,3,1500,500,M,D,7.0,Kangoo,2019,Renault,True,50.0,M,23

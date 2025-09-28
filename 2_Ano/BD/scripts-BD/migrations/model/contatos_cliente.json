@@ -1,0 +1,14 @@
+{
+    "contatos_cliente": [
+        {
+            "ID_Cliente": 1,
+            "Email": "joao@email.com",
+            "Telefone": "912345678"
+        },
+        {
+            "ID_Cliente": 2,
+            "Email": "maria@email.com",
+            "Telefone": "987654321"
+        }
+    ]
+}

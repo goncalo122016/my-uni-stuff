@@ -1,0 +1,16 @@
+{
+    "cliente": [
+        {
+            "ID": 1,
+            "Nome": "João Silva",
+            "DataNascimento": "1990-01-01",
+            "NIF": "123456789"
+        },
+        {
+            "ID": 2,
+            "Nome": "Maria Costa",
+            "DataNascimento": "1985-05-15",
+            "NIF": "987654321"
+        }
+    ]
+}

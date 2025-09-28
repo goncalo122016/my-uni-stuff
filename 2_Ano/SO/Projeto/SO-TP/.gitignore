@@ -1,0 +1,12 @@
+DatasetTest/
+.vscode/
+obj/
+bin/
+
+docs/
+
+Gdataset/
+
+addGdatasetMetadata.sh
+
+Gcatalog.tsv

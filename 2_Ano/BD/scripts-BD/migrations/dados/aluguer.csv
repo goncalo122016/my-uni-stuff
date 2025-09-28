@@ -1,0 +1,4 @@
+﻿Id,MetodoPagamento,Valor,DataInicio,DataFim,ID_Cliente,Matricula,ID_Funcionario
+10,Cartão,150.0,2024-05-01,2024-05-05,4,33-AA-11,21
+40,Dinheiro,90.0,2024-05-10,2024-05-12,5,12-BB-22,22
+33,MB Way,200.0,2024-05-15,2024-05-20,6,23-CC-33,23

@@ -1,0 +1,9 @@
+{
+    "contatos_stand": [
+        {
+            "ID_Stand": 1,
+            "Email": "contacto@standlux.com",
+            "Telefone": "212345678"
+        }
+    ]
+}
