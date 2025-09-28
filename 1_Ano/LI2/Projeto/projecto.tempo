@@ -1,0 +1,253 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  us/call  us/call  name    
+ 25.00      0.12     0.12                             _init
+ 22.92      0.23     0.11                             gerar_combinacoes
+ 20.83      0.33     0.10                             indices_array
+ 10.42      0.38     0.05   524280     0.10     0.10  reis
+  8.33      0.42     0.04  6644880     0.01     0.01  mesmo_valor
+  6.25      0.45     0.03  6553500     0.00     0.00  conta_reis_na_linha
+  2.08      0.46     0.01  6553500     0.00     0.00  combinacao_valida
+  2.08      0.47     0.01  6553500     0.00     0.01  mesmo_tipo_e_tamanho
+  2.08      0.48     0.01    57035     0.18     0.18  sequencia
+  0.00      0.48     0.00 13107376     0.00     0.01  imprimir_combinacao
+  0.00      0.48     0.00  2986905     0.00     0.00  carta_para_cod
+  0.00      0.48     0.00   580280     0.00     0.06  dupla_sequencia
+  0.00      0.48     0.00   360387     0.00     0.00  menorMultiploDeQuatro
+  0.00      0.48     0.00   112300     0.00     0.00  ordena
+  0.00      0.48     0.00      100     0.00     0.00  todas_combinacoes
+  0.00      0.48     0.00        1     0.00    12.69  processar_jogadas
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2022 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 4 byte(s) for 2.08% of 0.48 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     53.8    0.11    0.15                 gerar_combinacoes [1]
+                0.00    0.10 13105776/13107376     imprimir_combinacao [3]
+                0.03    0.00 6553500/6553500     conta_reis_na_linha [9]
+                0.01    0.00 6553500/6553500     combinacao_valida [10]
+-----------------------------------------------
+                                                 <spontaneous>
+[2]     25.0    0.12    0.00                 _init [2]
+-----------------------------------------------
+                0.00    0.00    1600/13107376     processar_jogadas [14]
+                0.00    0.10 13105776/13107376     gerar_combinacoes [1]
+[3]     21.7    0.00    0.10 13107376         imprimir_combinacao [3]
+                0.01    0.04 6553500/6553500     mesmo_tipo_e_tamanho [5]
+                0.05    0.00  524280/524280      reis [6]
+-----------------------------------------------
+                                                 <spontaneous>
+[4]     20.8    0.10    0.00                 indices_array [4]
+-----------------------------------------------
+                0.01    0.04 6553500/6553500     imprimir_combinacao [3]
+[5]     11.2    0.01    0.04 6553500         mesmo_tipo_e_tamanho [5]
+                0.00    0.03  524280/580280      dupla_sequencia [8]
+                0.01    0.00   56000/57035       sequencia [11]
+                0.00    0.00  112000/2986905     carta_para_cod [16]
+                0.00    0.00  112000/112300      ordena [18]
+-----------------------------------------------
+                0.05    0.00  524280/524280      imprimir_combinacao [3]
+[6]     10.4    0.05    0.00  524280         reis [6]
+-----------------------------------------------
+                0.00    0.00   56736/6644880     combinacao_valida [10]
+                0.00    0.00   67951/6644880     compara [13]
+                0.00    0.00   67951/6644880     sequencia [11]
+                0.00    0.00  246616/6644880     carta_mais_alta [12]
+                0.04    0.00 6205626/6644880     dupla_sequencia [8]
+[7]      8.3    0.04    0.00 6644880         mesmo_valor [7]
+                0.00    0.00 2378305/2986905     carta_para_cod [16]
+                0.00    0.00   56736/360387      menorMultiploDeQuatro [17]
+-----------------------------------------------
+                0.00    0.00   56000/580280      combinacao_valida [10]
+                0.00    0.03  524280/580280      mesmo_tipo_e_tamanho [5]
+[8]      7.8    0.00    0.04  580280         dupla_sequencia [8]
+                0.04    0.00 6205626/6644880     mesmo_valor [7]
+                0.00    0.00  246616/360387      menorMultiploDeQuatro [17]
+-----------------------------------------------
+                0.03    0.00 6553500/6553500     gerar_combinacoes [1]
+[9]      6.2    0.03    0.00 6553500         conta_reis_na_linha [9]
+-----------------------------------------------
+                0.01    0.00 6553500/6553500     gerar_combinacoes [1]
+[10]     2.9    0.01    0.00 6553500         combinacao_valida [10]
+                0.00    0.00   56000/580280      dupla_sequencia [8]
+                0.00    0.00   56736/6644880     mesmo_valor [7]
+                0.00    0.00    1035/57035       sequencia [11]
+-----------------------------------------------
+                0.00    0.00    1035/57035       combinacao_valida [10]
+                0.01    0.00   56000/57035       mesmo_tipo_e_tamanho [5]
+[11]     2.2    0.01    0.00   57035         sequencia [11]
+                0.00    0.00   67951/6644880     mesmo_valor [7]
+                0.00    0.00   57035/360387      menorMultiploDeQuatro [17]
+-----------------------------------------------
+                                                 <spontaneous>
+[12]     0.3    0.00    0.00                 carta_mais_alta [12]
+                0.00    0.00  246616/6644880     mesmo_valor [7]
+-----------------------------------------------
+                                                 <spontaneous>
+[13]     0.1    0.00    0.00                 compara [13]
+                0.00    0.00   67951/6644880     mesmo_valor [7]
+-----------------------------------------------
+                0.00    0.00       1/1           _fini [15]
+[14]     0.0    0.00    0.00       1         processar_jogadas [14]
+                0.00    0.00    1600/13107376     imprimir_combinacao [3]
+                0.00    0.00     200/112300      ordena [18]
+-----------------------------------------------
+                                                 <spontaneous>
+[15]     0.0    0.00    0.00                 _fini [15]
+                0.00    0.00       1/1           processar_jogadas [14]
+-----------------------------------------------
+                0.00    0.00  112000/2986905     mesmo_tipo_e_tamanho [5]
+                0.00    0.00  496600/2986905     ordena [18]
+                0.00    0.00 2378305/2986905     mesmo_valor [7]
+[16]     0.0    0.00    0.00 2986905         carta_para_cod [16]
+-----------------------------------------------
+                0.00    0.00   56736/360387      mesmo_valor [7]
+                0.00    0.00   57035/360387      sequencia [11]
+                0.00    0.00  246616/360387      dupla_sequencia [8]
+[17]     0.0    0.00    0.00  360387         menorMultiploDeQuatro [17]
+-----------------------------------------------
+                0.00    0.00     100/112300      todas_combinacoes [19]
+                0.00    0.00     200/112300      processar_jogadas [14]
+                0.00    0.00  112000/112300      mesmo_tipo_e_tamanho [5]
+[18]     0.0    0.00    0.00  112300         ordena [18]
+                0.00    0.00  496600/2986905     carta_para_cod [16]
+-----------------------------------------------
+                0.00    0.00     100/100         main [23]
+[19]     0.0    0.00    0.00     100         todas_combinacoes [19]
+                0.00    0.00     100/112300      ordena [18]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2022 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+   [2] _init                   [3] imprimir_combinacao    [14] processar_jogadas
+  [16] carta_para_cod          [4] indices_array           [6] reis
+  [10] combinacao_valida      [17] menorMultiploDeQuatro  [11] sequencia
+   [9] conta_reis_na_linha     [5] mesmo_tipo_e_tamanho   [19] todas_combinacoes
+   [8] dupla_sequencia         [7] mesmo_valor
+   [1] gerar_combinacoes      [18] ordena
