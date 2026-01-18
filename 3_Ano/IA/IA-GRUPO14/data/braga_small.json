@@ -1,0 +1,137 @@
+{
+  "name": "braga_taxigreen_small_dataset",
+  "geography": "Braga, Portugal - Small Network",
+  "description": "Sistema compacto com 8 nós para testes rápidos",
+  "city_center": {"latitude": 41.5531, "longitude": -8.4258},
+  "metadata": {
+    "version": "2.0",
+    "created": "2025-11-02",
+    "total_vehicles": 3,
+    "total_stations": 4,
+    "total_nodes": 8,
+    "total_edges": 24
+  },
+  "vehicles": [
+    {
+      "id": "TX-001",
+      "name": "Táxi Amarelo Centro",
+      "type": "combustion",
+      "fuel_type": "diesel",
+      "position": {"latitude": 41.5531, "longitude": -8.4258},
+      "autonomy": 500,
+      "current_fuel": 400,
+      "capacity": 4,
+      "cost_per_km": 1.75,
+      "eco_score": 45,
+      "status": "idle",
+      "current_occupancy": 0
+    },
+    {
+      "id": "EV-001",
+      "name": "Táxi Elétrico Verde",
+      "type": "electric",
+      "fuel_type": "electricity",
+      "position": {"latitude": 41.5548, "longitude": -8.3980},
+      "autonomy": 350,
+      "current_fuel": 300,
+      "capacity": 4,
+      "cost_per_km": 0.95,
+      "eco_score": 98,
+      "status": "idle",
+      "current_occupancy": 0
+    },
+    {
+      "id": "TX-002",
+      "name": "Táxi Amarelo Norte",
+      "type": "combustion",
+      "fuel_type": "diesel",
+      "position": {"latitude": 41.5618, "longitude": -8.4315},
+      "autonomy": 520,
+      "current_fuel": 50,
+      "capacity": 5,
+      "cost_per_km": 1.85,
+      "eco_score": 42,
+      "status": "idle",
+      "current_occupancy": 0
+    }
+  ],
+  "stations": [
+    {
+      "id": "CS-001",
+      "name": "Estação Centro",
+      "type": "charging_station",
+      "position": {"latitude": 41.5533, "longitude": -8.4260},
+      "capacity": 4,
+      "current_queue": 0,
+      "charging_speed": "fast",
+      "cost_per_kwh": 0.35
+    },
+    {
+      "id": "CS-002",
+      "name": "Estação Norte",
+      "type": "charging_station",
+      "position": {"latitude": 41.5620, "longitude": -8.4317},
+      "capacity": 3,
+      "current_queue": 0,
+      "charging_speed": "fast",
+      "cost_per_kwh": 0.35
+    },
+    {
+      "id": "RF-001",
+      "name": "Posto Centro",
+      "type": "refuel_station",
+      "position": {"latitude": 41.5517, "longitude": -8.4127},
+      "capacity": 6,
+      "current_queue": 0,
+      "fuel_types": ["diesel", "gasoline"],
+      "price_per_liter": 1.65
+    },
+    {
+      "id": "RF-002",
+      "name": "Posto Norte",
+      "type": "refuel_station",
+      "position": {"latitude": 41.5454, "longitude": -8.4258},
+      "capacity": 4,
+      "current_queue": 0,
+      "fuel_types": ["diesel", "gasoline"],
+      "price_per_liter": 1.62
+    }
+  ],
+  "graph_nodes": [
+    {"id": "N-001", "name": "Centro", "position": {"latitude": 41.5531, "longitude": -8.4258}},
+    {"id": "N-002", "name": "Zona Industrial", "position": {"latitude": 41.5462, "longitude": -8.3850}},
+    {"id": "N-003", "name": "Hospital", "position": {"latitude": 41.5618, "longitude": -8.4315}},
+    {"id": "N-004", "name": "Universidade", "position": {"latitude": 41.5595, "longitude": -8.3970}},
+    {"id": "N-005", "name": "Estádio", "position": {"latitude": 41.5515, "longitude": -8.4125}},
+    {"id": "N-006", "name": "Bom Jesus", "position": {"latitude": 41.5550, "longitude": -8.3770}},
+    {"id": "N-007", "name": "Shopping", "position": {"latitude": 41.5548, "longitude": -8.3980}},
+    {"id": "N-008", "name": "Estação", "position": {"latitude": 41.5452, "longitude": -8.4256}}
+  ],
+  "graph_edges": [
+    {"from": "N-001", "to": "N-005", "distance_km": 2.3, "time_minutes": 6},
+    {"from": "N-001", "to": "N-008", "distance_km": 1.2, "time_minutes": 3},
+    {"from": "N-002", "to": "N-006", "distance_km": 2.8, "time_minutes": 7},
+    {"from": "N-002", "to": "N-007", "distance_km": 1.9, "time_minutes": 5},
+    {"from": "N-003", "to": "N-004", "distance_km": 3.5, "time_minutes": 8},
+    {"from": "N-004", "to": "N-007", "distance_km": 1.2, "time_minutes": 3},
+    {"from": "N-005", "to": "N-001", "distance_km": 2.3, "time_minutes": 6},
+    {"from": "N-005", "to": "N-007", "distance_km": 2.0, "time_minutes": 5},
+    {"from": "N-006", "to": "N-007", "distance_km": 2.0, "time_minutes": 5},
+    {"from": "N-006", "to": "N-002", "distance_km": 2.8, "time_minutes": 7},
+    {"from": "N-007", "to": "N-004", "distance_km": 1.2, "time_minutes": 3},
+    {"from": "N-007", "to": "N-005", "distance_km": 2.0, "time_minutes": 5},
+    {"from": "N-007", "to": "N-002", "distance_km": 1.9, "time_minutes": 5},
+    {"from": "N-008", "to": "N-001", "distance_km": 1.2, "time_minutes": 3},
+    {"from": "N-001", "to": "N-003", "distance_km": 2.5, "time_minutes": 6},
+    {"from": "N-003", "to": "N-001", "distance_km": 2.5, "time_minutes": 6},
+    {"from": "N-004", "to": "N-003", "distance_km": 3.5, "time_minutes": 8},
+    {"from": "N-004", "to": "N-006", "distance_km": 2.5, "time_minutes": 6},
+    {"from": "N-006", "to": "N-004", "distance_km": 2.5, "time_minutes": 6},
+    {"from": "N-008", "to": "N-005", "distance_km": 1.5, "time_minutes": 4},
+    {"from": "N-005", "to": "N-008", "distance_km": 1.5, "time_minutes": 4},
+    {"from": "N-002", "to": "N-001", "distance_km": 4.2, "time_minutes": 10},
+    {"from": "N-001", "to": "N-002", "distance_km": 4.2, "time_minutes": 10},
+    {"from": "N-003", "to": "N-008", "distance_km": 2.8, "time_minutes": 7},
+    {"from": "N-008", "to": "N-003", "distance_km": 2.8, "time_minutes": 7}
+  ]
+}

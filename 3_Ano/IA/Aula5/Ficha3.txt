@@ -1,0 +1,23 @@
+1) Problema de Pesquisa (não informada; )
+
+2)
+Representação de Estado: capacidade atual dos dois baldes : (x,y)
+Estado inicial: Baldes com capacidades de 3 e 5 litros, inicialmente vazios : (0,0)
+Estado objetivo: Um dos baldes com exatamente 2 litros : (_,2) ou (2,_)
+
+Operadores: encher um balde; esvaziar um balde ; despejar um balde no outro 
+Custo: 1 para cada operação -> uniforme
+
+----
+
+Ficha TP3:
+Problema: Pesquisa informada
+
+Estado: Estação
+Estado inicial: estação de Aeroporto
+Estado Objetivo: estação do Lumiar
+
+Operadores: Linhas de metro definidas entre estações (mudança de estado : mudança de estação)
+Custo Operação: Tempo de viagem entre uma estação e outra (expectável)
+Custo Total: Tempo total da viagem (soma dos tempos entre cada estação da solução)
+

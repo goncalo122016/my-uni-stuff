@@ -1,0 +1,122 @@
+:root {
+  --color-primary: #f0f2f5;
+  --color-secondary: #1877f2;
+  --color-accent: #42b883;
+  --color-text: #1c1e21;
+  --color-border: #dadde1;
+  --color-white: #ffffff;
+}
+
+html, body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--color-primary);
+  min-height: 100vh;
+  min-width: min-content;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  min-height: 100vh;
+}
+
+h1 {
+  color: var(--color-text);
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#playerTurn {
+  color: var(--color-secondary);
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+#gameBoard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 5px;
+  background-color: var(--color-border);
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-bottom: 30px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: var(--color-white);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cell:hover {
+  background-color: #f8f9fa;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cell.x {
+  color: var(--color-secondary);
+}
+
+.cell.o {
+  color: var(--color-accent);
+}
+
+#resetButton {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#resetButton:hover {
+  background-color: #166fe5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#resetButton:active {
+  transform: translateY(0);
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  #playerTurn {
+    font-size: 1.2rem;
+  }
+}
+
+
+

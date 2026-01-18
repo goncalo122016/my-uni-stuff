@@ -1,0 +1,274 @@
+===============================================================
+                SPACE-MISSION COMMUNICATION PROTOCOL
+            (MissionLink UDP, Telemetry TCP, API Layer)
+===============================================================
+
+Este documento descreve todos os tipos de mensagens do sistema,
+ajustados e otimizados segundo o planeamento do grupo.
+
+---------------------------------------------------------------
+1. MISSION LINK PROTOCOL (UDP)
+---------------------------------------------------------------
+Socket UDP entre Rover <-> MotherShip.
+Fiabilidade garantida pela aplicação:
+    - seq / ack
+    - retransmissão
+    - checksum
+    - timestamps
+
+Formato binário (novo):
+    HEADER (9 bytes):
+        type (1 byte)
+        seq  (uint32)
+        ack  (uint32)
+
+    PAYLOAD FIXO (140 bytes):
+        mission_id (8 chars ASCII)
+        rover_id   (8 chars ASCII)
+        area:
+            x1,y1,x2,y2   (4 floats)
+        tasks (64 bytes ASCII/UTF-8)
+        duration         (uint32)
+        progress_period  (uint32)
+        progress         (float32)
+        battery          (1 byte)
+        position (3 floats: x,y,z)
+        padding até 140 bytes
+
+    CHECKSUM (1 byte):
+        (sum(header + payload) % 256)
+
+---------------------------------------------------------------
+1.1 TIPOS DE MENSAGENS
+---------------------------------------------------------------
+
+ENUM MissionMessageType:
+    1  MISSION_HELLO
+    2  MISSION_REQUEST
+    3  MISSION_ASSIGN
+    4  MISSION_ACKNOWLEDGMENT
+    5  MISSION_PROGRESS
+    6  MISSION_COMPLETE
+    7  MISSION_ABORT
+    8  MISSION_CANCEL
+
+---------------------------------------------------------------
+1.2 FLUXO DE MISSÃO
+---------------------------------------------------------------
+
+1. Rover -> MotherShip: MISSION_HELLO
+   - Permite à nave guardar o endereço real UDP do rover.
+
+2. Rover -> MotherShip: MISSION_REQUEST
+   - Pedido de missão.
+
+3. MotherShip -> Rover: MISSION_ASSIGN
+   Payload contém:
+       mission_id
+       area (x1,y1,x2,y2)
+       tasks
+       duration
+       progress_period
+
+4. Rover -> MotherShip: MISSION_ACKNOWLEDGMENT
+   - Confirma receção do ASSIGN com ack.
+
+5. Rover -> MotherShip: MISSION_PROGRESS
+       mission_id
+       progress (0–1)
+       battery
+       position (x,y,z)
+
+6. Rover -> MotherShip:
+       MISSION_COMPLETE  ou
+       MISSION_ABORT
+
+7. Opcional: MotherShip -> Rover: MISSION_CANCEL
+
+---------------------------------------------------------------
+1.3 EXEMPLOS (estruturais — já adaptados ao binário)
+---------------------------------------------------------------
+
+MISSION_ASSIGN (JSON equivalente):
+{
+  "type": "MISSION_ASSIGN",
+  "seq": 12,
+  "mission_id": "M-003",
+  "rover_id": "R-02",
+
+  "area": { "x1": 10, "y1": 20, "x2": 30, "y2": 50 },
+  "tasks": "check_accessibility",
+
+  "duration": 1800,
+  "progress_period": 120,
+
+  "timestamp": "03/10/2025 15:39:02"
+}
+
+MISSION_PROGRESS (JSON equivalente):
+{
+  "type": "MISSION_PROGRESS",
+  "seq": 25,
+  "ack": 24,
+  "mission_id": "M-003",
+  "progress": 0.45,
+
+  "position": { "x": 12, "y": 25, "z": 200 },
+  "battery": 72,
+
+  "timestamp": "03/10/2025 15:39:02"
+}
+
+---------------------------------------------------------------
+2. TELEMETRY STREAM (TCP)
+---------------------------------------------------------------
+
+Canal persistente TCP Rover -> MotherShip.
+
+OBJETIVO:
+    - Estado contínuo do rover
+    - Usado pelo GroundControl para interface gráfica
+    - Enviado a cada TELEMETRY_INTERVAL segundos
+
+PROTOCOLO:
+    • Formato binário fixo (87 bytes)
+    • Conexão TCP mantém estado
+    • Cada mensagem contém TUDO o que o rover sabe no momento
+
+---------------------------------------------------------------
+2.1 FORMATO BINÁRIO DE TELEMETRIA
+---------------------------------------------------------------
+
+ESTRUTURA (total = 87 bytes):
+
+    MAGIC            (2 bytes)  = 0xAA55
+    SIZE             (2 bytes)  = 87
+    rover_id         (8 bytes ASCII padded)
+    mission_id       (8 bytes ASCII padded)
+    state            (1 byte)   enum (0..3)
+    battery          (1 byte)   percentual 0-100
+    temperature      (4 bytes float)
+    position.x       (4 bytes float)
+    position.y       (4 bytes float)
+    position.z       (4 bytes float)
+    speed.x          (4 bytes float)
+    speed.y          (4 bytes float)
+    speed.z          (4 bytes float)
+    timestamp_ms     (8 bytes uint64)
+    reserved         (28 bytes zeros)
+    checksum         (1 byte) = sum(all bytes except checksum) % 256
+
+---------------------------------------------------------------
+2.2 ESTADO DO ROVER
+---------------------------------------------------------------
+
+Enum RoverState (armazenado como 1 byte no protocolo):
+
+    0 -> idle
+    1 -> in_mission
+    2 -> charging
+    3 -> error
+
+Conversões:
+
+    RoverState.to_str() -> "idle" / "in_mission" / "charging" / "error"
+    RoverState.from_str("idle") -> RoverState.IDLE
+    TelemetryMessage._state_to_byte(RoverState.IDLE) -> 0
+    TelemetryMessage._byte_to_state(0) -> RoverState.IDLE
+
+**Internamente no sistema (UI, logs, API REST), o estado é sempre string.  
+No protocolo binário é sempre integer.**
+
+---------------------------------------------------------------
+2.3 EXEMPLO (representação JSON equivalente)
+---------------------------------------------------------------
+
+{
+  "rover_id": "R-02",
+  "mission_id": "M-003",
+
+  "state": "in_mission",
+  "battery": 72,
+  "temperature": 31.0,
+
+  "position": { "x": 12.0, "y": 25.0, "z": 200.0 },
+  "speed":    { "x": -0.7, "y": 1.0, "z": 0.0 },
+
+  "timestamp": "03/10/2025 15:39:02"
+}
+
+---------------------------------------------------------------
+2.4 REGRAS DE TRANSMISSÃO
+---------------------------------------------------------------
+
+• Rover mantém conexão TCP aberta para a MotherShip  
+• A cada X segundos:
+      -> gera TelemetryMessage
+      -> serializa com to_bytes()
+      -> envia via writer.write()
+
+• No lado da MotherShip:
+      -> lê exatamente SIZE bytes
+      -> TelemetryMessage.from_bytes() reconstrói o objeto
+      -> TelemetryManager atualiza estado, histórico e eventos
+
+---------------------------------------------------------------
+2.5 VALIDAÇÕES
+---------------------------------------------------------------
+
+1. Tamanho deve ser exatamente 87 bytes  
+2. MAGIC deve ser 0xAA55  
+3. SIZE deve ser 87  
+4. checksum deve ser válido  
+5. state deve estar entre 0 e 3  
+6. reserved deve ser ignorado (futuras versões)  
+
+---------------------------------------------------------------
+2.6 FLUXO COMPLETO
+---------------------------------------------------------------
+
+1. Rover abre TCP
+2. Envia telemetria periódica
+3. MotherShip:
+      - Valida binário
+      - Converte state_byte -> RoverState
+      - Atualiza painel (UI)
+      - Gera eventos:
+            telemetry_update
+            low_battery
+            rover_state_change
+4. Se conexão cair -> rover marcado como offline
+
+---------------------------------------------------------------
+3. HTTP / API_LAYER (GroundControl)
+---------------------------------------------------------------
+
+REST API:
+    [GET  /rovers]              -> lista rovers + estado
+    [GET  /rovers/{id}]         -> última telemetria
+    [GET  /missions]            -> lista missões
+    [GET  /missions/{id}]       -> estado da missão
+    [POST /send-mission]        -> envia missão para MotherShip
+
+EVENTOS via WebSocket / SSE:
+    - telemetry_update
+    - mission_assigned
+    - mission_progress
+    - mission_completed
+    - mission_aborted
+    - low_battery
+    - rover_state_change
+
+Formato do evento:
+
+{
+  "event": "telemetry_update",
+  "rover_id": "R-02",
+  "mission_id": "M-003",
+
+  "position": { "x": 12, "y": 25, "z": 200 },
+  "battery": 72,
+  "state": "in_mission",
+
+  "timestamp": "03/10/2025 15:39:02"
+}

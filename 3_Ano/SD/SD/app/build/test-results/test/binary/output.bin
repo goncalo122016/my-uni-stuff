@@ -1,0 +1,114 @@
+,+(Taxa de compressão: 87.45659722222221%
+,. [CACHE] Evicted LRU: 2024-01-01
+,2'[NotificationService] endDay() chamado
+,20[PERSIST] Dia 2026-01-09 persistido (1 eventos)
+,2,[NotificationService] startNewDay() chamado
+,22[SERVER] Dia avançado: 2026-01-09 → 2026-01-10
+,2<[SERVER] Todos os eventos do dia anterior foram arquivados.
+,4'[EventService] Produto inválido: null
+,4#[EventService] Produto inválido: 
+,4*[EventService] Quantidade inválida: -1.0
+,4&[EventService] Preço inválido: -1.0
+9:[CACHE] Evicted LRU: date1
+9;[CACHE] Evicted LRU: date0
+9;[CACHE] Evicted LRU: date1
+9;[CACHE] Evicted LRU: date2
+9;[CACHE] Evicted LRU: date3
+9;[CACHE] Evicted LRU: date4
+9;[CACHE] Evicted LRU: date5
+9;[CACHE] Evicted LRU: date6
+9;[CACHE] Evicted LRU: date7
+9;[CACHE] Evicted LRU: date8
+9;[CACHE] Evicted LRU: date9
+9;[CACHE] Evicted LRU: date10
+9;[CACHE] Evicted LRU: date11
+9;[CACHE] Evicted LRU: date12
+9;[CACHE] Evicted LRU: date13
+9;[CACHE] Evicted LRU: date14
+9;[CACHE] Evicted LRU: date15
+9;[CACHE] Evicted LRU: date16
+9;[CACHE] Evicted LRU: date17
+9;[CACHE] Evicted LRU: date18
+9;[CACHE] Evicted LRU: date19
+9;[CACHE] Evicted LRU: date20
+9;[CACHE] Evicted LRU: date21
+9;[CACHE] Evicted LRU: date22
+9;[CACHE] Evicted LRU: date23
+9;[CACHE] Evicted LRU: date24
+9;[CACHE] Evicted LRU: date25
+9;[CACHE] Evicted LRU: date26
+9;[CACHE] Evicted LRU: date27
+9;[CACHE] Evicted LRU: date28
+9;[CACHE] Evicted LRU: date29
+9;[CACHE] Evicted LRU: date30
+9;[CACHE] Evicted LRU: date31
+9;[CACHE] Evicted LRU: date32
+9;[CACHE] Evicted LRU: date33
+9;[CACHE] Evicted LRU: date34
+9;[CACHE] Evicted LRU: date35
+9;[CACHE] Evicted LRU: date36
+9;[CACHE] Evicted LRU: date37
+9;[CACHE] Evicted LRU: date38
+9;[CACHE] Evicted LRU: date39
+9;[CACHE] Evicted LRU: date40
+9;[CACHE] Evicted LRU: date41
+9;[CACHE] Evicted LRU: date42
+9;[CACHE] Evicted LRU: date43
+9;[CACHE] Evicted LRU: date44
+9;[CACHE] Evicted LRU: date45
+9;[CACHE] Evicted LRU: date46
+9;[CACHE] Evicted LRU: date47
+9;[CACHE] Evicted LRU: date48
+9;[CACHE] Evicted LRU: date49
+9;[CACHE] Evicted LRU: date50
+9;[CACHE] Evicted LRU: date51
+9;[CACHE] Evicted LRU: date52
+9;[CACHE] Evicted LRU: date53
+9;[CACHE] Evicted LRU: date54
+9;[CACHE] Evicted LRU: date55
+9;[CACHE] Evicted LRU: date56
+9;[CACHE] Evicted LRU: date57
+9;[CACHE] Evicted LRU: date58
+9;[CACHE] Evicted LRU: date59
+9;[CACHE] Evicted LRU: date60
+9;[CACHE] Evicted LRU: date61
+9;[CACHE] Evicted LRU: date62
+9;[CACHE] Evicted LRU: date63
+9;[CACHE] Evicted LRU: date64
+9;[CACHE] Evicted LRU: date65
+9;[CACHE] Evicted LRU: date66
+9;[CACHE] Evicted LRU: date67
+9;[CACHE] Evicted LRU: date68
+9;[CACHE] Evicted LRU: date69
+9;[CACHE] Evicted LRU: date70
+9;[CACHE] Evicted LRU: date71
+9;[CACHE] Evicted LRU: date72
+9;[CACHE] Evicted LRU: date73
+9;[CACHE] Evicted LRU: date74
+9;[CACHE] Evicted LRU: date75
+9;[CACHE] Evicted LRU: date76
+9;[CACHE] Evicted LRU: date77
+9;[CACHE] Evicted LRU: date78
+9;[CACHE] Evicted LRU: date79
+9;[CACHE] Evicted LRU: date80
+9;[CACHE] Evicted LRU: date81
+9;[CACHE] Evicted LRU: date82
+9;[CACHE] Evicted LRU: date83
+9;[CACHE] Evicted LRU: date84
+9;[CACHE] Evicted LRU: date85
+9;[CACHE] Evicted LRU: date86
+9;[CACHE] Evicted LRU: date87
+9;[CACHE] Evicted LRU: date88
+9;[CACHE] Evicted LRU: date89
+9;[CACHE] Evicted LRU: date90
+9;[CACHE] Evicted LRU: date91
+9;[CACHE] Evicted LRU: date92
+9;[CACHE] Evicted LRU: date93
+9;[CACHE] Evicted LRU: date94
+9A[CACHE] Evicted LRU: date0
+9A[CACHE] Evicted LRU: date1
+9A[CACHE] Evicted LRU: date2
+9A[CACHE] Evicted LRU: date3
+9A[CACHE] Evicted LRU: date4
+9G [CACHE] Evicted LRU: 2024-01-02
+9J [CACHE] Evicted LRU: 2024-01-01

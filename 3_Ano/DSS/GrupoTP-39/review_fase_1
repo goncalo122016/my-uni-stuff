@@ -1,0 +1,7 @@
+Gostava de ver as cardinalidades todas explícitas. Muitos “has/is a” disfarçados - por exemplo, podia-se dizer “Nota” refere “Item”. Pensem se faz sentido suportar mais que um item na mesma nota. Deviam ter modelado a questão dos menus.
+A modelação dos funcionários e dos items/preparação parece-me incompleta. Entidades devem ser escritas no singular. 
+Nos use-cases, parece-me faltar alguns, por exemplo ver o stock de um item - já que têm o requisitar. No “Ver Pedidos”, um bom passo 1 seria “Funcionário escolhe pedido da lista”. 
+O fluxo normal não pode ter loop - não é para modelar uma máquina de estados. Não faz sentido voltar ao passo 1, isso é modelado como outra invocação do UC. Os “triggers” dos use-cases não devem ser os passos 1 dos mesmos. 
+A descrição é o que acontece depois do UC começar. Os fluxos excepcionais não podem ligar ao fluxo normal - assim podem levar à pós-condição e portanto seriam só alternativos. 
+Não ponham autenticação como pré-condição e depois um "<<include>> Autenticação”, ou uma forma ou outra, mas como colocaram a seta no diagrama tem de ser a segunda. 
+Para a próxima incluam o excel no repositório.

@@ -1,0 +1,726 @@
+{
+  "name": "braga_taxigreen_dataset_enhanced",
+  "geography": "Braga, Portugal",
+  "description": "Sistema avançado de gestão de frota de táxis na cidade de Braga com IA e otimização",
+  "city_center": {"latitude": 41.5531, "longitude": -8.4258},
+  "metadata": {
+    "version": "2.0",
+    "created": "2025-10-27",
+    "total_vehicles": 4,
+    "total_stations": 8,
+    "total_locations": 10,
+    "total_nodes": 15,
+    "total_edges": 54
+  },
+  "vehicles": [
+    {
+      "id": "TX-001",
+      "name": "Táxi Amarelo Centro",
+      "type": "combustion",
+      "fuel_type": "diesel",
+      "position": {"latitude": 41.5531, "longitude": -8.4258},
+      "autonomy": 500,
+      "current_fuel": 75,
+      "capacity": 4,
+      "cost_per_km": 1.75,
+      "eco_score": 45,
+      "status": "idle",
+      "current_occupancy": 0
+    },
+    {
+      "id": "TX-002",
+      "name": "Táxi Amarelo Zona Comercial",
+      "type": "combustion",
+      "fuel_type": "diesel",
+      "position": {"latitude": 41.5548, "longitude": -8.4189},
+      "autonomy": 520,
+      "current_fuel": 480,
+      "capacity": 5,
+      "cost_per_km": 1.85,
+      "eco_score": 42,
+      "status": "idle",
+      "current_occupancy": 0
+    },
+    {
+      "id": "EV-001",
+      "name": "Táxi Elétrico Verde Centro",
+      "type": "electric",
+      "fuel_type": "electricity",
+      "position": {"latitude": 41.5490, "longitude": -8.4310},
+      "autonomy": 350,
+      "current_fuel": 320,
+      "capacity": 4,
+      "cost_per_km": 0.95,
+      "eco_score": 98,
+      "status": "idle",
+      "current_occupancy": 0
+    },
+    {
+      "id": "EV-002",
+      "name": "Táxi Elétrico Verde Comercial",
+      "type": "electric",
+      "fuel_type": "electricity",
+      "position": {"latitude": 41.5512, "longitude": -8.4008},
+      "autonomy": 380,
+      "current_fuel": 350,
+      "capacity": 5,
+      "cost_per_km": 0.88,
+      "eco_score": 99,
+      "status": "idle",
+      "current_occupancy": 0
+    }
+  ],
+  "stations": [
+    {
+      "id": "CS-001",
+      "name": "Estação de Recarga Centro",
+      "type": "charging_station",
+      "position": {"latitude": 41.5531, "longitude": -8.4258},
+      "capacity": 6,
+      "current_queue": 0,
+      "charge_time_minutes": 30,
+      "vehicles_in_queue": []
+    },
+    {
+      "id": "CS-002",
+      "name": "Estação de Recarga Zona Comercial",
+      "type": "charging_station",
+      "position": {"latitude": 41.5548, "longitude": -8.4189},
+      "capacity": 4,
+      "current_queue": 0,
+      "charge_time_minutes": 30,
+      "vehicles_in_queue": []
+    },
+    {
+      "id": "CS-003",
+      "name": "Estação de Recarga Bairro Este",
+      "type": "charging_station",
+      "position": {"latitude": 41.5512, "longitude": -8.4008},
+      "capacity": 3,
+      "current_queue": 0,
+      "charge_time_minutes": 30,
+      "vehicles_in_queue": []
+    },
+    {
+      "id": "CS-004",
+      "name": "Estação de Recarga Norte",
+      "type": "charging_station",
+      "position": {"latitude": 41.5700, "longitude": -8.4150},
+      "capacity": 4,
+      "current_queue": 0,
+      "charge_time_minutes": 30,
+      "vehicles_in_queue": []
+    },
+    {
+      "id": "RF-001",
+      "name": "Posto de Abastecimento Centro",
+      "type": "refuel_station",
+      "position": {"latitude": 41.5520, "longitude": -8.4240},
+      "capacity": 8,
+      "current_queue": 0,
+      "refuel_time_minutes": 5,
+      "vehicles_in_queue": []
+    },
+    {
+      "id": "RF-002",
+      "name": "Posto de Abastecimento Zona Industrial",
+      "type": "refuel_station",
+      "position": {"latitude": 41.5389, "longitude": -8.4420},
+      "capacity": 6,
+      "current_queue": 0,
+      "refuel_time_minutes": 5,
+      "vehicles_in_queue": []
+    },
+    {
+      "id": "RF-003",
+      "name": "Posto de Abastecimento Zona Residencial",
+      "type": "refuel_station",
+      "position": {"latitude": 41.5625, "longitude": -8.4380},
+      "capacity": 5,
+      "current_queue": 0,
+      "refuel_time_minutes": 5,
+      "vehicles_in_queue": []
+    },
+    {
+      "id": "RF-004",
+      "name": "Posto de Abastecimento Aeroporto",
+      "type": "refuel_station",
+      "position": {"latitude": 41.5450, "longitude": -8.3850},
+      "capacity": 10,
+      "current_queue": 0,
+      "refuel_time_minutes": 5,
+      "vehicles_in_queue": []
+    }
+  ],
+  "locations": [
+    {
+      "id": "LOC-001",
+      "name": "Aeroporto de Braga",
+      "category": "airport",
+      "position": {"latitude": 41.5450, "longitude": -8.3850},
+      "demand_level": "high",
+      "priority": "urgent"
+    },
+    {
+      "id": "LOC-002",
+      "name": "Estação de Comboios",
+      "category": "train_station",
+      "position": {"latitude": 41.5612, "longitude": -8.2823},
+      "demand_level": "high",
+      "priority": "normal"
+    },
+    {
+      "id": "LOC-003",
+      "name": "Centro Comercial Braga Parque",
+      "category": "shopping",
+      "position": {"latitude": 41.5548, "longitude": -8.4189},
+      "demand_level": "very_high",
+      "priority": "normal"
+    },
+    {
+      "id": "LOC-004",
+      "name": "Hospital de Braga",
+      "category": "hospital",
+      "position": {"latitude": 41.5452, "longitude": -8.4158},
+      "demand_level": "high",
+      "priority": "urgent"
+    },
+    {
+      "id": "LOC-005",
+      "name": "Universidade do Minho",
+      "category": "university",
+      "position": {"latitude": 41.5663, "longitude": -8.3972},
+      "demand_level": "high",
+      "priority": "low"
+    },
+    {
+      "id": "LOC-006",
+      "name": "Câmara Municipal de Braga",
+      "category": "government",
+      "position": {"latitude": 41.5531, "longitude": -8.4258},
+      "demand_level": "medium",
+      "priority": "normal"
+    },
+    {
+      "id": "LOC-007",
+      "name": "Parque Urbano de Braga",
+      "category": "park",
+      "position": {"latitude": 41.5520, "longitude": -8.3950},
+      "demand_level": "medium",
+      "priority": "low"
+    },
+    {
+      "id": "LOC-008",
+      "name": "Terminal Rodoviário",
+      "category": "bus_station",
+      "position": {"latitude": 41.5490, "longitude": -8.4310},
+      "demand_level": "high",
+      "priority": "normal"
+    },
+    {
+      "id": "LOC-009",
+      "name": "Centro de Conferências",
+      "category": "conference",
+      "position": {"latitude": 41.5565, "longitude": -8.4200},
+      "demand_level": "medium",
+      "priority": "normal"
+    },
+    {
+      "id": "LOC-010",
+      "name": "Porto de Braga",
+      "category": "port",
+      "position": {"latitude": 41.5400, "longitude": -8.3700},
+      "demand_level": "low",
+      "priority": "low"
+    }
+  ],
+  "graph_nodes": [
+    {
+      "id": "N-001",
+      "name": "Centro Histórico",
+      "description": "Centro da cidade com museus e comércio",
+      "position": {"latitude": 41.5531, "longitude": -8.4258},
+      "demand_level": "very_high",
+      "vehicle_capacity": 50,
+      "parking_spots": 25
+    },
+    {
+      "id": "N-002",
+      "name": "Zona Industrial",
+      "description": "Área industrial com empresas de logística",
+      "position": {"latitude": 41.5389, "longitude": -8.4420},
+      "demand_level": "high",
+      "vehicle_capacity": 30,
+      "parking_spots": 45
+    },
+    {
+      "id": "N-003",
+      "name": "Bairro Este",
+      "description": "Zona residencial com bom acesso ao centro",
+      "position": {"latitude": 41.5512, "longitude": -8.4008},
+      "demand_level": "high",
+      "vehicle_capacity": 40,
+      "parking_spots": 35
+    },
+    {
+      "id": "N-004",
+      "name": "Zona Comercial",
+      "description": "Centro comercial com shoppings e lojas",
+      "position": {"latitude": 41.5548, "longitude": -8.4189},
+      "demand_level": "very_high",
+      "vehicle_capacity": 60,
+      "parking_spots": 50
+    },
+    {
+      "id": "N-005",
+      "name": "Zona Residencial Oeste",
+      "description": "Bairros residenciais tranquilos",
+      "position": {"latitude": 41.5625, "longitude": -8.4380},
+      "demand_level": "medium",
+      "vehicle_capacity": 35,
+      "parking_spots": 40
+    },
+    {
+      "id": "N-006",
+      "name": "Zona Norte",
+      "description": "Zona de transporte e logística",
+      "position": {"latitude": 41.5700, "longitude": -8.4150},
+      "demand_level": "medium",
+      "vehicle_capacity": 45,
+      "parking_spots": 55
+    },
+    {
+      "id": "N-007",
+      "name": "Aeroporto",
+      "description": "Aeroporto Internacional de Braga",
+      "position": {"latitude": 41.5450, "longitude": -8.3850},
+      "demand_level": "high",
+      "vehicle_capacity": 70,
+      "parking_spots": 100
+    },
+    {
+      "id": "N-008",
+      "name": "Estação Central",
+      "description": "Estação de comboios central",
+      "position": {"latitude": 41.5490, "longitude": -8.4310},
+      "demand_level": "very_high",
+      "vehicle_capacity": 80,
+      "parking_spots": 60
+    },
+    {
+      "id": "N-009",
+      "name": "Aeroporto de Braga",
+      "description": "Aeroporto Internacional de Braga",
+      "position": {"latitude": 41.5450, "longitude": -8.3850},
+      "demand_level": "high",
+      "vehicle_capacity": 70,
+      "parking_spots": 100
+    },
+    {
+      "id": "N-010",
+      "name": "Universidade do Minho",
+      "description": "Campus universitário com alta demanda",
+      "position": {"latitude": 41.5663, "longitude": -8.3972},
+      "demand_level": "high",
+      "vehicle_capacity": 60,
+      "parking_spots": 80
+    },
+    {
+      "id": "N-011",
+      "name": "Hospital de Braga",
+      "description": "Hospital principal da cidade",
+      "position": {"latitude": 41.5452, "longitude": -8.4158},
+      "demand_level": "high",
+      "vehicle_capacity": 40,
+      "parking_spots": 50
+    },
+    {
+      "id": "N-012",
+      "name": "Braga Parque (Shopping)",
+      "description": "Centro comercial com alta demanda",
+      "position": {"latitude": 41.5548, "longitude": -8.4189},
+      "demand_level": "very_high",
+      "vehicle_capacity": 100,
+      "parking_spots": 200
+    },
+    {
+      "id": "N-013",
+      "name": "Parque Urbano",
+      "description": "Área de lazer e recreação",
+      "position": {"latitude": 41.5520, "longitude": -8.3950},
+      "demand_level": "medium",
+      "vehicle_capacity": 30,
+      "parking_spots": 40
+    },
+    {
+      "id": "N-014",
+      "name": "Centro de Conferências",
+      "description": "Centro de eventos e conferências",
+      "position": {"latitude": 41.5565, "longitude": -8.4200},
+      "demand_level": "medium",
+      "vehicle_capacity": 50,
+      "parking_spots": 60
+    },
+    {
+      "id": "N-015",
+      "name": "Porto de Braga",
+      "description": "Zona portuária e logística",
+      "position": {"latitude": 41.5400, "longitude": -8.3700},
+      "demand_level": "low",
+      "vehicle_capacity": 20,
+      "parking_spots": 30
+    }
+  ],
+  "graph_edges": [
+    {
+      "from": "N-001",
+      "to": "N-002",
+      "distance_km": 5.2,
+      "time_minutes": 12,
+      "traffic_multiplier": 1.0,
+      "is_blocked": false,
+      "road_type": "main_street"
+    },
+    {
+      "from": "N-001",
+      "to": "N-003",
+      "distance_km": 7.0,
+      "time_minutes": 15,
+      "traffic_multiplier": 1.0,
+      "is_blocked": false,
+      "road_type": "secondary_road"
+    },
+    {
+      "from": "N-001",
+      "to": "N-004",
+      "distance_km": 3.75,
+      "time_minutes": 10,
+      "traffic_multiplier": 1.2,
+      "is_blocked": false,
+      "road_type": "main_street"
+    },
+    {
+      "from": "N-001",
+      "to": "N-005",
+      "distance_km": 5.5,
+      "time_minutes": 13,
+      "traffic_multiplier": 1.0,
+      "is_blocked": false,
+      "road_type": "secondary_road"
+    },
+    {
+      "from": "N-001",
+      "to": "N-006",
+      "distance_km": 8.75,
+      "time_minutes": 20,
+      "traffic_multiplier": 1.1,
+      "is_blocked": false,
+      "road_type": "highway"
+    },
+    {
+      "from": "N-002",
+      "to": "N-005",
+      "distance_km": 7.25,
+      "time_minutes": 17,
+      "traffic_multiplier": 1.0,
+      "is_blocked": false,
+      "road_type": "secondary_road"
+    },
+    {
+      "from": "N-002",
+      "to": "N-006",
+      "distance_km": 8.0,
+      "time_minutes": 19,
+      "traffic_multiplier": 1.1,
+      "is_blocked": false,
+      "road_type": "highway"
+    },
+    {
+      "from": "N-003",
+      "to": "N-004",
+      "distance_km": 6.25,
+      "time_minutes": 15,
+      "traffic_multiplier": 1.0,
+      "is_blocked": false,
+      "road_type": "secondary_road"
+    },
+    {
+      "from": "N-003",
+      "to": "N-006",
+      "distance_km": 7.0,
+      "time_minutes": 17,
+      "traffic_multiplier": 1.0,
+      "is_blocked": false,
+      "road_type": "secondary_road"
+    },
+    {
+      "from": "N-004",
+      "to": "N-005",
+      "distance_km": 4.5,
+      "time_minutes": 11,
+      "traffic_multiplier": 1.0,
+      "is_blocked": false,
+      "road_type": "main_street"
+    },
+    {
+      "from": "N-004",
+      "to": "N-008",
+      "distance_km": 5.75,
+      "time_minutes": 13,
+      "traffic_multiplier": 1.3,
+      "is_blocked": false,
+      "road_type": "main_street"
+    },
+    {
+      "from": "N-005",
+      "to": "N-006",
+      "distance_km": 5.5,
+      "time_minutes": 13,
+      "traffic_multiplier": 1.0,
+      "is_blocked": false,
+      "road_type": "secondary_road"
+    },
+    {
+      "from": "N-001",
+      "to": "N-007",
+      "distance_km": 10.5,
+      "time_minutes": 24,
+      "traffic_multiplier": 1.0,
+      "is_blocked": false,
+      "road_type": "highway"
+    },
+    {
+      "from": "N-006",
+      "to": "N-007",
+      "distance_km": 12.75,
+      "time_minutes": 29,
+      "traffic_multiplier": 0.9,
+      "is_blocked": false,
+      "road_type": "highway"
+    },
+    {
+      "from": "N-003",
+      "to": "N-007",
+      "distance_km": 9.5,
+      "time_minutes": 22,
+      "traffic_multiplier": 1.0,
+      "is_blocked": false,
+      "road_type": "highway"
+    },
+    {
+      "from": "N-001",
+      "to": "N-008",
+      "distance_km": 4.75,
+      "time_minutes": 11,
+      "traffic_multiplier": 1.4,
+      "is_blocked": false,
+      "road_type": "main_street"
+    },
+    {
+      "from": "N-006",
+      "to": "N-008",
+      "distance_km": 7.75,
+      "time_minutes": 18,
+      "traffic_multiplier": 1.1,
+      "is_blocked": false,
+      "road_type": "secondary_road"
+    },
+    {
+      "from": "N-002",
+      "to": "N-003",
+      "distance_km": 8.0,
+      "time_minutes": 19,
+      "traffic_multiplier": 1.0,
+      "is_blocked": false,
+      "road_type": "secondary_road"
+    },
+    {
+      "from": "N-005",
+      "to": "N-004",
+      "distance_km": 4.5,
+      "time_minutes": 11,
+      "traffic_multiplier": 1.0,
+      "is_blocked": false,
+      "road_type": "main_street"
+    },
+    {
+      "from": "N-002",
+      "to": "N-007",
+      "distance_km": 11.25,
+      "time_minutes": 26,
+      "traffic_multiplier": 0.95,
+      "is_blocked": false,
+      "road_type": "highway"
+    },
+    {
+      "from": "N-001",
+      "to": "N-009",
+      "distance_km": 10.5,
+      "time_minutes": 24,
+      "traffic_multiplier": 1.0,
+      "is_blocked": false,
+      "road_type": "highway"
+    },
+    {
+      "from": "N-003",
+      "to": "N-009",
+      "distance_km": 9.5,
+      "time_minutes": 22,
+      "traffic_multiplier": 1.0,
+      "is_blocked": false,
+      "road_type": "highway"
+    },
+    {
+      "from": "N-006",
+      "to": "N-010",
+      "distance_km": 5.5,
+      "time_minutes": 13,
+      "traffic_multiplier": 1.0,
+      "is_blocked": false,
+      "road_type": "secondary_road"
+    },
+    {
+      "from": "N-003",
+      "to": "N-010",
+      "distance_km": 4.8,
+      "time_minutes": 11,
+      "traffic_multiplier": 1.0,
+      "is_blocked": false,
+      "road_type": "secondary_road"
+    },
+    {
+      "from": "N-001",
+      "to": "N-011",
+      "distance_km": 3.2,
+      "time_minutes": 8,
+      "traffic_multiplier": 1.2,
+      "is_blocked": false,
+      "road_type": "main_street"
+    },
+    {
+      "from": "N-004",
+      "to": "N-011",
+      "distance_km": 2.5,
+      "time_minutes": 6,
+      "traffic_multiplier": 1.1,
+      "is_blocked": false,
+      "road_type": "main_street"
+    },
+    {
+      "from": "N-004",
+      "to": "N-012",
+      "distance_km": 0.5,
+      "time_minutes": 2,
+      "traffic_multiplier": 1.3,
+      "is_blocked": false,
+      "road_type": "main_street"
+    },
+    {
+      "from": "N-001",
+      "to": "N-012",
+      "distance_km": 3.5,
+      "time_minutes": 9,
+      "traffic_multiplier": 1.2,
+      "is_blocked": false,
+      "road_type": "main_street"
+    },
+    {
+      "from": "N-003",
+      "to": "N-013",
+      "distance_km": 3.0,
+      "time_minutes": 7,
+      "traffic_multiplier": 1.0,
+      "is_blocked": false,
+      "road_type": "secondary_road"
+    },
+    {
+      "from": "N-010",
+      "to": "N-013",
+      "distance_km": 2.2,
+      "time_minutes": 5,
+      "traffic_multiplier": 1.0,
+      "is_blocked": false,
+      "road_type": "secondary_road"
+    },
+    {
+      "from": "N-004",
+      "to": "N-014",
+      "distance_km": 1.8,
+      "time_minutes": 4,
+      "traffic_multiplier": 1.1,
+      "is_blocked": false,
+      "road_type": "main_street"
+    },
+    {
+      "from": "N-006",
+      "to": "N-014",
+      "distance_km": 3.5,
+      "time_minutes": 8,
+      "traffic_multiplier": 1.0,
+      "is_blocked": false,
+      "road_type": "secondary_road"
+    },
+    {
+      "from": "N-009",
+      "to": "N-015",
+      "distance_km": 4.5,
+      "time_minutes": 10,
+      "traffic_multiplier": 0.9,
+      "is_blocked": false,
+      "road_type": "highway"
+    },
+    {
+      "from": "N-002",
+      "to": "N-015",
+      "distance_km": 6.0,
+      "time_minutes": 14,
+      "traffic_multiplier": 1.0,
+      "is_blocked": false,
+      "road_type": "secondary_road"
+    }
+  ],
+  "traffic_patterns": [
+    {
+      "time_window": "08:00-09:30",
+      "description": "Hora de ponta matinal",
+      "multiplier": 1.5,
+      "affected_edges": ["N-001-N-004", "N-001-N-008", "N-004-N-008"]
+    },
+    {
+      "time_window": "12:00-13:00",
+      "description": "Hora de almoço",
+      "multiplier": 1.3,
+      "affected_edges": ["N-001-N-004", "N-004-N-005"]
+    },
+    {
+      "time_window": "17:30-19:00",
+      "description": "Hora de ponta vespertina",
+      "multiplier": 1.4,
+      "affected_edges": ["N-001-N-004", "N-001-N-006", "N-004-N-008"]
+    },
+    {
+      "time_window": "14:00-17:30",
+      "description": "Período de trânsito reduzido",
+      "multiplier": 0.9,
+      "affected_edges": ["N-001-N-007", "N-006-N-007"]
+    }
+  ],
+  "simulation_config": {
+    "initial_time": "08:00",
+    "time_step_minutes": 1,
+    "total_simulation_hours": 24,
+    "request_generation_interval_minutes": 3,
+    "min_passengers": 1,
+    "max_passengers": 6,
+    "vehicle_maintenance_probability": 0.02,
+    "emergency_request_probability": 0.05,
+    "eco_preference_probability": 0.40
+  },
+  "environmental_settings": {
+    "co2_combustion_kg_per_km": 0.21,
+    "co2_electric_kg_per_km": 0.05,
+    "noise_combustion_db": 75,
+    "noise_electric_db": 60,
+    "eco_bonus_percentage": 15
+  }
+}

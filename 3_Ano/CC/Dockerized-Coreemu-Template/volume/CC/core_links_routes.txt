@@ -1,0 +1,80 @@
+############################################################
+# Configuração de conexões – CORE
+# Unidades: Delay/Jitter em µs, Bandwidth em bps, Loss em %
+############################################################
+
+# ===== Ligação Terrestre =====
+GroundControl <-> sat0
+  Bandwidth: 100000000
+  Delay: 5000        # 5 ms
+  Jitter: 1000       # 1 ms
+  Loss: 0.0
+
+sat0 <-> MotherShip
+  Bandwidth: 100000000
+  Delay: 10000       # 10 ms
+  Jitter: 2000       # 2 ms
+  Loss: 0.0
+
+# ===== Ligações Orbitais (reduzidas) =====
+MotherShip <-> sat1
+  Bandwidth: 50000000
+  Delay: 90000       # 90 ms (90000 µs)
+  Jitter: 9000       # 9 ms
+  Loss: 0.2
+
+MotherShip <-> sat2
+  Bandwidth: 50000000
+  Delay: 100000      # 100 ms
+  Jitter: 10000      # 10 ms
+  Loss: 0.3
+
+MotherShip <-> sat3
+  Bandwidth: 40000000
+  Delay: 120000      # 120 ms
+  Jitter: 12000      # 12 ms
+  Loss: 0.3
+
+# ===== Ligações Inter-Satélite (reduzidas) =====
+sat1 <-> sat2
+  Bandwidth: 100000000
+  Delay: 25000       # 25 ms
+  Jitter: 4000       # 4 ms
+  Loss: 0.1
+
+sat2 <-> sat3
+  Bandwidth: 100000000
+  Delay: 30000       # 30 ms
+  Jitter: 5000       # 5 ms
+  Loss: 0.1
+
+# ===== Ligações Satélite <-> Rover =====
+# R1 (rota padrão / estável) — rápida e limpa
+sat1 <-> rover1
+  Bandwidth: 20000000
+  Delay: 40000       # 40 ms
+  Jitter: 5000       # 5 ms
+  Loss: 0.2
+
+# R3 (rota degradada / desafiante) — ainda desafiante, mas mais rápida que antes
+sat3 <-> rover3
+  Bandwidth: 10000000
+  Delay: 60000       # 60 ms
+  Jitter: 15000      # 15 ms
+  Loss: 1.0
+
+# R2 (rota lenta mas estável) — latência maior porém menor perda
+sat2 <-> rover2
+  Bandwidth: 15000000
+  Delay: 90000       # 90 ms
+  Jitter: 8000       # 8 ms
+  Loss: 0.3
+
+############################################################
+# ROTAS SUGERIDAS (curtas e rápidas para testes)
+# - Rota estável (default): MotherShip -> sat1 -> rover1
+# - Rota desafiadora: MotherShip -> sat2 -> rover2
+# - Rota lenta/moderada: MotherShip -> sat3 -> rover3
+# - Rotas de fallback: MotherShip -> sat1 -> sat2 -> rover2  (ex.: quando sat2 directe falha)
+############################################################
+

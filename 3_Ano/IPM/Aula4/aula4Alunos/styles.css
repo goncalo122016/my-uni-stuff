@@ -1,0 +1,105 @@
+:root {
+  --background-color: #ECEEEC;
+  --accent-color: #7DF6B4;
+  --accent-color-dark: #77d5a1;
+  --light-color: #FFF;
+  --dark-color: #000;
+  --text-secondary-color: #3F3F3F;
+  --border-color: #4D4D4D;
+}
+
+html, body {
+  margin: 0;
+  font-family: 'Anek Latin';
+  background-color: var(--background-color);
+}
+
+.card {
+  padding: 20px;
+  background-color: var(--light-color);
+}
+
+#app {
+  display: grid;
+  background-color: var(--background-color);
+  grid-template-areas: 
+    "nav nav nav nav"
+    ". main side ."
+    ". main section ."
+    ". main . ."
+    "footer footer footer footer";
+    grid-template-rows: 50px auto auto 1fr 100px;
+    grid-template-columns: 1fr 3fr 2fr 1fr;
+    gap: 10px;
+}
+
+#nav {
+  grid-area: nav;
+  display: flex;
+  justify-content: space-between;
+}
+
+.elems{
+  display: flex;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  background-color: var(--light-color);
+  padding: 1rem;
+  cursor: pointer;
+  margin: 0;
+}
+
+.button:hover {
+  background-color: var(--background-color);
+}
+
+.elem1 {
+  background-color: var(--accent-color);
+  cursor: pointer;
+}
+
+.elem1:hover {
+  background-color: var(--accent-color-dark);
+}
+
+#logo {
+  height: 50px;
+}
+
+#main {
+  grid-area: main;
+}
+
+.side {
+  grid-area: side;  
+}
+
+.section {
+  grid-area: section;
+}
+
+.list {
+  padding-inline-start: 0px;
+}
+
+.list-item {
+  padding-top: 0.5rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.list-item:hover {
+  color: var(--accent-color);
+}
+
+#footer {
+  grid-area: footer;
+  background-color: var(--light-color);
+  align-content: center;
+  text-align: center;
+}
+
+

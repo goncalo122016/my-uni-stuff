@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="EventSerializer Tests Suite" tests="20" skipped="0" failures="0" errors="0" timestamp="2026-01-09T21:34:19.804Z" hostname="goncalo-HP" time="0.064">
+  <properties/>
+  <testcase name="Test 15: Very large quantities and prices" classname="server.EventSerializerTestSuite" time="0.004"/>
+  <testcase name="Test 18: Zero values" classname="server.EventSerializerTestSuite" time="0.001"/>
+  <testcase name="Test 9: Compression ratio empty" classname="server.EventSerializerTestSuite" time="0.002"/>
+  <testcase name="Test 6: Estimate size multiple" classname="server.EventSerializerTestSuite" time="0.003"/>
+  <testcase name="Test 12: Deserialize preserves data" classname="server.EventSerializerTestSuite" time="0.001"/>
+  <testcase name="Test 20: Estimate vs actual size" classname="server.EventSerializerTestSuite" time="0.003"/>
+  <testcase name="Test 4: Estimate size empty" classname="server.EventSerializerTestSuite" time="0.001"/>
+  <testcase name="Test 11: Deserialize empty" classname="server.EventSerializerTestSuite" time="0.002"/>
+  <testcase name="Test 14: Special characters in product names" classname="server.EventSerializerTestSuite" time="0.002"/>
+  <testcase name="Test 17: Repeated product names" classname="server.EventSerializerTestSuite" time="0.003"/>
+  <testcase name="Test 3: Serialize multiple events" classname="server.EventSerializerTestSuite" time="0.002"/>
+  <testcase name="Test 10: Round trip serialize/deserialize" classname="server.EventSerializerTestSuite" time="0.001"/>
+  <testcase name="Test 2: Serialize single event" classname="server.EventSerializerTestSuite" time="0.0"/>
+  <testcase name="Test 5: Estimate size single" classname="server.EventSerializerTestSuite" time="0.001"/>
+  <testcase name="Test 7: Estimate scales with count" classname="server.EventSerializerTestSuite" time="0.001"/>
+  <testcase name="Test 8: Get compression ratio" classname="server.EventSerializerTestSuite" time="0.001"/>
+  <testcase name="Test 13: Large batch serialization" classname="server.EventSerializerTestSuite" time="0.009"/>
+  <testcase name="Test 1: Serialize empty list" classname="server.EventSerializerTestSuite" time="0.001"/>
+  <testcase name="Test 19: Compression ratio consistency" classname="server.EventSerializerTestSuite" time="0.001"/>
+  <testcase name="Test 16: Decimal precision" classname="server.EventSerializerTestSuite" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

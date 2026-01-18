@@ -1,0 +1,16 @@
+Sep 30 09:31:31 PC1 atftpd[44.140136509798208]: SIGINT received, stopping threads and exiting.
+Sep 30 09:31:31 PC1 atftpd[44.140136509798208]: tftpd.c: 468: select: Interrupted system call
+Sep 30 09:39:53 PC1 atftpd[52.126694380906048]: recvmsg: Connection refused
+Sep 30 09:39:53 PC1 atftpd[52.126694380906048]: tftpd_file.c: 1149: recvfrom: Connection refused
+Sep 30 09:42:25 PC1 atftpd[52.126694389434176]: SIGINT received, stopping threads and exiting.
+Sep 30 09:42:25 PC1 atftpd[52.126694389434176]: tftpd.c: 468: select: Interrupted system call
+Oct 05 18:10:15 PC1 atftpd[54.131544350467904]: SIGINT received, stopping threads and exiting.
+Oct 05 18:10:15 PC1 atftpd[54.131544350467904]: tftpd.c: 468: select: Interrupted system call
+Oct 05 18:46:39 PC1 atftpd[76.128428227950400]: SIGINT received, stopping threads and exiting.
+Oct 05 18:46:39 PC1 atftpd[76.128428227950400]: tftpd.c: 468: select: Interrupted system call
+Oct 07 15:10:22 PC1 atftpd[144.131921503139648]: SIGINT received, stopping threads and exiting.
+Oct 07 15:10:22 PC1 atftpd[144.131921503139648]: tftpd.c: 468: select: Interrupted system call
+Oct 07 15:27:27 PC1 atftpd[148.123687789303616]: SIGINT received, stopping threads and exiting.
+Oct 07 15:27:27 PC1 atftpd[148.123687789303616]: tftpd.c: 468: select: Interrupted system call
+Oct 07 16:21:39 PC1 atftpd[163.137716739098432]: SIGINT received, stopping threads and exiting.
+Oct 07 16:21:39 PC1 atftpd[163.137716739098432]: tftpd.c: 468: select: Interrupted system call

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="SeriesCache Tests Suite" tests="20" skipped="0" failures="0" errors="0" timestamp="2026-01-09T21:34:20.854Z" hostname="goncalo-HP" time="0.074">
+  <properties/>
+  <testcase name="Test 13: Put existing updates" classname="server.SeriesCacheTestSuite" time="0.003"/>
+  <testcase name="Test 20: Edge case - max size 1" classname="server.SeriesCacheTestSuite" time="0.002"/>
+  <testcase name="Test 16: Stress test with frequent evictions" classname="server.SeriesCacheTestSuite" time="0.026"/>
+  <testcase name="Test 4: Get non-existent returns null" classname="server.SeriesCacheTestSuite" time="0.003"/>
+  <testcase name="Test 8: Clear all" classname="server.SeriesCacheTestSuite" time="0.001"/>
+  <testcase name="Test 1: Create cache with max size" classname="server.SeriesCacheTestSuite" time="0.001"/>
+  <testcase name="Test 10: Get cached dates" classname="server.SeriesCacheTestSuite" time="0.001"/>
+  <testcase name="Test 2: Initially empty" classname="server.SeriesCacheTestSuite" time="0.001"/>
+  <testcase name="Test 18: Sequential put and get" classname="server.SeriesCacheTestSuite" time="0.002"/>
+  <testcase name="Test 15: Many items below max" classname="server.SeriesCacheTestSuite" time="0.002"/>
+  <testcase name="Test 17: Cache with null list" classname="server.SeriesCacheTestSuite" time="0.002"/>
+  <testcase name="Test 3: Put and get item" classname="server.SeriesCacheTestSuite" time="0.001"/>
+  <testcase name="Test 14: Multiple events in cache" classname="server.SeriesCacheTestSuite" time="0.001"/>
+  <testcase name="Test 5: Contains existing" classname="server.SeriesCacheTestSuite" time="0.001"/>
+  <testcase name="Test 12: Access updates LRU" classname="server.SeriesCacheTestSuite" time="0.001"/>
+  <testcase name="Test 19: Large event lists" classname="server.SeriesCacheTestSuite" time="0.001"/>
+  <testcase name="Test 9: Size increases with puts" classname="server.SeriesCacheTestSuite" time="0.001"/>
+  <testcase name="Test 11: LRU eviction on overflow" classname="server.SeriesCacheTestSuite" time="0.002"/>
+  <testcase name="Test 6: Contains non-existent" classname="server.SeriesCacheTestSuite" time="0.001"/>
+  <testcase name="Test 7: Remove item" classname="server.SeriesCacheTestSuite" time="0.0"/>
+  <system-out><![CDATA[[CACHE] Evicted LRU: date1
+[CACHE] Evicted LRU: date0
+[CACHE] Evicted LRU: date1
+[CACHE] Evicted LRU: date2
+[CACHE] Evicted LRU: date3
+[CACHE] Evicted LRU: date4
+[CACHE] Evicted LRU: date5
+[CACHE] Evicted LRU: date6
+[CACHE] Evicted LRU: date7
+[CACHE] Evicted LRU: date8
+[CACHE] Evicted LRU: date9
+[CACHE] Evicted LRU: date10
+[CACHE] Evicted LRU: date11
+[CACHE] Evicted LRU: date12
+[CACHE] Evicted LRU: date13
+[CACHE] Evicted LRU: date14
+[CACHE] Evicted LRU: date15
+[CACHE] Evicted LRU: date16
+[CACHE] Evicted LRU: date17
+[CACHE] Evicted LRU: date18
+[CACHE] Evicted LRU: date19
+[CACHE] Evicted LRU: date20
+[CACHE] Evicted LRU: date21
+[CACHE] Evicted LRU: date22
+[CACHE] Evicted LRU: date23
+[CACHE] Evicted LRU: date24
+[CACHE] Evicted LRU: date25
+[CACHE] Evicted LRU: date26
+[CACHE] Evicted LRU: date27
+[CACHE] Evicted LRU: date28
+[CACHE] Evicted LRU: date29
+[CACHE] Evicted LRU: date30
+[CACHE] Evicted LRU: date31
+[CACHE] Evicted LRU: date32
+[CACHE] Evicted LRU: date33
+[CACHE] Evicted LRU: date34
+[CACHE] Evicted LRU: date35
+[CACHE] Evicted LRU: date36
+[CACHE] Evicted LRU: date37
+[CACHE] Evicted LRU: date38
+[CACHE] Evicted LRU: date39
+[CACHE] Evicted LRU: date40
+[CACHE] Evicted LRU: date41
+[CACHE] Evicted LRU: date42
+[CACHE] Evicted LRU: date43
+[CACHE] Evicted LRU: date44
+[CACHE] Evicted LRU: date45
+[CACHE] Evicted LRU: date46
+[CACHE] Evicted LRU: date47
+[CACHE] Evicted LRU: date48
+[CACHE] Evicted LRU: date49
+[CACHE] Evicted LRU: date50
+[CACHE] Evicted LRU: date51
+[CACHE] Evicted LRU: date52
+[CACHE] Evicted LRU: date53
+[CACHE] Evicted LRU: date54
+[CACHE] Evicted LRU: date55
+[CACHE] Evicted LRU: date56
+[CACHE] Evicted LRU: date57
+[CACHE] Evicted LRU: date58
+[CACHE] Evicted LRU: date59
+[CACHE] Evicted LRU: date60
+[CACHE] Evicted LRU: date61
+[CACHE] Evicted LRU: date62
+[CACHE] Evicted LRU: date63
+[CACHE] Evicted LRU: date64
+[CACHE] Evicted LRU: date65
+[CACHE] Evicted LRU: date66
+[CACHE] Evicted LRU: date67
+[CACHE] Evicted LRU: date68
+[CACHE] Evicted LRU: date69
+[CACHE] Evicted LRU: date70
+[CACHE] Evicted LRU: date71
+[CACHE] Evicted LRU: date72
+[CACHE] Evicted LRU: date73
+[CACHE] Evicted LRU: date74
+[CACHE] Evicted LRU: date75
+[CACHE] Evicted LRU: date76
+[CACHE] Evicted LRU: date77
+[CACHE] Evicted LRU: date78
+[CACHE] Evicted LRU: date79
+[CACHE] Evicted LRU: date80
+[CACHE] Evicted LRU: date81
+[CACHE] Evicted LRU: date82
+[CACHE] Evicted LRU: date83
+[CACHE] Evicted LRU: date84
+[CACHE] Evicted LRU: date85
+[CACHE] Evicted LRU: date86
+[CACHE] Evicted LRU: date87
+[CACHE] Evicted LRU: date88
+[CACHE] Evicted LRU: date89
+[CACHE] Evicted LRU: date90
+[CACHE] Evicted LRU: date91
+[CACHE] Evicted LRU: date92
+[CACHE] Evicted LRU: date93
+[CACHE] Evicted LRU: date94
+[CACHE] Evicted LRU: date0
+[CACHE] Evicted LRU: date1
+[CACHE] Evicted LRU: date2
+[CACHE] Evicted LRU: date3
+[CACHE] Evicted LRU: date4
+[CACHE] Evicted LRU: 2024-01-02
+[CACHE] Evicted LRU: 2024-01-01
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

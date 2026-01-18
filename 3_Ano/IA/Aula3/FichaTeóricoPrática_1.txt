@@ -1,0 +1,17 @@
+Ficha Teórico-Prática n.º 1 - IA
+
+Origem: A; Destino: L ou G 
+
+i- DFS (Vantajoso em termos de memória):
+ > Ordem de Expansão: A->B->D->H->I->E->J->K->C->F
+ > Solução: A->C->F->L
+ 
+ii- BFS (Num grafo não-pesado garante a solução ótima):
+ > Ordem de Expansão: A->B->C
+ > Solução: A->C->G
+ 
+iii- Custo Uniforme (Dá a solução ótima mesmo num grafo pesado):
+ > Ordem de Expansão: A->B->C
+ > A->C->G
+
+iv- DFS Ocupa menos espaço em memória.

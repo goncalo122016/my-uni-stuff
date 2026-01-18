@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="server.EventServiceTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2026-01-09T21:34:19.872Z" hostname="goncalo-HP" time="0.973">
+  <properties/>
+  <testcase name="testEventSerializerCompression()" classname="server.EventServiceTest" time="0.011"/>
+  <testcase name="testMultipleClients()" classname="server.EventServiceTest" time="0.004"/>
+  <testcase name="testSeriesCacheLRU()" classname="server.EventServiceTest" time="0.002"/>
+  <testcase name="testEventSerializer()" classname="server.EventServiceTest" time="0.001"/>
+  <testcase name="testGetTodayTotal()" classname="server.EventServiceTest" time="0.021"/>
+  <testcase name="testAddEvent()" classname="server.EventServiceTest" time="0.002"/>
+  <testcase name="testAdvanceDay()" classname="server.EventServiceTest" time="0.042"/>
+  <testcase name="testNotificationServiceTimeout()" classname="server.EventServiceTest" time="0.503"/>
+  <testcase name="testAddEventInvalidData()" classname="server.EventServiceTest" time="0.007"/>
+  <testcase name="testNotificationServiceSimultaneous()" classname="server.EventServiceTest" time="0.205"/>
+  <testcase name="testNotificationServiceConsecutive()" classname="server.EventServiceTest" time="0.155"/>
+  <testcase name="testSeriesCache()" classname="server.EventServiceTest" time="0.004"/>
+  <system-out><![CDATA[Taxa de compressão: 87.45659722222221%
+[CACHE] Evicted LRU: 2024-01-01
+[NotificationService] endDay() chamado
+[PERSIST] Dia 2026-01-09 persistido (1 eventos)
+[NotificationService] startNewDay() chamado
+[SERVER] Dia avançado: 2026-01-09 → 2026-01-10
+[SERVER] Todos os eventos do dia anterior foram arquivados.
+[EventService] Produto inválido: null
+[EventService] Produto inválido: 
+[EventService] Quantidade inválida: -1.0
+[EventService] Preço inválido: -1.0
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

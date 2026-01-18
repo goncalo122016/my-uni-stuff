@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="AuthService Tests Suite" tests="20" skipped="0" failures="0" errors="0" timestamp="2026-01-09T21:34:19.729Z" hostname="goncalo-HP" time="0.067">
+  <properties/>
+  <testcase name="Test 13: Special characters" classname="server.AuthServiceTestSuite" time="0.02"/>
+  <testcase name="Test 19: Register and verify password stored" classname="server.AuthServiceTestSuite" time="0.003"/>
+  <testcase name="Test 11: Long username" classname="server.AuthServiceTestSuite" time="0.002"/>
+  <testcase name="Test 9: Empty username" classname="server.AuthServiceTestSuite" time="0.001"/>
+  <testcase name="Test 16: Sequential registration and authentication" classname="server.AuthServiceTestSuite" time="0.006"/>
+  <testcase name="Test 20: Concurrent registrations" classname="server.AuthServiceTestSuite" time="0.006"/>
+  <testcase name="Test 17: Whitespace in credentials" classname="server.AuthServiceTestSuite" time="0.002"/>
+  <testcase name="Test 12: Long password" classname="server.AuthServiceTestSuite" time="0.0"/>
+  <testcase name="Test 8: Case sensitive passwords" classname="server.AuthServiceTestSuite" time="0.001"/>
+  <testcase name="Test 15: Numbers only" classname="server.AuthServiceTestSuite" time="0.002"/>
+  <testcase name="Test 10: Empty password" classname="server.AuthServiceTestSuite" time="0.001"/>
+  <testcase name="Test 4: Authenticate with wrong password" classname="server.AuthServiceTestSuite" time="0.002"/>
+  <testcase name="Test 5: Authenticate non-existent user" classname="server.AuthServiceTestSuite" time="0.001"/>
+  <testcase name="Test 2: Register duplicate user returns false" classname="server.AuthServiceTestSuite" time="0.0"/>
+  <testcase name="Test 3: Authenticate with correct password" classname="server.AuthServiceTestSuite" time="0.0"/>
+  <testcase name="Test 7: Case sensitive usernames" classname="server.AuthServiceTestSuite" time="0.0"/>
+  <testcase name="Test 6: Multiple users" classname="server.AuthServiceTestSuite" time="0.0"/>
+  <testcase name="Test 1: Register new user" classname="server.AuthServiceTestSuite" time="0.0"/>
+  <testcase name="Test 14: Unicode characters" classname="server.AuthServiceTestSuite" time="0.0"/>
+  <testcase name="Test 18: Verify all users stored" classname="server.AuthServiceTestSuite" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

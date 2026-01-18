@@ -1,0 +1,33 @@
+Problema de estado único -> Trânsito constante (estático)
+    Custo: Soma dos Custos + Trânsito
+
+Problema de Contingência -> Trânsito não constante (dinâmico)
+
+________________________________________________________________
+
+1) Exploração Greedy: Gualtar -> S.Vítor -> S.Vicente -> Nogueiró
+
+   Caminho: (igual à Exploração)
+
+   Custo: 22
+
+2) Exploração A*: Gualtar -> S.Vítor -> S.Mamede -> Sobreposta -> Nogueiró
+   
+   Caminho: Gualtar -> S.Mamede -> Sobreposta -> Nogueiró
+
+   Custo: 15
+
+3) FORMULAÇÃO:
+
+- Tipo: Problema de Contingência
+- Representação de estado: Freguesia (representada num nó)
+- Estado Inicial: Gualtar 
+- Estado Final: Nogueiró
+- Operadores: 
+    - Mover entre freguesias adjacentes
+    - Pré-condição: Freguesias adjacentes e com caminho disponível (nada que impeça o trânsito de andar)
+    - Efeito: Mudança de estado; Mudança de instante de tempo.
+- Custo: Soma do caminho + trânsito + piso + ect...
+
+4) Estático: Custo
+   Dinâmico: Tipo, Custo, (Operadores - dependendo do problema)

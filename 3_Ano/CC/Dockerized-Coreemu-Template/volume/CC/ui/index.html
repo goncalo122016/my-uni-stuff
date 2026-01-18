@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <title>Ground Control — Painel</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Ground Control</h1>
+    <div class="controls">
+      <label>MotherShip IP:
+        <input id="apiHost" type="text" placeholder="10.0.8.20" value="">
+      </label>
+      <button id="btnConnect">Conectar</button>
+      <span id="status" class="status">Desconectado</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel map-panel" id="mapPanel">
+      <h2>Mapa</h2>
+      <canvas id="mapCanvas" aria-label="Mapa de Rovers"></canvas>
+    </section>
+
+    <section class="panel" id="roversPanel">
+      <h2>Rovers</h2>
+      <div id="roversList" class="list">—</div>
+    </section>
+
+    <section class="panel" id="missionsPanel">
+      <h2>Missões</h2>
+      <div id="missionsList" class="list">—</div>
+    </section>
+
+    <section class="panel" id="missionFormPanel">
+      <h2>Enviar Missão</h2>
+      <form id="missionForm">
+        <div class="form-row">
+          <label>Rover ID <input id="formRoverId" required></label>
+        </div>
+        <fieldset class="area-fieldset">
+          <legend>Área</legend>
+          <div class="form-grid">
+            <label>X1 <input id="x1" type="number" step="any" required></label>
+            <label>Y1 <input id="y1" type="number" step="any" required></label>
+            <label>X2 <input id="x2" type="number" step="any" required></label>
+            <label>Y2 <input id="y2" type="number" step="any" required></label>
+          </div>
+        </fieldset>
+        <div class="form-row">
+          <label>Tarefas <input id="tasks" required></label>
+        </div>
+        <div class="form-row">
+          <label>Duração (s) <input id="duration" type="number" value="60" required></label>
+        </div>
+        <div class="form-row">
+          <label>Período de Progresso: <input id="progressPeriod" type="number" value="2" required></label> 
+        </div>
+        <div class="form-row">
+          <button type="submit">Enviar Missão</button>
+          <button type="button" id="btnRefresh">Atualizar</button>
+        </div>
+        <div id="formResult" class="form-result"></div>
+      </form>
+    </section>
+
+    <section class="panel" id="eventsPanel">
+      <h2>Últimos Eventos de Telemetria</h2>
+      <ul id="eventsList" class="events"></ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Designed for MotherShip / GroundControl demo</small>
+  </footer>
+
+  <script src="map.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+Ficha Teórico-Prática n.º 2
+
+i-
+  > Tipo: Problema de Estado Único
+  > Representação do estado: Cada nó é uma Cidade
+  > Estado inicial: Elvas
+  > Estado final: Lisboa
+  > Operadores: Caminhos entre cidades, apenas se existir a aresta entre as cidades é que há um caminho entre elas, estado passa de uma cidade para a outra
+
+Algoritmo Greedy (em cada instante escolhe o nodo com a melhor eurística):
+ - Ordem de Esxpansão: Elvas->Alandroal(180)->Redondo(170)->Monsaraz(120)->Barreiro(30)->Baixa da Banheira(33)->Moita(35)->Alcochete(28)->Lisboa
+ 
+Algoritmo A* (Escolhe o menor (custo + heurística) acumulado):
+ - Solução: (['elvas', 'borba', 'estremoz', 'evora', 'montemor', 'vendasnovas', 'lisboa'], 155)
