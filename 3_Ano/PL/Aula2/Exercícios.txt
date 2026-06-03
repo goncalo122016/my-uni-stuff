@@ -1,0 +1,6 @@
+1.1) String binária que termina com "01"
+(0|1)*01
+[01]*01
+
+1.2) String binária com números pares de 1
+0*(10*10*)0*

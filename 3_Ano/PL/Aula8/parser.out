@@ -1,0 +1,485 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> Comands
+Rule 1     Comands -> Comands Comand
+Rule 2     Comands -> Comand
+Rule 3     Comand -> IDEN EQ Expr
+Rule 4     Comand -> EXCLAMATION Expr
+Rule 5     Comand -> QUESTION IDEN
+Rule 6     Comand -> STAR
+Rule 7     Comand -> HASH
+Rule 8     Expr -> Expr ADD Term
+Rule 9     Expr -> Expr SUB Term
+Rule 10    Expr -> Term
+Rule 11    Term -> Term MUL Factor
+Rule 12    Term -> Term DIV Factor
+Rule 13    Term -> Factor
+Rule 14    Factor -> INT
+Rule 15    Factor -> ( Expr )
+Rule 16    Factor -> IDEN
+
+Terminals, with rules where they appear
+
+(                    : 15
+)                    : 15
+ADD                  : 8
+DIV                  : 12
+EQ                   : 3
+EXCLAMATION          : 4
+HASH                 : 7
+IDEN                 : 3 5 16
+INT                  : 14
+MUL                  : 11
+QUESTION             : 5
+STAR                 : 6
+SUB                  : 9
+error                : 
+
+Nonterminals, with rules where they appear
+
+Comand               : 1 2
+Comands              : 1 0
+Expr                 : 3 4 8 9 15
+Factor               : 11 12 13
+Term                 : 8 9 10 11 12
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . Comands
+    (1) Comands -> . Comands Comand
+    (2) Comands -> . Comand
+    (3) Comand -> . IDEN EQ Expr
+    (4) Comand -> . EXCLAMATION Expr
+    (5) Comand -> . QUESTION IDEN
+    (6) Comand -> . STAR
+    (7) Comand -> . HASH
+
+    IDEN            shift and go to state 3
+    EXCLAMATION     shift and go to state 4
+    QUESTION        shift and go to state 5
+    STAR            shift and go to state 6
+    HASH            shift and go to state 7
+
+    Comands                        shift and go to state 1
+    Comand                         shift and go to state 2
+
+state 1
+
+    (0) S' -> Comands .
+    (1) Comands -> Comands . Comand
+    (3) Comand -> . IDEN EQ Expr
+    (4) Comand -> . EXCLAMATION Expr
+    (5) Comand -> . QUESTION IDEN
+    (6) Comand -> . STAR
+    (7) Comand -> . HASH
+
+    IDEN            shift and go to state 3
+    EXCLAMATION     shift and go to state 4
+    QUESTION        shift and go to state 5
+    STAR            shift and go to state 6
+    HASH            shift and go to state 7
+
+    Comand                         shift and go to state 8
+
+state 2
+
+    (2) Comands -> Comand .
+
+    IDEN            reduce using rule 2 (Comands -> Comand .)
+    EXCLAMATION     reduce using rule 2 (Comands -> Comand .)
+    QUESTION        reduce using rule 2 (Comands -> Comand .)
+    STAR            reduce using rule 2 (Comands -> Comand .)
+    HASH            reduce using rule 2 (Comands -> Comand .)
+    $end            reduce using rule 2 (Comands -> Comand .)
+
+
+state 3
+
+    (3) Comand -> IDEN . EQ Expr
+
+    EQ              shift and go to state 9
+
+
+state 4
+
+    (4) Comand -> EXCLAMATION . Expr
+    (8) Expr -> . Expr ADD Term
+    (9) Expr -> . Expr SUB Term
+    (10) Expr -> . Term
+    (11) Term -> . Term MUL Factor
+    (12) Term -> . Term DIV Factor
+    (13) Term -> . Factor
+    (14) Factor -> . INT
+    (15) Factor -> . ( Expr )
+    (16) Factor -> . IDEN
+
+    INT             shift and go to state 13
+    (               shift and go to state 14
+    IDEN            shift and go to state 15
+
+    Expr                           shift and go to state 10
+    Term                           shift and go to state 11
+    Factor                         shift and go to state 12
+
+state 5
+
+    (5) Comand -> QUESTION . IDEN
+
+    IDEN            shift and go to state 16
+
+
+state 6
+
+    (6) Comand -> STAR .
+
+    IDEN            reduce using rule 6 (Comand -> STAR .)
+    EXCLAMATION     reduce using rule 6 (Comand -> STAR .)
+    QUESTION        reduce using rule 6 (Comand -> STAR .)
+    STAR            reduce using rule 6 (Comand -> STAR .)
+    HASH            reduce using rule 6 (Comand -> STAR .)
+    $end            reduce using rule 6 (Comand -> STAR .)
+
+
+state 7
+
+    (7) Comand -> HASH .
+
+    IDEN            reduce using rule 7 (Comand -> HASH .)
+    EXCLAMATION     reduce using rule 7 (Comand -> HASH .)
+    QUESTION        reduce using rule 7 (Comand -> HASH .)
+    STAR            reduce using rule 7 (Comand -> HASH .)
+    HASH            reduce using rule 7 (Comand -> HASH .)
+    $end            reduce using rule 7 (Comand -> HASH .)
+
+
+state 8
+
+    (1) Comands -> Comands Comand .
+
+    IDEN            reduce using rule 1 (Comands -> Comands Comand .)
+    EXCLAMATION     reduce using rule 1 (Comands -> Comands Comand .)
+    QUESTION        reduce using rule 1 (Comands -> Comands Comand .)
+    STAR            reduce using rule 1 (Comands -> Comands Comand .)
+    HASH            reduce using rule 1 (Comands -> Comands Comand .)
+    $end            reduce using rule 1 (Comands -> Comands Comand .)
+
+
+state 9
+
+    (3) Comand -> IDEN EQ . Expr
+    (8) Expr -> . Expr ADD Term
+    (9) Expr -> . Expr SUB Term
+    (10) Expr -> . Term
+    (11) Term -> . Term MUL Factor
+    (12) Term -> . Term DIV Factor
+    (13) Term -> . Factor
+    (14) Factor -> . INT
+    (15) Factor -> . ( Expr )
+    (16) Factor -> . IDEN
+
+    INT             shift and go to state 13
+    (               shift and go to state 14
+    IDEN            shift and go to state 15
+
+    Expr                           shift and go to state 17
+    Term                           shift and go to state 11
+    Factor                         shift and go to state 12
+
+state 10
+
+    (4) Comand -> EXCLAMATION Expr .
+    (8) Expr -> Expr . ADD Term
+    (9) Expr -> Expr . SUB Term
+
+    IDEN            reduce using rule 4 (Comand -> EXCLAMATION Expr .)
+    EXCLAMATION     reduce using rule 4 (Comand -> EXCLAMATION Expr .)
+    QUESTION        reduce using rule 4 (Comand -> EXCLAMATION Expr .)
+    STAR            reduce using rule 4 (Comand -> EXCLAMATION Expr .)
+    HASH            reduce using rule 4 (Comand -> EXCLAMATION Expr .)
+    $end            reduce using rule 4 (Comand -> EXCLAMATION Expr .)
+    ADD             shift and go to state 18
+    SUB             shift and go to state 19
+
+
+state 11
+
+    (10) Expr -> Term .
+    (11) Term -> Term . MUL Factor
+    (12) Term -> Term . DIV Factor
+
+    ADD             reduce using rule 10 (Expr -> Term .)
+    SUB             reduce using rule 10 (Expr -> Term .)
+    IDEN            reduce using rule 10 (Expr -> Term .)
+    EXCLAMATION     reduce using rule 10 (Expr -> Term .)
+    QUESTION        reduce using rule 10 (Expr -> Term .)
+    STAR            reduce using rule 10 (Expr -> Term .)
+    HASH            reduce using rule 10 (Expr -> Term .)
+    $end            reduce using rule 10 (Expr -> Term .)
+    )               reduce using rule 10 (Expr -> Term .)
+    MUL             shift and go to state 20
+    DIV             shift and go to state 21
+
+
+state 12
+
+    (13) Term -> Factor .
+
+    MUL             reduce using rule 13 (Term -> Factor .)
+    DIV             reduce using rule 13 (Term -> Factor .)
+    ADD             reduce using rule 13 (Term -> Factor .)
+    SUB             reduce using rule 13 (Term -> Factor .)
+    IDEN            reduce using rule 13 (Term -> Factor .)
+    EXCLAMATION     reduce using rule 13 (Term -> Factor .)
+    QUESTION        reduce using rule 13 (Term -> Factor .)
+    STAR            reduce using rule 13 (Term -> Factor .)
+    HASH            reduce using rule 13 (Term -> Factor .)
+    $end            reduce using rule 13 (Term -> Factor .)
+    )               reduce using rule 13 (Term -> Factor .)
+
+
+state 13
+
+    (14) Factor -> INT .
+
+    MUL             reduce using rule 14 (Factor -> INT .)
+    DIV             reduce using rule 14 (Factor -> INT .)
+    ADD             reduce using rule 14 (Factor -> INT .)
+    SUB             reduce using rule 14 (Factor -> INT .)
+    IDEN            reduce using rule 14 (Factor -> INT .)
+    EXCLAMATION     reduce using rule 14 (Factor -> INT .)
+    QUESTION        reduce using rule 14 (Factor -> INT .)
+    STAR            reduce using rule 14 (Factor -> INT .)
+    HASH            reduce using rule 14 (Factor -> INT .)
+    $end            reduce using rule 14 (Factor -> INT .)
+    )               reduce using rule 14 (Factor -> INT .)
+
+
+state 14
+
+    (15) Factor -> ( . Expr )
+    (8) Expr -> . Expr ADD Term
+    (9) Expr -> . Expr SUB Term
+    (10) Expr -> . Term
+    (11) Term -> . Term MUL Factor
+    (12) Term -> . Term DIV Factor
+    (13) Term -> . Factor
+    (14) Factor -> . INT
+    (15) Factor -> . ( Expr )
+    (16) Factor -> . IDEN
+
+    INT             shift and go to state 13
+    (               shift and go to state 14
+    IDEN            shift and go to state 15
+
+    Expr                           shift and go to state 22
+    Term                           shift and go to state 11
+    Factor                         shift and go to state 12
+
+state 15
+
+    (16) Factor -> IDEN .
+
+    MUL             reduce using rule 16 (Factor -> IDEN .)
+    DIV             reduce using rule 16 (Factor -> IDEN .)
+    ADD             reduce using rule 16 (Factor -> IDEN .)
+    SUB             reduce using rule 16 (Factor -> IDEN .)
+    IDEN            reduce using rule 16 (Factor -> IDEN .)
+    EXCLAMATION     reduce using rule 16 (Factor -> IDEN .)
+    QUESTION        reduce using rule 16 (Factor -> IDEN .)
+    STAR            reduce using rule 16 (Factor -> IDEN .)
+    HASH            reduce using rule 16 (Factor -> IDEN .)
+    $end            reduce using rule 16 (Factor -> IDEN .)
+    )               reduce using rule 16 (Factor -> IDEN .)
+
+
+state 16
+
+    (5) Comand -> QUESTION IDEN .
+
+    IDEN            reduce using rule 5 (Comand -> QUESTION IDEN .)
+    EXCLAMATION     reduce using rule 5 (Comand -> QUESTION IDEN .)
+    QUESTION        reduce using rule 5 (Comand -> QUESTION IDEN .)
+    STAR            reduce using rule 5 (Comand -> QUESTION IDEN .)
+    HASH            reduce using rule 5 (Comand -> QUESTION IDEN .)
+    $end            reduce using rule 5 (Comand -> QUESTION IDEN .)
+
+
+state 17
+
+    (3) Comand -> IDEN EQ Expr .
+    (8) Expr -> Expr . ADD Term
+    (9) Expr -> Expr . SUB Term
+
+    IDEN            reduce using rule 3 (Comand -> IDEN EQ Expr .)
+    EXCLAMATION     reduce using rule 3 (Comand -> IDEN EQ Expr .)
+    QUESTION        reduce using rule 3 (Comand -> IDEN EQ Expr .)
+    STAR            reduce using rule 3 (Comand -> IDEN EQ Expr .)
+    HASH            reduce using rule 3 (Comand -> IDEN EQ Expr .)
+    $end            reduce using rule 3 (Comand -> IDEN EQ Expr .)
+    ADD             shift and go to state 18
+    SUB             shift and go to state 19
+
+
+state 18
+
+    (8) Expr -> Expr ADD . Term
+    (11) Term -> . Term MUL Factor
+    (12) Term -> . Term DIV Factor
+    (13) Term -> . Factor
+    (14) Factor -> . INT
+    (15) Factor -> . ( Expr )
+    (16) Factor -> . IDEN
+
+    INT             shift and go to state 13
+    (               shift and go to state 14
+    IDEN            shift and go to state 15
+
+    Term                           shift and go to state 23
+    Factor                         shift and go to state 12
+
+state 19
+
+    (9) Expr -> Expr SUB . Term
+    (11) Term -> . Term MUL Factor
+    (12) Term -> . Term DIV Factor
+    (13) Term -> . Factor
+    (14) Factor -> . INT
+    (15) Factor -> . ( Expr )
+    (16) Factor -> . IDEN
+
+    INT             shift and go to state 13
+    (               shift and go to state 14
+    IDEN            shift and go to state 15
+
+    Term                           shift and go to state 24
+    Factor                         shift and go to state 12
+
+state 20
+
+    (11) Term -> Term MUL . Factor
+    (14) Factor -> . INT
+    (15) Factor -> . ( Expr )
+    (16) Factor -> . IDEN
+
+    INT             shift and go to state 13
+    (               shift and go to state 14
+    IDEN            shift and go to state 15
+
+    Factor                         shift and go to state 25
+
+state 21
+
+    (12) Term -> Term DIV . Factor
+    (14) Factor -> . INT
+    (15) Factor -> . ( Expr )
+    (16) Factor -> . IDEN
+
+    INT             shift and go to state 13
+    (               shift and go to state 14
+    IDEN            shift and go to state 15
+
+    Factor                         shift and go to state 26
+
+state 22
+
+    (15) Factor -> ( Expr . )
+    (8) Expr -> Expr . ADD Term
+    (9) Expr -> Expr . SUB Term
+
+    )               shift and go to state 27
+    ADD             shift and go to state 18
+    SUB             shift and go to state 19
+
+
+state 23
+
+    (8) Expr -> Expr ADD Term .
+    (11) Term -> Term . MUL Factor
+    (12) Term -> Term . DIV Factor
+
+    ADD             reduce using rule 8 (Expr -> Expr ADD Term .)
+    SUB             reduce using rule 8 (Expr -> Expr ADD Term .)
+    IDEN            reduce using rule 8 (Expr -> Expr ADD Term .)
+    EXCLAMATION     reduce using rule 8 (Expr -> Expr ADD Term .)
+    QUESTION        reduce using rule 8 (Expr -> Expr ADD Term .)
+    STAR            reduce using rule 8 (Expr -> Expr ADD Term .)
+    HASH            reduce using rule 8 (Expr -> Expr ADD Term .)
+    $end            reduce using rule 8 (Expr -> Expr ADD Term .)
+    )               reduce using rule 8 (Expr -> Expr ADD Term .)
+    MUL             shift and go to state 20
+    DIV             shift and go to state 21
+
+
+state 24
+
+    (9) Expr -> Expr SUB Term .
+    (11) Term -> Term . MUL Factor
+    (12) Term -> Term . DIV Factor
+
+    ADD             reduce using rule 9 (Expr -> Expr SUB Term .)
+    SUB             reduce using rule 9 (Expr -> Expr SUB Term .)
+    IDEN            reduce using rule 9 (Expr -> Expr SUB Term .)
+    EXCLAMATION     reduce using rule 9 (Expr -> Expr SUB Term .)
+    QUESTION        reduce using rule 9 (Expr -> Expr SUB Term .)
+    STAR            reduce using rule 9 (Expr -> Expr SUB Term .)
+    HASH            reduce using rule 9 (Expr -> Expr SUB Term .)
+    $end            reduce using rule 9 (Expr -> Expr SUB Term .)
+    )               reduce using rule 9 (Expr -> Expr SUB Term .)
+    MUL             shift and go to state 20
+    DIV             shift and go to state 21
+
+
+state 25
+
+    (11) Term -> Term MUL Factor .
+
+    MUL             reduce using rule 11 (Term -> Term MUL Factor .)
+    DIV             reduce using rule 11 (Term -> Term MUL Factor .)
+    ADD             reduce using rule 11 (Term -> Term MUL Factor .)
+    SUB             reduce using rule 11 (Term -> Term MUL Factor .)
+    IDEN            reduce using rule 11 (Term -> Term MUL Factor .)
+    EXCLAMATION     reduce using rule 11 (Term -> Term MUL Factor .)
+    QUESTION        reduce using rule 11 (Term -> Term MUL Factor .)
+    STAR            reduce using rule 11 (Term -> Term MUL Factor .)
+    HASH            reduce using rule 11 (Term -> Term MUL Factor .)
+    $end            reduce using rule 11 (Term -> Term MUL Factor .)
+    )               reduce using rule 11 (Term -> Term MUL Factor .)
+
+
+state 26
+
+    (12) Term -> Term DIV Factor .
+
+    MUL             reduce using rule 12 (Term -> Term DIV Factor .)
+    DIV             reduce using rule 12 (Term -> Term DIV Factor .)
+    ADD             reduce using rule 12 (Term -> Term DIV Factor .)
+    SUB             reduce using rule 12 (Term -> Term DIV Factor .)
+    IDEN            reduce using rule 12 (Term -> Term DIV Factor .)
+    EXCLAMATION     reduce using rule 12 (Term -> Term DIV Factor .)
+    QUESTION        reduce using rule 12 (Term -> Term DIV Factor .)
+    STAR            reduce using rule 12 (Term -> Term DIV Factor .)
+    HASH            reduce using rule 12 (Term -> Term DIV Factor .)
+    $end            reduce using rule 12 (Term -> Term DIV Factor .)
+    )               reduce using rule 12 (Term -> Term DIV Factor .)
+
+
+state 27
+
+    (15) Factor -> ( Expr ) .
+
+    MUL             reduce using rule 15 (Factor -> ( Expr ) .)
+    DIV             reduce using rule 15 (Factor -> ( Expr ) .)
+    ADD             reduce using rule 15 (Factor -> ( Expr ) .)
+    SUB             reduce using rule 15 (Factor -> ( Expr ) .)
+    IDEN            reduce using rule 15 (Factor -> ( Expr ) .)
+    EXCLAMATION     reduce using rule 15 (Factor -> ( Expr ) .)
+    QUESTION        reduce using rule 15 (Factor -> ( Expr ) .)
+    STAR            reduce using rule 15 (Factor -> ( Expr ) .)
+    HASH            reduce using rule 15 (Factor -> ( Expr ) .)
+    $end            reduce using rule 15 (Factor -> ( Expr ) .)
+    )               reduce using rule 15 (Factor -> ( Expr ) .)
+

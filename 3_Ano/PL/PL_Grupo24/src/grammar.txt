@@ -1,0 +1,110 @@
+program         : program_units
+
+program_units   : program_unit
+                | program_units program_unit
+
+program_unit    : main_program
+                | subroutine
+                | function
+
+main_program    : PROGRAM IDENTIFIER statements END
+                | PROGRAM IDENTIFIER END
+
+statements      : statement
+                | statements statement
+
+statement       : declaration
+                | assignment
+                | print_stmt
+                | read_stmt
+                | if_stmt
+                | do_loop
+                | goto_stmt
+                | call_stmt
+                | return_stmt
+
+declaration     : type_spec var_list
+
+type_spec       : INTEGER
+                | REAL
+                | LOGICAL
+
+var_list        : IDENTIFIER
+                | var_list COMMA IDENTIFIER
+
+assignment      : IDENTIFIER ASSIGN expression
+
+print_stmt      : PRINT TIMES print_list
+
+print_list      : COMMA expression
+                | print_list COMMA expression
+
+read_stmt       : READ TIMES read_list
+
+read_list       : COMMA IDENTIFIER
+                | read_list COMMA IDENTIFIER
+
+if_stmt         : IF LPAREN expression RPAREN THEN statements ENDIF
+                | IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF
+
+do_loop         : DO NUMBER IDENTIFIER ASSIGN expression COMMA expression
+                  statements
+                  NUMBER CONTINUE
+
+goto_stmt       : GOTO NUMBER
+
+call_stmt       : CALL IDENTIFIER LPAREN arg_list RPAREN
+                | CALL IDENTIFIER
+
+return_stmt     : RETURN
+
+expression      : expr_or
+
+expr_or         : expr_and
+                | expr_or OR expr_and
+
+expr_and        : expr_not
+                | expr_and AND expr_not
+
+expr_not        : expr_rel
+                | NOT expr_not
+
+expr_rel        : expr_arith
+                | expr_arith EQ expr_arith
+                | expr_arith NE expr_arith
+                | expr_arith LT expr_arith
+                | expr_arith LE expr_arith
+                | expr_arith GT expr_arith
+                | expr_arith GE expr_arith
+
+expr_arith      : term
+                | expr_arith PLUS term
+                | expr_arith MINUS term
+
+term            : factor
+                | term TIMES factor
+                | term DIVIDE factor
+
+factor          : primary
+                | MINUS factor
+
+primary         : NUMBER
+                | REAL_NUMBER
+                | STRING
+                | TRUE
+                | FALSE
+                | IDENTIFIER
+                | IDENTIFIER LPAREN arg_list RPAREN
+                | LPAREN expression RPAREN
+
+arg_list        : expression
+                | arg_list COMMA expression
+
+subroutine      : SUBROUTINE IDENTIFIER LPAREN param_list RPAREN statements END
+                | SUBROUTINE IDENTIFIER statements END
+
+function        : type_spec FUNCTION IDENTIFIER LPAREN param_list RPAREN statements END
+                | type_spec FUNCTION IDENTIFIER statements END
+
+param_list      : IDENTIFIER
+                | param_list COMMA IDENTIFIER

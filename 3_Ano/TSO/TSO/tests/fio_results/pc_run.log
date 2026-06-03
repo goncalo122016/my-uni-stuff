@@ -1,0 +1,13 @@
+=== Teste Page Cache com 0% deduplicação ===
+FUSE PID: 10313
+=== Resultado 0% concluído ===
+=== Teste Page Cache com 50% deduplicação ===
+FUSE PID: 10514
+=== Resultado 50% concluído ===
+=== Teste Page Cache com 100% deduplicação ===
+FUSE PID: 10634
+=== Resultado 100% concluído ===
+Todos os testes Page Cache concluídos! Resultados em /home/rodas/TSO/tests/fio_results
+=== Teste de Carga de Trabalho Criada Manualmente ===
+A copiar ficheiros (Carga manual)...
+Fim.

@@ -1,0 +1,39 @@
+// Ex 1.1
+// PUSHS "Write a number: "
+// WRITES
+// READ
+// ATOI
+// 
+// PUSHI 2
+// MOD
+// WRITELN
+// 
+// JZ EVEN
+// PUSHS "Odd number!"
+// JUMP PRINT
+// 
+// EVEN:
+// PUSHS "Even number!"
+// 
+// PRINT:
+// WRITES
+
+// Ex 1.2
+PUSHS "Write a number: "
+WRITES
+READ
+ATOI
+
+LOOP:
+PUSHG 0
+WRITELN
+WRITEI
+
+PUSHI 1
+SUB
+
+PUSHG 0
+PUSHI 0
+INF
+
+JZ LOOP

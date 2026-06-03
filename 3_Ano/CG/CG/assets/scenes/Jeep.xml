@@ -1,0 +1,30 @@
+<world>
+    <window width="1024" height="768" />
+    <background r="1.0" g="1.0" b="1.0" a="1.0" />
+    <camera>
+        <position x="8" y="5" z="8" />
+        <lookAt x="0" y="0" z="0" />
+        <up x="0" y="1" z="0" />
+        <projection fov="45" near="0.1" far="1000" />
+    </camera>
+    <lights>
+        <light>
+            <position x="15" y="15" z="15" />
+            <ambient r="0.5" g="0.5" b="0.5" />
+            <diffuse r="1.0" g="1.0" b="1.0" />
+            <specular r="1.0" g="1.0" b="1.0" />
+        </light>
+    </lights>
+    <models>
+        <model file="Jeep.obj">
+            <texture file="car_jeep_ren.jpg" />
+            <color>
+                <diffuse  R="240" G="240" B="240" />
+                <ambient  R="50"  G="50"  B="50"  />
+                <specular R="200" G="200" B="200" />
+                <emissive R="0"   G="0"   B="0"   />
+                <shininess value="50" />
+            </color>
+        </model>
+    </models>
+</world>

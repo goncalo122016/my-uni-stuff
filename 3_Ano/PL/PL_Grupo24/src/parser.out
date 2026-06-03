@@ -1,0 +1,4126 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> program
+Rule 1     program -> program_units
+Rule 2     program_units -> program_unit
+Rule 3     program_units -> program_units program_unit
+Rule 4     program_unit -> main_program
+Rule 5     program_unit -> subroutine
+Rule 6     program_unit -> function
+Rule 7     main_program -> PROGRAM IDENTIFIER statements END
+Rule 8     main_program -> PROGRAM IDENTIFIER END
+Rule 9     statements -> statement
+Rule 10    statements -> statements statement
+Rule 11    statement -> declaration
+Rule 12    statement -> assignment
+Rule 13    statement -> print_stmt
+Rule 14    statement -> read_stmt
+Rule 15    statement -> if_stmt
+Rule 16    statement -> do_loop
+Rule 17    statement -> goto_stmt
+Rule 18    statement -> call_stmt
+Rule 19    statement -> return_stmt
+Rule 20    declaration -> type_spec var_list
+Rule 21    type_spec -> INTEGER
+Rule 22    type_spec -> REAL
+Rule 23    type_spec -> LOGICAL
+Rule 24    var_list -> IDENTIFIER
+Rule 25    var_list -> var_list COMMA IDENTIFIER
+Rule 26    assignment -> IDENTIFIER ASSIGN expression
+Rule 27    print_stmt -> PRINT TIMES print_list
+Rule 28    print_list -> COMMA expression
+Rule 29    print_list -> print_list COMMA expression
+Rule 30    read_stmt -> READ TIMES read_list
+Rule 31    read_list -> COMMA IDENTIFIER
+Rule 32    read_list -> read_list COMMA IDENTIFIER
+Rule 33    if_stmt -> IF LPAREN expression RPAREN THEN statements ENDIF
+Rule 34    if_stmt -> IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF
+Rule 35    do_loop -> DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE
+Rule 36    goto_stmt -> GOTO NUMBER
+Rule 37    expression -> expr_or
+Rule 38    expr_or -> expr_and
+Rule 39    expr_or -> expr_or OR expr_and
+Rule 40    expr_and -> expr_not
+Rule 41    expr_and -> expr_and AND expr_not
+Rule 42    expr_not -> expr_rel
+Rule 43    expr_not -> NOT expr_not
+Rule 44    expr_rel -> expr_arith
+Rule 45    expr_rel -> expr_arith EQ expr_arith
+Rule 46    expr_rel -> expr_arith NE expr_arith
+Rule 47    expr_rel -> expr_arith LT expr_arith
+Rule 48    expr_rel -> expr_arith LE expr_arith
+Rule 49    expr_rel -> expr_arith GT expr_arith
+Rule 50    expr_rel -> expr_arith GE expr_arith
+Rule 51    expr_arith -> term
+Rule 52    expr_arith -> expr_arith PLUS term
+Rule 53    expr_arith -> expr_arith MINUS term
+Rule 54    term -> factor
+Rule 55    term -> term TIMES factor
+Rule 56    term -> term DIVIDE factor
+Rule 57    factor -> primary
+Rule 58    factor -> MINUS factor
+Rule 59    primary -> NUMBER
+Rule 60    primary -> REAL_NUMBER
+Rule 61    primary -> STRING
+Rule 62    primary -> TRUE
+Rule 63    primary -> FALSE
+Rule 64    primary -> IDENTIFIER
+Rule 65    primary -> LPAREN expression RPAREN
+Rule 66    subroutine -> SUBROUTINE IDENTIFIER LPAREN param_list RPAREN statements END
+Rule 67    subroutine -> SUBROUTINE IDENTIFIER statements END
+Rule 68    function -> type_spec FUNCTION IDENTIFIER LPAREN param_list RPAREN statements END
+Rule 69    function -> type_spec FUNCTION IDENTIFIER statements END
+Rule 70    param_list -> IDENTIFIER
+Rule 71    param_list -> param_list COMMA IDENTIFIER
+Rule 72    call_stmt -> CALL IDENTIFIER LPAREN arg_list RPAREN
+Rule 73    call_stmt -> CALL IDENTIFIER
+Rule 74    return_stmt -> RETURN
+Rule 75    arg_list -> expression
+Rule 76    arg_list -> arg_list COMMA expression
+Rule 77    primary -> IDENTIFIER LPAREN arg_list RPAREN
+
+Terminals, with rules where they appear
+
+AND                  : 41
+ASSIGN               : 26 35
+CALL                 : 72 73
+COMMA                : 25 28 29 31 32 35 71 76
+CONTINUE             : 35
+DIVIDE               : 56
+DO                   : 35
+ELSE                 : 34
+END                  : 7 8 66 67 68 69
+ENDIF                : 33 34
+EQ                   : 45
+FALSE                : 63
+FUNCTION             : 68 69
+GE                   : 50
+GOTO                 : 36
+GT                   : 49
+IDENTIFIER           : 7 8 24 25 26 31 32 35 64 66 67 68 69 70 71 72 73 77
+IF                   : 33 34
+INTEGER              : 21
+LE                   : 48
+LOGICAL              : 23
+LPAREN               : 33 34 65 66 68 72 77
+LT                   : 47
+MINUS                : 53 58
+NE                   : 46
+NOT                  : 43
+NUMBER               : 35 35 36 59
+OR                   : 39
+PLUS                 : 52
+PRINT                : 27
+PROGRAM              : 7 8
+READ                 : 30
+REAL                 : 22
+REAL_NUMBER          : 60
+RETURN               : 74
+RPAREN               : 33 34 65 66 68 72 77
+STRING               : 61
+SUBROUTINE           : 66 67
+THEN                 : 33 34
+TIMES                : 27 30 55
+TRUE                 : 62
+error                : 
+
+Nonterminals, with rules where they appear
+
+arg_list             : 72 76 77
+assignment           : 12
+call_stmt            : 18
+declaration          : 11
+do_loop              : 16
+expr_and             : 38 39 41
+expr_arith           : 44 45 45 46 46 47 47 48 48 49 49 50 50 52 53
+expr_not             : 40 41 43
+expr_or              : 37 39
+expr_rel             : 42
+expression           : 26 28 29 33 34 35 35 65 75 76
+factor               : 54 55 56 58
+function             : 6
+goto_stmt            : 17
+if_stmt              : 15
+main_program         : 4
+param_list           : 66 68 71
+primary              : 57
+print_list           : 27 29
+print_stmt           : 13
+program              : 0
+program_unit         : 2 3
+program_units        : 1 3
+read_list            : 30 32
+read_stmt            : 14
+return_stmt          : 19
+statement            : 9 10
+statements           : 7 10 33 34 34 35 66 67 68 69
+subroutine           : 5
+term                 : 51 52 53 55 56
+type_spec            : 20 68 69
+var_list             : 20 25
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . program
+    (1) program -> . program_units
+    (2) program_units -> . program_unit
+    (3) program_units -> . program_units program_unit
+    (4) program_unit -> . main_program
+    (5) program_unit -> . subroutine
+    (6) program_unit -> . function
+    (7) main_program -> . PROGRAM IDENTIFIER statements END
+    (8) main_program -> . PROGRAM IDENTIFIER END
+    (66) subroutine -> . SUBROUTINE IDENTIFIER LPAREN param_list RPAREN statements END
+    (67) subroutine -> . SUBROUTINE IDENTIFIER statements END
+    (68) function -> . type_spec FUNCTION IDENTIFIER LPAREN param_list RPAREN statements END
+    (69) function -> . type_spec FUNCTION IDENTIFIER statements END
+    (21) type_spec -> . INTEGER
+    (22) type_spec -> . REAL
+    (23) type_spec -> . LOGICAL
+
+    PROGRAM         shift and go to state 7
+    SUBROUTINE      shift and go to state 8
+    INTEGER         shift and go to state 10
+    REAL            shift and go to state 11
+    LOGICAL         shift and go to state 12
+
+    program                        shift and go to state 1
+    program_units                  shift and go to state 2
+    program_unit                   shift and go to state 3
+    main_program                   shift and go to state 4
+    subroutine                     shift and go to state 5
+    function                       shift and go to state 6
+    type_spec                      shift and go to state 9
+
+state 1
+
+    (0) S' -> program .
+
+
+
+state 2
+
+    (1) program -> program_units .
+    (3) program_units -> program_units . program_unit
+    (4) program_unit -> . main_program
+    (5) program_unit -> . subroutine
+    (6) program_unit -> . function
+    (7) main_program -> . PROGRAM IDENTIFIER statements END
+    (8) main_program -> . PROGRAM IDENTIFIER END
+    (66) subroutine -> . SUBROUTINE IDENTIFIER LPAREN param_list RPAREN statements END
+    (67) subroutine -> . SUBROUTINE IDENTIFIER statements END
+    (68) function -> . type_spec FUNCTION IDENTIFIER LPAREN param_list RPAREN statements END
+    (69) function -> . type_spec FUNCTION IDENTIFIER statements END
+    (21) type_spec -> . INTEGER
+    (22) type_spec -> . REAL
+    (23) type_spec -> . LOGICAL
+
+    $end            reduce using rule 1 (program -> program_units .)
+    PROGRAM         shift and go to state 7
+    SUBROUTINE      shift and go to state 8
+    INTEGER         shift and go to state 10
+    REAL            shift and go to state 11
+    LOGICAL         shift and go to state 12
+
+    program_unit                   shift and go to state 13
+    main_program                   shift and go to state 4
+    subroutine                     shift and go to state 5
+    function                       shift and go to state 6
+    type_spec                      shift and go to state 9
+
+state 3
+
+    (2) program_units -> program_unit .
+
+    PROGRAM         reduce using rule 2 (program_units -> program_unit .)
+    SUBROUTINE      reduce using rule 2 (program_units -> program_unit .)
+    INTEGER         reduce using rule 2 (program_units -> program_unit .)
+    REAL            reduce using rule 2 (program_units -> program_unit .)
+    LOGICAL         reduce using rule 2 (program_units -> program_unit .)
+    $end            reduce using rule 2 (program_units -> program_unit .)
+
+
+state 4
+
+    (4) program_unit -> main_program .
+
+    PROGRAM         reduce using rule 4 (program_unit -> main_program .)
+    SUBROUTINE      reduce using rule 4 (program_unit -> main_program .)
+    INTEGER         reduce using rule 4 (program_unit -> main_program .)
+    REAL            reduce using rule 4 (program_unit -> main_program .)
+    LOGICAL         reduce using rule 4 (program_unit -> main_program .)
+    $end            reduce using rule 4 (program_unit -> main_program .)
+
+
+state 5
+
+    (5) program_unit -> subroutine .
+
+    PROGRAM         reduce using rule 5 (program_unit -> subroutine .)
+    SUBROUTINE      reduce using rule 5 (program_unit -> subroutine .)
+    INTEGER         reduce using rule 5 (program_unit -> subroutine .)
+    REAL            reduce using rule 5 (program_unit -> subroutine .)
+    LOGICAL         reduce using rule 5 (program_unit -> subroutine .)
+    $end            reduce using rule 5 (program_unit -> subroutine .)
+
+
+state 6
+
+    (6) program_unit -> function .
+
+    PROGRAM         reduce using rule 6 (program_unit -> function .)
+    SUBROUTINE      reduce using rule 6 (program_unit -> function .)
+    INTEGER         reduce using rule 6 (program_unit -> function .)
+    REAL            reduce using rule 6 (program_unit -> function .)
+    LOGICAL         reduce using rule 6 (program_unit -> function .)
+    $end            reduce using rule 6 (program_unit -> function .)
+
+
+state 7
+
+    (7) main_program -> PROGRAM . IDENTIFIER statements END
+    (8) main_program -> PROGRAM . IDENTIFIER END
+
+    IDENTIFIER      shift and go to state 14
+
+
+state 8
+
+    (66) subroutine -> SUBROUTINE . IDENTIFIER LPAREN param_list RPAREN statements END
+    (67) subroutine -> SUBROUTINE . IDENTIFIER statements END
+
+    IDENTIFIER      shift and go to state 15
+
+
+state 9
+
+    (68) function -> type_spec . FUNCTION IDENTIFIER LPAREN param_list RPAREN statements END
+    (69) function -> type_spec . FUNCTION IDENTIFIER statements END
+
+    FUNCTION        shift and go to state 16
+
+
+state 10
+
+    (21) type_spec -> INTEGER .
+
+    FUNCTION        reduce using rule 21 (type_spec -> INTEGER .)
+    IDENTIFIER      reduce using rule 21 (type_spec -> INTEGER .)
+
+
+state 11
+
+    (22) type_spec -> REAL .
+
+    FUNCTION        reduce using rule 22 (type_spec -> REAL .)
+    IDENTIFIER      reduce using rule 22 (type_spec -> REAL .)
+
+
+state 12
+
+    (23) type_spec -> LOGICAL .
+
+    FUNCTION        reduce using rule 23 (type_spec -> LOGICAL .)
+    IDENTIFIER      reduce using rule 23 (type_spec -> LOGICAL .)
+
+
+state 13
+
+    (3) program_units -> program_units program_unit .
+
+    PROGRAM         reduce using rule 3 (program_units -> program_units program_unit .)
+    SUBROUTINE      reduce using rule 3 (program_units -> program_units program_unit .)
+    INTEGER         reduce using rule 3 (program_units -> program_units program_unit .)
+    REAL            reduce using rule 3 (program_units -> program_units program_unit .)
+    LOGICAL         reduce using rule 3 (program_units -> program_units program_unit .)
+    $end            reduce using rule 3 (program_units -> program_units program_unit .)
+
+
+state 14
+
+    (7) main_program -> PROGRAM IDENTIFIER . statements END
+    (8) main_program -> PROGRAM IDENTIFIER . END
+    (9) statements -> . statement
+    (10) statements -> . statements statement
+    (11) statement -> . declaration
+    (12) statement -> . assignment
+    (13) statement -> . print_stmt
+    (14) statement -> . read_stmt
+    (15) statement -> . if_stmt
+    (16) statement -> . do_loop
+    (17) statement -> . goto_stmt
+    (18) statement -> . call_stmt
+    (19) statement -> . return_stmt
+    (20) declaration -> . type_spec var_list
+    (26) assignment -> . IDENTIFIER ASSIGN expression
+    (27) print_stmt -> . PRINT TIMES print_list
+    (30) read_stmt -> . READ TIMES read_list
+    (33) if_stmt -> . IF LPAREN expression RPAREN THEN statements ENDIF
+    (34) if_stmt -> . IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF
+    (35) do_loop -> . DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE
+    (36) goto_stmt -> . GOTO NUMBER
+    (72) call_stmt -> . CALL IDENTIFIER LPAREN arg_list RPAREN
+    (73) call_stmt -> . CALL IDENTIFIER
+    (74) return_stmt -> . RETURN
+    (21) type_spec -> . INTEGER
+    (22) type_spec -> . REAL
+    (23) type_spec -> . LOGICAL
+
+    END             shift and go to state 19
+    IDENTIFIER      shift and go to state 17
+    PRINT           shift and go to state 31
+    READ            shift and go to state 32
+    IF              shift and go to state 33
+    DO              shift and go to state 34
+    GOTO            shift and go to state 35
+    CALL            shift and go to state 36
+    RETURN          shift and go to state 37
+    INTEGER         shift and go to state 10
+    REAL            shift and go to state 11
+    LOGICAL         shift and go to state 12
+
+    statements                     shift and go to state 18
+    statement                      shift and go to state 20
+    declaration                    shift and go to state 21
+    assignment                     shift and go to state 22
+    print_stmt                     shift and go to state 23
+    read_stmt                      shift and go to state 24
+    if_stmt                        shift and go to state 25
+    do_loop                        shift and go to state 26
+    goto_stmt                      shift and go to state 27
+    call_stmt                      shift and go to state 28
+    return_stmt                    shift and go to state 29
+    type_spec                      shift and go to state 30
+
+state 15
+
+    (66) subroutine -> SUBROUTINE IDENTIFIER . LPAREN param_list RPAREN statements END
+    (67) subroutine -> SUBROUTINE IDENTIFIER . statements END
+    (9) statements -> . statement
+    (10) statements -> . statements statement
+    (11) statement -> . declaration
+    (12) statement -> . assignment
+    (13) statement -> . print_stmt
+    (14) statement -> . read_stmt
+    (15) statement -> . if_stmt
+    (16) statement -> . do_loop
+    (17) statement -> . goto_stmt
+    (18) statement -> . call_stmt
+    (19) statement -> . return_stmt
+    (20) declaration -> . type_spec var_list
+    (26) assignment -> . IDENTIFIER ASSIGN expression
+    (27) print_stmt -> . PRINT TIMES print_list
+    (30) read_stmt -> . READ TIMES read_list
+    (33) if_stmt -> . IF LPAREN expression RPAREN THEN statements ENDIF
+    (34) if_stmt -> . IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF
+    (35) do_loop -> . DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE
+    (36) goto_stmt -> . GOTO NUMBER
+    (72) call_stmt -> . CALL IDENTIFIER LPAREN arg_list RPAREN
+    (73) call_stmt -> . CALL IDENTIFIER
+    (74) return_stmt -> . RETURN
+    (21) type_spec -> . INTEGER
+    (22) type_spec -> . REAL
+    (23) type_spec -> . LOGICAL
+
+    LPAREN          shift and go to state 38
+    IDENTIFIER      shift and go to state 17
+    PRINT           shift and go to state 31
+    READ            shift and go to state 32
+    IF              shift and go to state 33
+    DO              shift and go to state 34
+    GOTO            shift and go to state 35
+    CALL            shift and go to state 36
+    RETURN          shift and go to state 37
+    INTEGER         shift and go to state 10
+    REAL            shift and go to state 11
+    LOGICAL         shift and go to state 12
+
+    statements                     shift and go to state 39
+    statement                      shift and go to state 20
+    declaration                    shift and go to state 21
+    assignment                     shift and go to state 22
+    print_stmt                     shift and go to state 23
+    read_stmt                      shift and go to state 24
+    if_stmt                        shift and go to state 25
+    do_loop                        shift and go to state 26
+    goto_stmt                      shift and go to state 27
+    call_stmt                      shift and go to state 28
+    return_stmt                    shift and go to state 29
+    type_spec                      shift and go to state 30
+
+state 16
+
+    (68) function -> type_spec FUNCTION . IDENTIFIER LPAREN param_list RPAREN statements END
+    (69) function -> type_spec FUNCTION . IDENTIFIER statements END
+
+    IDENTIFIER      shift and go to state 40
+
+
+state 17
+
+    (26) assignment -> IDENTIFIER . ASSIGN expression
+
+    ASSIGN          shift and go to state 41
+
+
+state 18
+
+    (7) main_program -> PROGRAM IDENTIFIER statements . END
+    (10) statements -> statements . statement
+    (11) statement -> . declaration
+    (12) statement -> . assignment
+    (13) statement -> . print_stmt
+    (14) statement -> . read_stmt
+    (15) statement -> . if_stmt
+    (16) statement -> . do_loop
+    (17) statement -> . goto_stmt
+    (18) statement -> . call_stmt
+    (19) statement -> . return_stmt
+    (20) declaration -> . type_spec var_list
+    (26) assignment -> . IDENTIFIER ASSIGN expression
+    (27) print_stmt -> . PRINT TIMES print_list
+    (30) read_stmt -> . READ TIMES read_list
+    (33) if_stmt -> . IF LPAREN expression RPAREN THEN statements ENDIF
+    (34) if_stmt -> . IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF
+    (35) do_loop -> . DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE
+    (36) goto_stmt -> . GOTO NUMBER
+    (72) call_stmt -> . CALL IDENTIFIER LPAREN arg_list RPAREN
+    (73) call_stmt -> . CALL IDENTIFIER
+    (74) return_stmt -> . RETURN
+    (21) type_spec -> . INTEGER
+    (22) type_spec -> . REAL
+    (23) type_spec -> . LOGICAL
+
+    END             shift and go to state 42
+    IDENTIFIER      shift and go to state 17
+    PRINT           shift and go to state 31
+    READ            shift and go to state 32
+    IF              shift and go to state 33
+    DO              shift and go to state 34
+    GOTO            shift and go to state 35
+    CALL            shift and go to state 36
+    RETURN          shift and go to state 37
+    INTEGER         shift and go to state 10
+    REAL            shift and go to state 11
+    LOGICAL         shift and go to state 12
+
+    statement                      shift and go to state 43
+    declaration                    shift and go to state 21
+    assignment                     shift and go to state 22
+    print_stmt                     shift and go to state 23
+    read_stmt                      shift and go to state 24
+    if_stmt                        shift and go to state 25
+    do_loop                        shift and go to state 26
+    goto_stmt                      shift and go to state 27
+    call_stmt                      shift and go to state 28
+    return_stmt                    shift and go to state 29
+    type_spec                      shift and go to state 30
+
+state 19
+
+    (8) main_program -> PROGRAM IDENTIFIER END .
+
+    PROGRAM         reduce using rule 8 (main_program -> PROGRAM IDENTIFIER END .)
+    SUBROUTINE      reduce using rule 8 (main_program -> PROGRAM IDENTIFIER END .)
+    INTEGER         reduce using rule 8 (main_program -> PROGRAM IDENTIFIER END .)
+    REAL            reduce using rule 8 (main_program -> PROGRAM IDENTIFIER END .)
+    LOGICAL         reduce using rule 8 (main_program -> PROGRAM IDENTIFIER END .)
+    $end            reduce using rule 8 (main_program -> PROGRAM IDENTIFIER END .)
+
+
+state 20
+
+    (9) statements -> statement .
+
+    END             reduce using rule 9 (statements -> statement .)
+    IDENTIFIER      reduce using rule 9 (statements -> statement .)
+    PRINT           reduce using rule 9 (statements -> statement .)
+    READ            reduce using rule 9 (statements -> statement .)
+    IF              reduce using rule 9 (statements -> statement .)
+    DO              reduce using rule 9 (statements -> statement .)
+    GOTO            reduce using rule 9 (statements -> statement .)
+    CALL            reduce using rule 9 (statements -> statement .)
+    RETURN          reduce using rule 9 (statements -> statement .)
+    INTEGER         reduce using rule 9 (statements -> statement .)
+    REAL            reduce using rule 9 (statements -> statement .)
+    LOGICAL         reduce using rule 9 (statements -> statement .)
+    ENDIF           reduce using rule 9 (statements -> statement .)
+    ELSE            reduce using rule 9 (statements -> statement .)
+    NUMBER          reduce using rule 9 (statements -> statement .)
+
+
+state 21
+
+    (11) statement -> declaration .
+
+    END             reduce using rule 11 (statement -> declaration .)
+    IDENTIFIER      reduce using rule 11 (statement -> declaration .)
+    PRINT           reduce using rule 11 (statement -> declaration .)
+    READ            reduce using rule 11 (statement -> declaration .)
+    IF              reduce using rule 11 (statement -> declaration .)
+    DO              reduce using rule 11 (statement -> declaration .)
+    GOTO            reduce using rule 11 (statement -> declaration .)
+    CALL            reduce using rule 11 (statement -> declaration .)
+    RETURN          reduce using rule 11 (statement -> declaration .)
+    INTEGER         reduce using rule 11 (statement -> declaration .)
+    REAL            reduce using rule 11 (statement -> declaration .)
+    LOGICAL         reduce using rule 11 (statement -> declaration .)
+    ENDIF           reduce using rule 11 (statement -> declaration .)
+    ELSE            reduce using rule 11 (statement -> declaration .)
+    NUMBER          reduce using rule 11 (statement -> declaration .)
+
+
+state 22
+
+    (12) statement -> assignment .
+
+    END             reduce using rule 12 (statement -> assignment .)
+    IDENTIFIER      reduce using rule 12 (statement -> assignment .)
+    PRINT           reduce using rule 12 (statement -> assignment .)
+    READ            reduce using rule 12 (statement -> assignment .)
+    IF              reduce using rule 12 (statement -> assignment .)
+    DO              reduce using rule 12 (statement -> assignment .)
+    GOTO            reduce using rule 12 (statement -> assignment .)
+    CALL            reduce using rule 12 (statement -> assignment .)
+    RETURN          reduce using rule 12 (statement -> assignment .)
+    INTEGER         reduce using rule 12 (statement -> assignment .)
+    REAL            reduce using rule 12 (statement -> assignment .)
+    LOGICAL         reduce using rule 12 (statement -> assignment .)
+    ENDIF           reduce using rule 12 (statement -> assignment .)
+    ELSE            reduce using rule 12 (statement -> assignment .)
+    NUMBER          reduce using rule 12 (statement -> assignment .)
+
+
+state 23
+
+    (13) statement -> print_stmt .
+
+    END             reduce using rule 13 (statement -> print_stmt .)
+    IDENTIFIER      reduce using rule 13 (statement -> print_stmt .)
+    PRINT           reduce using rule 13 (statement -> print_stmt .)
+    READ            reduce using rule 13 (statement -> print_stmt .)
+    IF              reduce using rule 13 (statement -> print_stmt .)
+    DO              reduce using rule 13 (statement -> print_stmt .)
+    GOTO            reduce using rule 13 (statement -> print_stmt .)
+    CALL            reduce using rule 13 (statement -> print_stmt .)
+    RETURN          reduce using rule 13 (statement -> print_stmt .)
+    INTEGER         reduce using rule 13 (statement -> print_stmt .)
+    REAL            reduce using rule 13 (statement -> print_stmt .)
+    LOGICAL         reduce using rule 13 (statement -> print_stmt .)
+    ENDIF           reduce using rule 13 (statement -> print_stmt .)
+    ELSE            reduce using rule 13 (statement -> print_stmt .)
+    NUMBER          reduce using rule 13 (statement -> print_stmt .)
+
+
+state 24
+
+    (14) statement -> read_stmt .
+
+    END             reduce using rule 14 (statement -> read_stmt .)
+    IDENTIFIER      reduce using rule 14 (statement -> read_stmt .)
+    PRINT           reduce using rule 14 (statement -> read_stmt .)
+    READ            reduce using rule 14 (statement -> read_stmt .)
+    IF              reduce using rule 14 (statement -> read_stmt .)
+    DO              reduce using rule 14 (statement -> read_stmt .)
+    GOTO            reduce using rule 14 (statement -> read_stmt .)
+    CALL            reduce using rule 14 (statement -> read_stmt .)
+    RETURN          reduce using rule 14 (statement -> read_stmt .)
+    INTEGER         reduce using rule 14 (statement -> read_stmt .)
+    REAL            reduce using rule 14 (statement -> read_stmt .)
+    LOGICAL         reduce using rule 14 (statement -> read_stmt .)
+    ENDIF           reduce using rule 14 (statement -> read_stmt .)
+    ELSE            reduce using rule 14 (statement -> read_stmt .)
+    NUMBER          reduce using rule 14 (statement -> read_stmt .)
+
+
+state 25
+
+    (15) statement -> if_stmt .
+
+    END             reduce using rule 15 (statement -> if_stmt .)
+    IDENTIFIER      reduce using rule 15 (statement -> if_stmt .)
+    PRINT           reduce using rule 15 (statement -> if_stmt .)
+    READ            reduce using rule 15 (statement -> if_stmt .)
+    IF              reduce using rule 15 (statement -> if_stmt .)
+    DO              reduce using rule 15 (statement -> if_stmt .)
+    GOTO            reduce using rule 15 (statement -> if_stmt .)
+    CALL            reduce using rule 15 (statement -> if_stmt .)
+    RETURN          reduce using rule 15 (statement -> if_stmt .)
+    INTEGER         reduce using rule 15 (statement -> if_stmt .)
+    REAL            reduce using rule 15 (statement -> if_stmt .)
+    LOGICAL         reduce using rule 15 (statement -> if_stmt .)
+    ENDIF           reduce using rule 15 (statement -> if_stmt .)
+    ELSE            reduce using rule 15 (statement -> if_stmt .)
+    NUMBER          reduce using rule 15 (statement -> if_stmt .)
+
+
+state 26
+
+    (16) statement -> do_loop .
+
+    END             reduce using rule 16 (statement -> do_loop .)
+    IDENTIFIER      reduce using rule 16 (statement -> do_loop .)
+    PRINT           reduce using rule 16 (statement -> do_loop .)
+    READ            reduce using rule 16 (statement -> do_loop .)
+    IF              reduce using rule 16 (statement -> do_loop .)
+    DO              reduce using rule 16 (statement -> do_loop .)
+    GOTO            reduce using rule 16 (statement -> do_loop .)
+    CALL            reduce using rule 16 (statement -> do_loop .)
+    RETURN          reduce using rule 16 (statement -> do_loop .)
+    INTEGER         reduce using rule 16 (statement -> do_loop .)
+    REAL            reduce using rule 16 (statement -> do_loop .)
+    LOGICAL         reduce using rule 16 (statement -> do_loop .)
+    ENDIF           reduce using rule 16 (statement -> do_loop .)
+    ELSE            reduce using rule 16 (statement -> do_loop .)
+    NUMBER          reduce using rule 16 (statement -> do_loop .)
+
+
+state 27
+
+    (17) statement -> goto_stmt .
+
+    END             reduce using rule 17 (statement -> goto_stmt .)
+    IDENTIFIER      reduce using rule 17 (statement -> goto_stmt .)
+    PRINT           reduce using rule 17 (statement -> goto_stmt .)
+    READ            reduce using rule 17 (statement -> goto_stmt .)
+    IF              reduce using rule 17 (statement -> goto_stmt .)
+    DO              reduce using rule 17 (statement -> goto_stmt .)
+    GOTO            reduce using rule 17 (statement -> goto_stmt .)
+    CALL            reduce using rule 17 (statement -> goto_stmt .)
+    RETURN          reduce using rule 17 (statement -> goto_stmt .)
+    INTEGER         reduce using rule 17 (statement -> goto_stmt .)
+    REAL            reduce using rule 17 (statement -> goto_stmt .)
+    LOGICAL         reduce using rule 17 (statement -> goto_stmt .)
+    ENDIF           reduce using rule 17 (statement -> goto_stmt .)
+    ELSE            reduce using rule 17 (statement -> goto_stmt .)
+    NUMBER          reduce using rule 17 (statement -> goto_stmt .)
+
+
+state 28
+
+    (18) statement -> call_stmt .
+
+    END             reduce using rule 18 (statement -> call_stmt .)
+    IDENTIFIER      reduce using rule 18 (statement -> call_stmt .)
+    PRINT           reduce using rule 18 (statement -> call_stmt .)
+    READ            reduce using rule 18 (statement -> call_stmt .)
+    IF              reduce using rule 18 (statement -> call_stmt .)
+    DO              reduce using rule 18 (statement -> call_stmt .)
+    GOTO            reduce using rule 18 (statement -> call_stmt .)
+    CALL            reduce using rule 18 (statement -> call_stmt .)
+    RETURN          reduce using rule 18 (statement -> call_stmt .)
+    INTEGER         reduce using rule 18 (statement -> call_stmt .)
+    REAL            reduce using rule 18 (statement -> call_stmt .)
+    LOGICAL         reduce using rule 18 (statement -> call_stmt .)
+    ENDIF           reduce using rule 18 (statement -> call_stmt .)
+    ELSE            reduce using rule 18 (statement -> call_stmt .)
+    NUMBER          reduce using rule 18 (statement -> call_stmt .)
+
+
+state 29
+
+    (19) statement -> return_stmt .
+
+    END             reduce using rule 19 (statement -> return_stmt .)
+    IDENTIFIER      reduce using rule 19 (statement -> return_stmt .)
+    PRINT           reduce using rule 19 (statement -> return_stmt .)
+    READ            reduce using rule 19 (statement -> return_stmt .)
+    IF              reduce using rule 19 (statement -> return_stmt .)
+    DO              reduce using rule 19 (statement -> return_stmt .)
+    GOTO            reduce using rule 19 (statement -> return_stmt .)
+    CALL            reduce using rule 19 (statement -> return_stmt .)
+    RETURN          reduce using rule 19 (statement -> return_stmt .)
+    INTEGER         reduce using rule 19 (statement -> return_stmt .)
+    REAL            reduce using rule 19 (statement -> return_stmt .)
+    LOGICAL         reduce using rule 19 (statement -> return_stmt .)
+    ENDIF           reduce using rule 19 (statement -> return_stmt .)
+    ELSE            reduce using rule 19 (statement -> return_stmt .)
+    NUMBER          reduce using rule 19 (statement -> return_stmt .)
+
+
+state 30
+
+    (20) declaration -> type_spec . var_list
+    (24) var_list -> . IDENTIFIER
+    (25) var_list -> . var_list COMMA IDENTIFIER
+
+    IDENTIFIER      shift and go to state 45
+
+    var_list                       shift and go to state 44
+
+state 31
+
+    (27) print_stmt -> PRINT . TIMES print_list
+
+    TIMES           shift and go to state 46
+
+
+state 32
+
+    (30) read_stmt -> READ . TIMES read_list
+
+    TIMES           shift and go to state 47
+
+
+state 33
+
+    (33) if_stmt -> IF . LPAREN expression RPAREN THEN statements ENDIF
+    (34) if_stmt -> IF . LPAREN expression RPAREN THEN statements ELSE statements ENDIF
+
+    LPAREN          shift and go to state 48
+
+
+state 34
+
+    (35) do_loop -> DO . NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE
+
+    NUMBER          shift and go to state 49
+
+
+state 35
+
+    (36) goto_stmt -> GOTO . NUMBER
+
+    NUMBER          shift and go to state 50
+
+
+state 36
+
+    (72) call_stmt -> CALL . IDENTIFIER LPAREN arg_list RPAREN
+    (73) call_stmt -> CALL . IDENTIFIER
+
+    IDENTIFIER      shift and go to state 51
+
+
+state 37
+
+    (74) return_stmt -> RETURN .
+
+    END             reduce using rule 74 (return_stmt -> RETURN .)
+    IDENTIFIER      reduce using rule 74 (return_stmt -> RETURN .)
+    PRINT           reduce using rule 74 (return_stmt -> RETURN .)
+    READ            reduce using rule 74 (return_stmt -> RETURN .)
+    IF              reduce using rule 74 (return_stmt -> RETURN .)
+    DO              reduce using rule 74 (return_stmt -> RETURN .)
+    GOTO            reduce using rule 74 (return_stmt -> RETURN .)
+    CALL            reduce using rule 74 (return_stmt -> RETURN .)
+    RETURN          reduce using rule 74 (return_stmt -> RETURN .)
+    INTEGER         reduce using rule 74 (return_stmt -> RETURN .)
+    REAL            reduce using rule 74 (return_stmt -> RETURN .)
+    LOGICAL         reduce using rule 74 (return_stmt -> RETURN .)
+    ENDIF           reduce using rule 74 (return_stmt -> RETURN .)
+    ELSE            reduce using rule 74 (return_stmt -> RETURN .)
+    NUMBER          reduce using rule 74 (return_stmt -> RETURN .)
+
+
+state 38
+
+    (66) subroutine -> SUBROUTINE IDENTIFIER LPAREN . param_list RPAREN statements END
+    (70) param_list -> . IDENTIFIER
+    (71) param_list -> . param_list COMMA IDENTIFIER
+
+    IDENTIFIER      shift and go to state 52
+
+    param_list                     shift and go to state 53
+
+state 39
+
+    (67) subroutine -> SUBROUTINE IDENTIFIER statements . END
+    (10) statements -> statements . statement
+    (11) statement -> . declaration
+    (12) statement -> . assignment
+    (13) statement -> . print_stmt
+    (14) statement -> . read_stmt
+    (15) statement -> . if_stmt
+    (16) statement -> . do_loop
+    (17) statement -> . goto_stmt
+    (18) statement -> . call_stmt
+    (19) statement -> . return_stmt
+    (20) declaration -> . type_spec var_list
+    (26) assignment -> . IDENTIFIER ASSIGN expression
+    (27) print_stmt -> . PRINT TIMES print_list
+    (30) read_stmt -> . READ TIMES read_list
+    (33) if_stmt -> . IF LPAREN expression RPAREN THEN statements ENDIF
+    (34) if_stmt -> . IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF
+    (35) do_loop -> . DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE
+    (36) goto_stmt -> . GOTO NUMBER
+    (72) call_stmt -> . CALL IDENTIFIER LPAREN arg_list RPAREN
+    (73) call_stmt -> . CALL IDENTIFIER
+    (74) return_stmt -> . RETURN
+    (21) type_spec -> . INTEGER
+    (22) type_spec -> . REAL
+    (23) type_spec -> . LOGICAL
+
+    END             shift and go to state 54
+    IDENTIFIER      shift and go to state 17
+    PRINT           shift and go to state 31
+    READ            shift and go to state 32
+    IF              shift and go to state 33
+    DO              shift and go to state 34
+    GOTO            shift and go to state 35
+    CALL            shift and go to state 36
+    RETURN          shift and go to state 37
+    INTEGER         shift and go to state 10
+    REAL            shift and go to state 11
+    LOGICAL         shift and go to state 12
+
+    statement                      shift and go to state 43
+    declaration                    shift and go to state 21
+    assignment                     shift and go to state 22
+    print_stmt                     shift and go to state 23
+    read_stmt                      shift and go to state 24
+    if_stmt                        shift and go to state 25
+    do_loop                        shift and go to state 26
+    goto_stmt                      shift and go to state 27
+    call_stmt                      shift and go to state 28
+    return_stmt                    shift and go to state 29
+    type_spec                      shift and go to state 30
+
+state 40
+
+    (68) function -> type_spec FUNCTION IDENTIFIER . LPAREN param_list RPAREN statements END
+    (69) function -> type_spec FUNCTION IDENTIFIER . statements END
+    (9) statements -> . statement
+    (10) statements -> . statements statement
+    (11) statement -> . declaration
+    (12) statement -> . assignment
+    (13) statement -> . print_stmt
+    (14) statement -> . read_stmt
+    (15) statement -> . if_stmt
+    (16) statement -> . do_loop
+    (17) statement -> . goto_stmt
+    (18) statement -> . call_stmt
+    (19) statement -> . return_stmt
+    (20) declaration -> . type_spec var_list
+    (26) assignment -> . IDENTIFIER ASSIGN expression
+    (27) print_stmt -> . PRINT TIMES print_list
+    (30) read_stmt -> . READ TIMES read_list
+    (33) if_stmt -> . IF LPAREN expression RPAREN THEN statements ENDIF
+    (34) if_stmt -> . IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF
+    (35) do_loop -> . DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE
+    (36) goto_stmt -> . GOTO NUMBER
+    (72) call_stmt -> . CALL IDENTIFIER LPAREN arg_list RPAREN
+    (73) call_stmt -> . CALL IDENTIFIER
+    (74) return_stmt -> . RETURN
+    (21) type_spec -> . INTEGER
+    (22) type_spec -> . REAL
+    (23) type_spec -> . LOGICAL
+
+    LPAREN          shift and go to state 55
+    IDENTIFIER      shift and go to state 17
+    PRINT           shift and go to state 31
+    READ            shift and go to state 32
+    IF              shift and go to state 33
+    DO              shift and go to state 34
+    GOTO            shift and go to state 35
+    CALL            shift and go to state 36
+    RETURN          shift and go to state 37
+    INTEGER         shift and go to state 10
+    REAL            shift and go to state 11
+    LOGICAL         shift and go to state 12
+
+    type_spec                      shift and go to state 30
+    statements                     shift and go to state 56
+    statement                      shift and go to state 20
+    declaration                    shift and go to state 21
+    assignment                     shift and go to state 22
+    print_stmt                     shift and go to state 23
+    read_stmt                      shift and go to state 24
+    if_stmt                        shift and go to state 25
+    do_loop                        shift and go to state 26
+    goto_stmt                      shift and go to state 27
+    call_stmt                      shift and go to state 28
+    return_stmt                    shift and go to state 29
+
+state 41
+
+    (26) assignment -> IDENTIFIER ASSIGN . expression
+    (37) expression -> . expr_or
+    (38) expr_or -> . expr_and
+    (39) expr_or -> . expr_or OR expr_and
+    (40) expr_and -> . expr_not
+    (41) expr_and -> . expr_and AND expr_not
+    (42) expr_not -> . expr_rel
+    (43) expr_not -> . NOT expr_not
+    (44) expr_rel -> . expr_arith
+    (45) expr_rel -> . expr_arith EQ expr_arith
+    (46) expr_rel -> . expr_arith NE expr_arith
+    (47) expr_rel -> . expr_arith LT expr_arith
+    (48) expr_rel -> . expr_arith LE expr_arith
+    (49) expr_rel -> . expr_arith GT expr_arith
+    (50) expr_rel -> . expr_arith GE expr_arith
+    (51) expr_arith -> . term
+    (52) expr_arith -> . expr_arith PLUS term
+    (53) expr_arith -> . expr_arith MINUS term
+    (54) term -> . factor
+    (55) term -> . term TIMES factor
+    (56) term -> . term DIVIDE factor
+    (57) factor -> . primary
+    (58) factor -> . MINUS factor
+    (59) primary -> . NUMBER
+    (60) primary -> . REAL_NUMBER
+    (61) primary -> . STRING
+    (62) primary -> . TRUE
+    (63) primary -> . FALSE
+    (64) primary -> . IDENTIFIER
+    (65) primary -> . LPAREN expression RPAREN
+    (77) primary -> . IDENTIFIER LPAREN arg_list RPAREN
+
+    NOT             shift and go to state 63
+    MINUS           shift and go to state 66
+    NUMBER          shift and go to state 69
+    REAL_NUMBER     shift and go to state 70
+    STRING          shift and go to state 71
+    TRUE            shift and go to state 72
+    FALSE           shift and go to state 73
+    IDENTIFIER      shift and go to state 57
+    LPAREN          shift and go to state 74
+
+    expression                     shift and go to state 58
+    expr_or                        shift and go to state 59
+    expr_and                       shift and go to state 60
+    expr_not                       shift and go to state 61
+    expr_rel                       shift and go to state 62
+    expr_arith                     shift and go to state 64
+    term                           shift and go to state 65
+    factor                         shift and go to state 67
+    primary                        shift and go to state 68
+
+state 42
+
+    (7) main_program -> PROGRAM IDENTIFIER statements END .
+
+    PROGRAM         reduce using rule 7 (main_program -> PROGRAM IDENTIFIER statements END .)
+    SUBROUTINE      reduce using rule 7 (main_program -> PROGRAM IDENTIFIER statements END .)
+    INTEGER         reduce using rule 7 (main_program -> PROGRAM IDENTIFIER statements END .)
+    REAL            reduce using rule 7 (main_program -> PROGRAM IDENTIFIER statements END .)
+    LOGICAL         reduce using rule 7 (main_program -> PROGRAM IDENTIFIER statements END .)
+    $end            reduce using rule 7 (main_program -> PROGRAM IDENTIFIER statements END .)
+
+
+state 43
+
+    (10) statements -> statements statement .
+
+    END             reduce using rule 10 (statements -> statements statement .)
+    IDENTIFIER      reduce using rule 10 (statements -> statements statement .)
+    PRINT           reduce using rule 10 (statements -> statements statement .)
+    READ            reduce using rule 10 (statements -> statements statement .)
+    IF              reduce using rule 10 (statements -> statements statement .)
+    DO              reduce using rule 10 (statements -> statements statement .)
+    GOTO            reduce using rule 10 (statements -> statements statement .)
+    CALL            reduce using rule 10 (statements -> statements statement .)
+    RETURN          reduce using rule 10 (statements -> statements statement .)
+    INTEGER         reduce using rule 10 (statements -> statements statement .)
+    REAL            reduce using rule 10 (statements -> statements statement .)
+    LOGICAL         reduce using rule 10 (statements -> statements statement .)
+    ENDIF           reduce using rule 10 (statements -> statements statement .)
+    ELSE            reduce using rule 10 (statements -> statements statement .)
+    NUMBER          reduce using rule 10 (statements -> statements statement .)
+
+
+state 44
+
+    (20) declaration -> type_spec var_list .
+    (25) var_list -> var_list . COMMA IDENTIFIER
+
+    END             reduce using rule 20 (declaration -> type_spec var_list .)
+    IDENTIFIER      reduce using rule 20 (declaration -> type_spec var_list .)
+    PRINT           reduce using rule 20 (declaration -> type_spec var_list .)
+    READ            reduce using rule 20 (declaration -> type_spec var_list .)
+    IF              reduce using rule 20 (declaration -> type_spec var_list .)
+    DO              reduce using rule 20 (declaration -> type_spec var_list .)
+    GOTO            reduce using rule 20 (declaration -> type_spec var_list .)
+    CALL            reduce using rule 20 (declaration -> type_spec var_list .)
+    RETURN          reduce using rule 20 (declaration -> type_spec var_list .)
+    INTEGER         reduce using rule 20 (declaration -> type_spec var_list .)
+    REAL            reduce using rule 20 (declaration -> type_spec var_list .)
+    LOGICAL         reduce using rule 20 (declaration -> type_spec var_list .)
+    ENDIF           reduce using rule 20 (declaration -> type_spec var_list .)
+    ELSE            reduce using rule 20 (declaration -> type_spec var_list .)
+    NUMBER          reduce using rule 20 (declaration -> type_spec var_list .)
+    COMMA           shift and go to state 75
+
+
+state 45
+
+    (24) var_list -> IDENTIFIER .
+
+    COMMA           reduce using rule 24 (var_list -> IDENTIFIER .)
+    END             reduce using rule 24 (var_list -> IDENTIFIER .)
+    IDENTIFIER      reduce using rule 24 (var_list -> IDENTIFIER .)
+    PRINT           reduce using rule 24 (var_list -> IDENTIFIER .)
+    READ            reduce using rule 24 (var_list -> IDENTIFIER .)
+    IF              reduce using rule 24 (var_list -> IDENTIFIER .)
+    DO              reduce using rule 24 (var_list -> IDENTIFIER .)
+    GOTO            reduce using rule 24 (var_list -> IDENTIFIER .)
+    CALL            reduce using rule 24 (var_list -> IDENTIFIER .)
+    RETURN          reduce using rule 24 (var_list -> IDENTIFIER .)
+    INTEGER         reduce using rule 24 (var_list -> IDENTIFIER .)
+    REAL            reduce using rule 24 (var_list -> IDENTIFIER .)
+    LOGICAL         reduce using rule 24 (var_list -> IDENTIFIER .)
+    ENDIF           reduce using rule 24 (var_list -> IDENTIFIER .)
+    ELSE            reduce using rule 24 (var_list -> IDENTIFIER .)
+    NUMBER          reduce using rule 24 (var_list -> IDENTIFIER .)
+
+
+state 46
+
+    (27) print_stmt -> PRINT TIMES . print_list
+    (28) print_list -> . COMMA expression
+    (29) print_list -> . print_list COMMA expression
+
+    COMMA           shift and go to state 77
+
+    print_list                     shift and go to state 76
+
+state 47
+
+    (30) read_stmt -> READ TIMES . read_list
+    (31) read_list -> . COMMA IDENTIFIER
+    (32) read_list -> . read_list COMMA IDENTIFIER
+
+    COMMA           shift and go to state 79
+
+    read_list                      shift and go to state 78
+
+state 48
+
+    (33) if_stmt -> IF LPAREN . expression RPAREN THEN statements ENDIF
+    (34) if_stmt -> IF LPAREN . expression RPAREN THEN statements ELSE statements ENDIF
+    (37) expression -> . expr_or
+    (38) expr_or -> . expr_and
+    (39) expr_or -> . expr_or OR expr_and
+    (40) expr_and -> . expr_not
+    (41) expr_and -> . expr_and AND expr_not
+    (42) expr_not -> . expr_rel
+    (43) expr_not -> . NOT expr_not
+    (44) expr_rel -> . expr_arith
+    (45) expr_rel -> . expr_arith EQ expr_arith
+    (46) expr_rel -> . expr_arith NE expr_arith
+    (47) expr_rel -> . expr_arith LT expr_arith
+    (48) expr_rel -> . expr_arith LE expr_arith
+    (49) expr_rel -> . expr_arith GT expr_arith
+    (50) expr_rel -> . expr_arith GE expr_arith
+    (51) expr_arith -> . term
+    (52) expr_arith -> . expr_arith PLUS term
+    (53) expr_arith -> . expr_arith MINUS term
+    (54) term -> . factor
+    (55) term -> . term TIMES factor
+    (56) term -> . term DIVIDE factor
+    (57) factor -> . primary
+    (58) factor -> . MINUS factor
+    (59) primary -> . NUMBER
+    (60) primary -> . REAL_NUMBER
+    (61) primary -> . STRING
+    (62) primary -> . TRUE
+    (63) primary -> . FALSE
+    (64) primary -> . IDENTIFIER
+    (65) primary -> . LPAREN expression RPAREN
+    (77) primary -> . IDENTIFIER LPAREN arg_list RPAREN
+
+    NOT             shift and go to state 63
+    MINUS           shift and go to state 66
+    NUMBER          shift and go to state 69
+    REAL_NUMBER     shift and go to state 70
+    STRING          shift and go to state 71
+    TRUE            shift and go to state 72
+    FALSE           shift and go to state 73
+    IDENTIFIER      shift and go to state 57
+    LPAREN          shift and go to state 74
+
+    expression                     shift and go to state 80
+    expr_or                        shift and go to state 59
+    expr_and                       shift and go to state 60
+    expr_not                       shift and go to state 61
+    expr_rel                       shift and go to state 62
+    expr_arith                     shift and go to state 64
+    term                           shift and go to state 65
+    factor                         shift and go to state 67
+    primary                        shift and go to state 68
+
+state 49
+
+    (35) do_loop -> DO NUMBER . IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE
+
+    IDENTIFIER      shift and go to state 81
+
+
+state 50
+
+    (36) goto_stmt -> GOTO NUMBER .
+
+    END             reduce using rule 36 (goto_stmt -> GOTO NUMBER .)
+    IDENTIFIER      reduce using rule 36 (goto_stmt -> GOTO NUMBER .)
+    PRINT           reduce using rule 36 (goto_stmt -> GOTO NUMBER .)
+    READ            reduce using rule 36 (goto_stmt -> GOTO NUMBER .)
+    IF              reduce using rule 36 (goto_stmt -> GOTO NUMBER .)
+    DO              reduce using rule 36 (goto_stmt -> GOTO NUMBER .)
+    GOTO            reduce using rule 36 (goto_stmt -> GOTO NUMBER .)
+    CALL            reduce using rule 36 (goto_stmt -> GOTO NUMBER .)
+    RETURN          reduce using rule 36 (goto_stmt -> GOTO NUMBER .)
+    INTEGER         reduce using rule 36 (goto_stmt -> GOTO NUMBER .)
+    REAL            reduce using rule 36 (goto_stmt -> GOTO NUMBER .)
+    LOGICAL         reduce using rule 36 (goto_stmt -> GOTO NUMBER .)
+    ENDIF           reduce using rule 36 (goto_stmt -> GOTO NUMBER .)
+    ELSE            reduce using rule 36 (goto_stmt -> GOTO NUMBER .)
+    NUMBER          reduce using rule 36 (goto_stmt -> GOTO NUMBER .)
+
+
+state 51
+
+    (72) call_stmt -> CALL IDENTIFIER . LPAREN arg_list RPAREN
+    (73) call_stmt -> CALL IDENTIFIER .
+
+    LPAREN          shift and go to state 82
+    END             reduce using rule 73 (call_stmt -> CALL IDENTIFIER .)
+    IDENTIFIER      reduce using rule 73 (call_stmt -> CALL IDENTIFIER .)
+    PRINT           reduce using rule 73 (call_stmt -> CALL IDENTIFIER .)
+    READ            reduce using rule 73 (call_stmt -> CALL IDENTIFIER .)
+    IF              reduce using rule 73 (call_stmt -> CALL IDENTIFIER .)
+    DO              reduce using rule 73 (call_stmt -> CALL IDENTIFIER .)
+    GOTO            reduce using rule 73 (call_stmt -> CALL IDENTIFIER .)
+    CALL            reduce using rule 73 (call_stmt -> CALL IDENTIFIER .)
+    RETURN          reduce using rule 73 (call_stmt -> CALL IDENTIFIER .)
+    INTEGER         reduce using rule 73 (call_stmt -> CALL IDENTIFIER .)
+    REAL            reduce using rule 73 (call_stmt -> CALL IDENTIFIER .)
+    LOGICAL         reduce using rule 73 (call_stmt -> CALL IDENTIFIER .)
+    ENDIF           reduce using rule 73 (call_stmt -> CALL IDENTIFIER .)
+    ELSE            reduce using rule 73 (call_stmt -> CALL IDENTIFIER .)
+    NUMBER          reduce using rule 73 (call_stmt -> CALL IDENTIFIER .)
+
+
+state 52
+
+    (70) param_list -> IDENTIFIER .
+
+    RPAREN          reduce using rule 70 (param_list -> IDENTIFIER .)
+    COMMA           reduce using rule 70 (param_list -> IDENTIFIER .)
+
+
+state 53
+
+    (66) subroutine -> SUBROUTINE IDENTIFIER LPAREN param_list . RPAREN statements END
+    (71) param_list -> param_list . COMMA IDENTIFIER
+
+    RPAREN          shift and go to state 83
+    COMMA           shift and go to state 84
+
+
+state 54
+
+    (67) subroutine -> SUBROUTINE IDENTIFIER statements END .
+
+    PROGRAM         reduce using rule 67 (subroutine -> SUBROUTINE IDENTIFIER statements END .)
+    SUBROUTINE      reduce using rule 67 (subroutine -> SUBROUTINE IDENTIFIER statements END .)
+    INTEGER         reduce using rule 67 (subroutine -> SUBROUTINE IDENTIFIER statements END .)
+    REAL            reduce using rule 67 (subroutine -> SUBROUTINE IDENTIFIER statements END .)
+    LOGICAL         reduce using rule 67 (subroutine -> SUBROUTINE IDENTIFIER statements END .)
+    $end            reduce using rule 67 (subroutine -> SUBROUTINE IDENTIFIER statements END .)
+
+
+state 55
+
+    (68) function -> type_spec FUNCTION IDENTIFIER LPAREN . param_list RPAREN statements END
+    (70) param_list -> . IDENTIFIER
+    (71) param_list -> . param_list COMMA IDENTIFIER
+
+    IDENTIFIER      shift and go to state 52
+
+    param_list                     shift and go to state 85
+
+state 56
+
+    (69) function -> type_spec FUNCTION IDENTIFIER statements . END
+    (10) statements -> statements . statement
+    (11) statement -> . declaration
+    (12) statement -> . assignment
+    (13) statement -> . print_stmt
+    (14) statement -> . read_stmt
+    (15) statement -> . if_stmt
+    (16) statement -> . do_loop
+    (17) statement -> . goto_stmt
+    (18) statement -> . call_stmt
+    (19) statement -> . return_stmt
+    (20) declaration -> . type_spec var_list
+    (26) assignment -> . IDENTIFIER ASSIGN expression
+    (27) print_stmt -> . PRINT TIMES print_list
+    (30) read_stmt -> . READ TIMES read_list
+    (33) if_stmt -> . IF LPAREN expression RPAREN THEN statements ENDIF
+    (34) if_stmt -> . IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF
+    (35) do_loop -> . DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE
+    (36) goto_stmt -> . GOTO NUMBER
+    (72) call_stmt -> . CALL IDENTIFIER LPAREN arg_list RPAREN
+    (73) call_stmt -> . CALL IDENTIFIER
+    (74) return_stmt -> . RETURN
+    (21) type_spec -> . INTEGER
+    (22) type_spec -> . REAL
+    (23) type_spec -> . LOGICAL
+
+    END             shift and go to state 86
+    IDENTIFIER      shift and go to state 17
+    PRINT           shift and go to state 31
+    READ            shift and go to state 32
+    IF              shift and go to state 33
+    DO              shift and go to state 34
+    GOTO            shift and go to state 35
+    CALL            shift and go to state 36
+    RETURN          shift and go to state 37
+    INTEGER         shift and go to state 10
+    REAL            shift and go to state 11
+    LOGICAL         shift and go to state 12
+
+    type_spec                      shift and go to state 30
+    statement                      shift and go to state 43
+    declaration                    shift and go to state 21
+    assignment                     shift and go to state 22
+    print_stmt                     shift and go to state 23
+    read_stmt                      shift and go to state 24
+    if_stmt                        shift and go to state 25
+    do_loop                        shift and go to state 26
+    goto_stmt                      shift and go to state 27
+    call_stmt                      shift and go to state 28
+    return_stmt                    shift and go to state 29
+
+state 57
+
+    (64) primary -> IDENTIFIER .
+    (77) primary -> IDENTIFIER . LPAREN arg_list RPAREN
+
+    TIMES           reduce using rule 64 (primary -> IDENTIFIER .)
+    DIVIDE          reduce using rule 64 (primary -> IDENTIFIER .)
+    EQ              reduce using rule 64 (primary -> IDENTIFIER .)
+    NE              reduce using rule 64 (primary -> IDENTIFIER .)
+    LT              reduce using rule 64 (primary -> IDENTIFIER .)
+    LE              reduce using rule 64 (primary -> IDENTIFIER .)
+    GT              reduce using rule 64 (primary -> IDENTIFIER .)
+    GE              reduce using rule 64 (primary -> IDENTIFIER .)
+    PLUS            reduce using rule 64 (primary -> IDENTIFIER .)
+    MINUS           reduce using rule 64 (primary -> IDENTIFIER .)
+    AND             reduce using rule 64 (primary -> IDENTIFIER .)
+    OR              reduce using rule 64 (primary -> IDENTIFIER .)
+    END             reduce using rule 64 (primary -> IDENTIFIER .)
+    IDENTIFIER      reduce using rule 64 (primary -> IDENTIFIER .)
+    PRINT           reduce using rule 64 (primary -> IDENTIFIER .)
+    READ            reduce using rule 64 (primary -> IDENTIFIER .)
+    IF              reduce using rule 64 (primary -> IDENTIFIER .)
+    DO              reduce using rule 64 (primary -> IDENTIFIER .)
+    GOTO            reduce using rule 64 (primary -> IDENTIFIER .)
+    CALL            reduce using rule 64 (primary -> IDENTIFIER .)
+    RETURN          reduce using rule 64 (primary -> IDENTIFIER .)
+    INTEGER         reduce using rule 64 (primary -> IDENTIFIER .)
+    REAL            reduce using rule 64 (primary -> IDENTIFIER .)
+    LOGICAL         reduce using rule 64 (primary -> IDENTIFIER .)
+    ENDIF           reduce using rule 64 (primary -> IDENTIFIER .)
+    ELSE            reduce using rule 64 (primary -> IDENTIFIER .)
+    NUMBER          reduce using rule 64 (primary -> IDENTIFIER .)
+    RPAREN          reduce using rule 64 (primary -> IDENTIFIER .)
+    COMMA           reduce using rule 64 (primary -> IDENTIFIER .)
+    LPAREN          shift and go to state 87
+
+
+state 58
+
+    (26) assignment -> IDENTIFIER ASSIGN expression .
+
+    END             reduce using rule 26 (assignment -> IDENTIFIER ASSIGN expression .)
+    IDENTIFIER      reduce using rule 26 (assignment -> IDENTIFIER ASSIGN expression .)
+    PRINT           reduce using rule 26 (assignment -> IDENTIFIER ASSIGN expression .)
+    READ            reduce using rule 26 (assignment -> IDENTIFIER ASSIGN expression .)
+    IF              reduce using rule 26 (assignment -> IDENTIFIER ASSIGN expression .)
+    DO              reduce using rule 26 (assignment -> IDENTIFIER ASSIGN expression .)
+    GOTO            reduce using rule 26 (assignment -> IDENTIFIER ASSIGN expression .)
+    CALL            reduce using rule 26 (assignment -> IDENTIFIER ASSIGN expression .)
+    RETURN          reduce using rule 26 (assignment -> IDENTIFIER ASSIGN expression .)
+    INTEGER         reduce using rule 26 (assignment -> IDENTIFIER ASSIGN expression .)
+    REAL            reduce using rule 26 (assignment -> IDENTIFIER ASSIGN expression .)
+    LOGICAL         reduce using rule 26 (assignment -> IDENTIFIER ASSIGN expression .)
+    ENDIF           reduce using rule 26 (assignment -> IDENTIFIER ASSIGN expression .)
+    ELSE            reduce using rule 26 (assignment -> IDENTIFIER ASSIGN expression .)
+    NUMBER          reduce using rule 26 (assignment -> IDENTIFIER ASSIGN expression .)
+
+
+state 59
+
+    (37) expression -> expr_or .
+    (39) expr_or -> expr_or . OR expr_and
+
+    END             reduce using rule 37 (expression -> expr_or .)
+    IDENTIFIER      reduce using rule 37 (expression -> expr_or .)
+    PRINT           reduce using rule 37 (expression -> expr_or .)
+    READ            reduce using rule 37 (expression -> expr_or .)
+    IF              reduce using rule 37 (expression -> expr_or .)
+    DO              reduce using rule 37 (expression -> expr_or .)
+    GOTO            reduce using rule 37 (expression -> expr_or .)
+    CALL            reduce using rule 37 (expression -> expr_or .)
+    RETURN          reduce using rule 37 (expression -> expr_or .)
+    INTEGER         reduce using rule 37 (expression -> expr_or .)
+    REAL            reduce using rule 37 (expression -> expr_or .)
+    LOGICAL         reduce using rule 37 (expression -> expr_or .)
+    ENDIF           reduce using rule 37 (expression -> expr_or .)
+    ELSE            reduce using rule 37 (expression -> expr_or .)
+    NUMBER          reduce using rule 37 (expression -> expr_or .)
+    RPAREN          reduce using rule 37 (expression -> expr_or .)
+    COMMA           reduce using rule 37 (expression -> expr_or .)
+    OR              shift and go to state 88
+
+
+state 60
+
+    (38) expr_or -> expr_and .
+    (41) expr_and -> expr_and . AND expr_not
+
+    OR              reduce using rule 38 (expr_or -> expr_and .)
+    END             reduce using rule 38 (expr_or -> expr_and .)
+    IDENTIFIER      reduce using rule 38 (expr_or -> expr_and .)
+    PRINT           reduce using rule 38 (expr_or -> expr_and .)
+    READ            reduce using rule 38 (expr_or -> expr_and .)
+    IF              reduce using rule 38 (expr_or -> expr_and .)
+    DO              reduce using rule 38 (expr_or -> expr_and .)
+    GOTO            reduce using rule 38 (expr_or -> expr_and .)
+    CALL            reduce using rule 38 (expr_or -> expr_and .)
+    RETURN          reduce using rule 38 (expr_or -> expr_and .)
+    INTEGER         reduce using rule 38 (expr_or -> expr_and .)
+    REAL            reduce using rule 38 (expr_or -> expr_and .)
+    LOGICAL         reduce using rule 38 (expr_or -> expr_and .)
+    ENDIF           reduce using rule 38 (expr_or -> expr_and .)
+    ELSE            reduce using rule 38 (expr_or -> expr_and .)
+    NUMBER          reduce using rule 38 (expr_or -> expr_and .)
+    RPAREN          reduce using rule 38 (expr_or -> expr_and .)
+    COMMA           reduce using rule 38 (expr_or -> expr_and .)
+    AND             shift and go to state 89
+
+
+state 61
+
+    (40) expr_and -> expr_not .
+
+    AND             reduce using rule 40 (expr_and -> expr_not .)
+    OR              reduce using rule 40 (expr_and -> expr_not .)
+    END             reduce using rule 40 (expr_and -> expr_not .)
+    IDENTIFIER      reduce using rule 40 (expr_and -> expr_not .)
+    PRINT           reduce using rule 40 (expr_and -> expr_not .)
+    READ            reduce using rule 40 (expr_and -> expr_not .)
+    IF              reduce using rule 40 (expr_and -> expr_not .)
+    DO              reduce using rule 40 (expr_and -> expr_not .)
+    GOTO            reduce using rule 40 (expr_and -> expr_not .)
+    CALL            reduce using rule 40 (expr_and -> expr_not .)
+    RETURN          reduce using rule 40 (expr_and -> expr_not .)
+    INTEGER         reduce using rule 40 (expr_and -> expr_not .)
+    REAL            reduce using rule 40 (expr_and -> expr_not .)
+    LOGICAL         reduce using rule 40 (expr_and -> expr_not .)
+    ENDIF           reduce using rule 40 (expr_and -> expr_not .)
+    ELSE            reduce using rule 40 (expr_and -> expr_not .)
+    NUMBER          reduce using rule 40 (expr_and -> expr_not .)
+    RPAREN          reduce using rule 40 (expr_and -> expr_not .)
+    COMMA           reduce using rule 40 (expr_and -> expr_not .)
+
+
+state 62
+
+    (42) expr_not -> expr_rel .
+
+    AND             reduce using rule 42 (expr_not -> expr_rel .)
+    OR              reduce using rule 42 (expr_not -> expr_rel .)
+    END             reduce using rule 42 (expr_not -> expr_rel .)
+    IDENTIFIER      reduce using rule 42 (expr_not -> expr_rel .)
+    PRINT           reduce using rule 42 (expr_not -> expr_rel .)
+    READ            reduce using rule 42 (expr_not -> expr_rel .)
+    IF              reduce using rule 42 (expr_not -> expr_rel .)
+    DO              reduce using rule 42 (expr_not -> expr_rel .)
+    GOTO            reduce using rule 42 (expr_not -> expr_rel .)
+    CALL            reduce using rule 42 (expr_not -> expr_rel .)
+    RETURN          reduce using rule 42 (expr_not -> expr_rel .)
+    INTEGER         reduce using rule 42 (expr_not -> expr_rel .)
+    REAL            reduce using rule 42 (expr_not -> expr_rel .)
+    LOGICAL         reduce using rule 42 (expr_not -> expr_rel .)
+    ENDIF           reduce using rule 42 (expr_not -> expr_rel .)
+    ELSE            reduce using rule 42 (expr_not -> expr_rel .)
+    NUMBER          reduce using rule 42 (expr_not -> expr_rel .)
+    RPAREN          reduce using rule 42 (expr_not -> expr_rel .)
+    COMMA           reduce using rule 42 (expr_not -> expr_rel .)
+
+
+state 63
+
+    (43) expr_not -> NOT . expr_not
+    (42) expr_not -> . expr_rel
+    (43) expr_not -> . NOT expr_not
+    (44) expr_rel -> . expr_arith
+    (45) expr_rel -> . expr_arith EQ expr_arith
+    (46) expr_rel -> . expr_arith NE expr_arith
+    (47) expr_rel -> . expr_arith LT expr_arith
+    (48) expr_rel -> . expr_arith LE expr_arith
+    (49) expr_rel -> . expr_arith GT expr_arith
+    (50) expr_rel -> . expr_arith GE expr_arith
+    (51) expr_arith -> . term
+    (52) expr_arith -> . expr_arith PLUS term
+    (53) expr_arith -> . expr_arith MINUS term
+    (54) term -> . factor
+    (55) term -> . term TIMES factor
+    (56) term -> . term DIVIDE factor
+    (57) factor -> . primary
+    (58) factor -> . MINUS factor
+    (59) primary -> . NUMBER
+    (60) primary -> . REAL_NUMBER
+    (61) primary -> . STRING
+    (62) primary -> . TRUE
+    (63) primary -> . FALSE
+    (64) primary -> . IDENTIFIER
+    (65) primary -> . LPAREN expression RPAREN
+    (77) primary -> . IDENTIFIER LPAREN arg_list RPAREN
+
+    NOT             shift and go to state 63
+    MINUS           shift and go to state 66
+    NUMBER          shift and go to state 69
+    REAL_NUMBER     shift and go to state 70
+    STRING          shift and go to state 71
+    TRUE            shift and go to state 72
+    FALSE           shift and go to state 73
+    IDENTIFIER      shift and go to state 57
+    LPAREN          shift and go to state 74
+
+    expr_not                       shift and go to state 90
+    expr_rel                       shift and go to state 62
+    expr_arith                     shift and go to state 64
+    term                           shift and go to state 65
+    factor                         shift and go to state 67
+    primary                        shift and go to state 68
+
+state 64
+
+    (44) expr_rel -> expr_arith .
+    (45) expr_rel -> expr_arith . EQ expr_arith
+    (46) expr_rel -> expr_arith . NE expr_arith
+    (47) expr_rel -> expr_arith . LT expr_arith
+    (48) expr_rel -> expr_arith . LE expr_arith
+    (49) expr_rel -> expr_arith . GT expr_arith
+    (50) expr_rel -> expr_arith . GE expr_arith
+    (52) expr_arith -> expr_arith . PLUS term
+    (53) expr_arith -> expr_arith . MINUS term
+
+    AND             reduce using rule 44 (expr_rel -> expr_arith .)
+    OR              reduce using rule 44 (expr_rel -> expr_arith .)
+    END             reduce using rule 44 (expr_rel -> expr_arith .)
+    IDENTIFIER      reduce using rule 44 (expr_rel -> expr_arith .)
+    PRINT           reduce using rule 44 (expr_rel -> expr_arith .)
+    READ            reduce using rule 44 (expr_rel -> expr_arith .)
+    IF              reduce using rule 44 (expr_rel -> expr_arith .)
+    DO              reduce using rule 44 (expr_rel -> expr_arith .)
+    GOTO            reduce using rule 44 (expr_rel -> expr_arith .)
+    CALL            reduce using rule 44 (expr_rel -> expr_arith .)
+    RETURN          reduce using rule 44 (expr_rel -> expr_arith .)
+    INTEGER         reduce using rule 44 (expr_rel -> expr_arith .)
+    REAL            reduce using rule 44 (expr_rel -> expr_arith .)
+    LOGICAL         reduce using rule 44 (expr_rel -> expr_arith .)
+    ENDIF           reduce using rule 44 (expr_rel -> expr_arith .)
+    ELSE            reduce using rule 44 (expr_rel -> expr_arith .)
+    NUMBER          reduce using rule 44 (expr_rel -> expr_arith .)
+    RPAREN          reduce using rule 44 (expr_rel -> expr_arith .)
+    COMMA           reduce using rule 44 (expr_rel -> expr_arith .)
+    EQ              shift and go to state 91
+    NE              shift and go to state 92
+    LT              shift and go to state 93
+    LE              shift and go to state 94
+    GT              shift and go to state 95
+    GE              shift and go to state 96
+    PLUS            shift and go to state 97
+    MINUS           shift and go to state 98
+
+
+state 65
+
+    (51) expr_arith -> term .
+    (55) term -> term . TIMES factor
+    (56) term -> term . DIVIDE factor
+
+    EQ              reduce using rule 51 (expr_arith -> term .)
+    NE              reduce using rule 51 (expr_arith -> term .)
+    LT              reduce using rule 51 (expr_arith -> term .)
+    LE              reduce using rule 51 (expr_arith -> term .)
+    GT              reduce using rule 51 (expr_arith -> term .)
+    GE              reduce using rule 51 (expr_arith -> term .)
+    PLUS            reduce using rule 51 (expr_arith -> term .)
+    MINUS           reduce using rule 51 (expr_arith -> term .)
+    AND             reduce using rule 51 (expr_arith -> term .)
+    OR              reduce using rule 51 (expr_arith -> term .)
+    END             reduce using rule 51 (expr_arith -> term .)
+    IDENTIFIER      reduce using rule 51 (expr_arith -> term .)
+    PRINT           reduce using rule 51 (expr_arith -> term .)
+    READ            reduce using rule 51 (expr_arith -> term .)
+    IF              reduce using rule 51 (expr_arith -> term .)
+    DO              reduce using rule 51 (expr_arith -> term .)
+    GOTO            reduce using rule 51 (expr_arith -> term .)
+    CALL            reduce using rule 51 (expr_arith -> term .)
+    RETURN          reduce using rule 51 (expr_arith -> term .)
+    INTEGER         reduce using rule 51 (expr_arith -> term .)
+    REAL            reduce using rule 51 (expr_arith -> term .)
+    LOGICAL         reduce using rule 51 (expr_arith -> term .)
+    ENDIF           reduce using rule 51 (expr_arith -> term .)
+    ELSE            reduce using rule 51 (expr_arith -> term .)
+    NUMBER          reduce using rule 51 (expr_arith -> term .)
+    RPAREN          reduce using rule 51 (expr_arith -> term .)
+    COMMA           reduce using rule 51 (expr_arith -> term .)
+    TIMES           shift and go to state 99
+    DIVIDE          shift and go to state 100
+
+
+state 66
+
+    (58) factor -> MINUS . factor
+    (57) factor -> . primary
+    (58) factor -> . MINUS factor
+    (59) primary -> . NUMBER
+    (60) primary -> . REAL_NUMBER
+    (61) primary -> . STRING
+    (62) primary -> . TRUE
+    (63) primary -> . FALSE
+    (64) primary -> . IDENTIFIER
+    (65) primary -> . LPAREN expression RPAREN
+    (77) primary -> . IDENTIFIER LPAREN arg_list RPAREN
+
+    MINUS           shift and go to state 66
+    NUMBER          shift and go to state 69
+    REAL_NUMBER     shift and go to state 70
+    STRING          shift and go to state 71
+    TRUE            shift and go to state 72
+    FALSE           shift and go to state 73
+    IDENTIFIER      shift and go to state 57
+    LPAREN          shift and go to state 74
+
+    factor                         shift and go to state 101
+    primary                        shift and go to state 68
+
+state 67
+
+    (54) term -> factor .
+
+    TIMES           reduce using rule 54 (term -> factor .)
+    DIVIDE          reduce using rule 54 (term -> factor .)
+    EQ              reduce using rule 54 (term -> factor .)
+    NE              reduce using rule 54 (term -> factor .)
+    LT              reduce using rule 54 (term -> factor .)
+    LE              reduce using rule 54 (term -> factor .)
+    GT              reduce using rule 54 (term -> factor .)
+    GE              reduce using rule 54 (term -> factor .)
+    PLUS            reduce using rule 54 (term -> factor .)
+    MINUS           reduce using rule 54 (term -> factor .)
+    AND             reduce using rule 54 (term -> factor .)
+    OR              reduce using rule 54 (term -> factor .)
+    END             reduce using rule 54 (term -> factor .)
+    IDENTIFIER      reduce using rule 54 (term -> factor .)
+    PRINT           reduce using rule 54 (term -> factor .)
+    READ            reduce using rule 54 (term -> factor .)
+    IF              reduce using rule 54 (term -> factor .)
+    DO              reduce using rule 54 (term -> factor .)
+    GOTO            reduce using rule 54 (term -> factor .)
+    CALL            reduce using rule 54 (term -> factor .)
+    RETURN          reduce using rule 54 (term -> factor .)
+    INTEGER         reduce using rule 54 (term -> factor .)
+    REAL            reduce using rule 54 (term -> factor .)
+    LOGICAL         reduce using rule 54 (term -> factor .)
+    ENDIF           reduce using rule 54 (term -> factor .)
+    ELSE            reduce using rule 54 (term -> factor .)
+    NUMBER          reduce using rule 54 (term -> factor .)
+    RPAREN          reduce using rule 54 (term -> factor .)
+    COMMA           reduce using rule 54 (term -> factor .)
+
+
+state 68
+
+    (57) factor -> primary .
+
+    TIMES           reduce using rule 57 (factor -> primary .)
+    DIVIDE          reduce using rule 57 (factor -> primary .)
+    EQ              reduce using rule 57 (factor -> primary .)
+    NE              reduce using rule 57 (factor -> primary .)
+    LT              reduce using rule 57 (factor -> primary .)
+    LE              reduce using rule 57 (factor -> primary .)
+    GT              reduce using rule 57 (factor -> primary .)
+    GE              reduce using rule 57 (factor -> primary .)
+    PLUS            reduce using rule 57 (factor -> primary .)
+    MINUS           reduce using rule 57 (factor -> primary .)
+    AND             reduce using rule 57 (factor -> primary .)
+    OR              reduce using rule 57 (factor -> primary .)
+    END             reduce using rule 57 (factor -> primary .)
+    IDENTIFIER      reduce using rule 57 (factor -> primary .)
+    PRINT           reduce using rule 57 (factor -> primary .)
+    READ            reduce using rule 57 (factor -> primary .)
+    IF              reduce using rule 57 (factor -> primary .)
+    DO              reduce using rule 57 (factor -> primary .)
+    GOTO            reduce using rule 57 (factor -> primary .)
+    CALL            reduce using rule 57 (factor -> primary .)
+    RETURN          reduce using rule 57 (factor -> primary .)
+    INTEGER         reduce using rule 57 (factor -> primary .)
+    REAL            reduce using rule 57 (factor -> primary .)
+    LOGICAL         reduce using rule 57 (factor -> primary .)
+    ENDIF           reduce using rule 57 (factor -> primary .)
+    ELSE            reduce using rule 57 (factor -> primary .)
+    NUMBER          reduce using rule 57 (factor -> primary .)
+    RPAREN          reduce using rule 57 (factor -> primary .)
+    COMMA           reduce using rule 57 (factor -> primary .)
+
+
+state 69
+
+    (59) primary -> NUMBER .
+
+    TIMES           reduce using rule 59 (primary -> NUMBER .)
+    DIVIDE          reduce using rule 59 (primary -> NUMBER .)
+    EQ              reduce using rule 59 (primary -> NUMBER .)
+    NE              reduce using rule 59 (primary -> NUMBER .)
+    LT              reduce using rule 59 (primary -> NUMBER .)
+    LE              reduce using rule 59 (primary -> NUMBER .)
+    GT              reduce using rule 59 (primary -> NUMBER .)
+    GE              reduce using rule 59 (primary -> NUMBER .)
+    PLUS            reduce using rule 59 (primary -> NUMBER .)
+    MINUS           reduce using rule 59 (primary -> NUMBER .)
+    AND             reduce using rule 59 (primary -> NUMBER .)
+    OR              reduce using rule 59 (primary -> NUMBER .)
+    END             reduce using rule 59 (primary -> NUMBER .)
+    IDENTIFIER      reduce using rule 59 (primary -> NUMBER .)
+    PRINT           reduce using rule 59 (primary -> NUMBER .)
+    READ            reduce using rule 59 (primary -> NUMBER .)
+    IF              reduce using rule 59 (primary -> NUMBER .)
+    DO              reduce using rule 59 (primary -> NUMBER .)
+    GOTO            reduce using rule 59 (primary -> NUMBER .)
+    CALL            reduce using rule 59 (primary -> NUMBER .)
+    RETURN          reduce using rule 59 (primary -> NUMBER .)
+    INTEGER         reduce using rule 59 (primary -> NUMBER .)
+    REAL            reduce using rule 59 (primary -> NUMBER .)
+    LOGICAL         reduce using rule 59 (primary -> NUMBER .)
+    ENDIF           reduce using rule 59 (primary -> NUMBER .)
+    ELSE            reduce using rule 59 (primary -> NUMBER .)
+    NUMBER          reduce using rule 59 (primary -> NUMBER .)
+    RPAREN          reduce using rule 59 (primary -> NUMBER .)
+    COMMA           reduce using rule 59 (primary -> NUMBER .)
+
+
+state 70
+
+    (60) primary -> REAL_NUMBER .
+
+    TIMES           reduce using rule 60 (primary -> REAL_NUMBER .)
+    DIVIDE          reduce using rule 60 (primary -> REAL_NUMBER .)
+    EQ              reduce using rule 60 (primary -> REAL_NUMBER .)
+    NE              reduce using rule 60 (primary -> REAL_NUMBER .)
+    LT              reduce using rule 60 (primary -> REAL_NUMBER .)
+    LE              reduce using rule 60 (primary -> REAL_NUMBER .)
+    GT              reduce using rule 60 (primary -> REAL_NUMBER .)
+    GE              reduce using rule 60 (primary -> REAL_NUMBER .)
+    PLUS            reduce using rule 60 (primary -> REAL_NUMBER .)
+    MINUS           reduce using rule 60 (primary -> REAL_NUMBER .)
+    AND             reduce using rule 60 (primary -> REAL_NUMBER .)
+    OR              reduce using rule 60 (primary -> REAL_NUMBER .)
+    END             reduce using rule 60 (primary -> REAL_NUMBER .)
+    IDENTIFIER      reduce using rule 60 (primary -> REAL_NUMBER .)
+    PRINT           reduce using rule 60 (primary -> REAL_NUMBER .)
+    READ            reduce using rule 60 (primary -> REAL_NUMBER .)
+    IF              reduce using rule 60 (primary -> REAL_NUMBER .)
+    DO              reduce using rule 60 (primary -> REAL_NUMBER .)
+    GOTO            reduce using rule 60 (primary -> REAL_NUMBER .)
+    CALL            reduce using rule 60 (primary -> REAL_NUMBER .)
+    RETURN          reduce using rule 60 (primary -> REAL_NUMBER .)
+    INTEGER         reduce using rule 60 (primary -> REAL_NUMBER .)
+    REAL            reduce using rule 60 (primary -> REAL_NUMBER .)
+    LOGICAL         reduce using rule 60 (primary -> REAL_NUMBER .)
+    ENDIF           reduce using rule 60 (primary -> REAL_NUMBER .)
+    ELSE            reduce using rule 60 (primary -> REAL_NUMBER .)
+    NUMBER          reduce using rule 60 (primary -> REAL_NUMBER .)
+    RPAREN          reduce using rule 60 (primary -> REAL_NUMBER .)
+    COMMA           reduce using rule 60 (primary -> REAL_NUMBER .)
+
+
+state 71
+
+    (61) primary -> STRING .
+
+    TIMES           reduce using rule 61 (primary -> STRING .)
+    DIVIDE          reduce using rule 61 (primary -> STRING .)
+    EQ              reduce using rule 61 (primary -> STRING .)
+    NE              reduce using rule 61 (primary -> STRING .)
+    LT              reduce using rule 61 (primary -> STRING .)
+    LE              reduce using rule 61 (primary -> STRING .)
+    GT              reduce using rule 61 (primary -> STRING .)
+    GE              reduce using rule 61 (primary -> STRING .)
+    PLUS            reduce using rule 61 (primary -> STRING .)
+    MINUS           reduce using rule 61 (primary -> STRING .)
+    AND             reduce using rule 61 (primary -> STRING .)
+    OR              reduce using rule 61 (primary -> STRING .)
+    END             reduce using rule 61 (primary -> STRING .)
+    IDENTIFIER      reduce using rule 61 (primary -> STRING .)
+    PRINT           reduce using rule 61 (primary -> STRING .)
+    READ            reduce using rule 61 (primary -> STRING .)
+    IF              reduce using rule 61 (primary -> STRING .)
+    DO              reduce using rule 61 (primary -> STRING .)
+    GOTO            reduce using rule 61 (primary -> STRING .)
+    CALL            reduce using rule 61 (primary -> STRING .)
+    RETURN          reduce using rule 61 (primary -> STRING .)
+    INTEGER         reduce using rule 61 (primary -> STRING .)
+    REAL            reduce using rule 61 (primary -> STRING .)
+    LOGICAL         reduce using rule 61 (primary -> STRING .)
+    ENDIF           reduce using rule 61 (primary -> STRING .)
+    ELSE            reduce using rule 61 (primary -> STRING .)
+    NUMBER          reduce using rule 61 (primary -> STRING .)
+    RPAREN          reduce using rule 61 (primary -> STRING .)
+    COMMA           reduce using rule 61 (primary -> STRING .)
+
+
+state 72
+
+    (62) primary -> TRUE .
+
+    TIMES           reduce using rule 62 (primary -> TRUE .)
+    DIVIDE          reduce using rule 62 (primary -> TRUE .)
+    EQ              reduce using rule 62 (primary -> TRUE .)
+    NE              reduce using rule 62 (primary -> TRUE .)
+    LT              reduce using rule 62 (primary -> TRUE .)
+    LE              reduce using rule 62 (primary -> TRUE .)
+    GT              reduce using rule 62 (primary -> TRUE .)
+    GE              reduce using rule 62 (primary -> TRUE .)
+    PLUS            reduce using rule 62 (primary -> TRUE .)
+    MINUS           reduce using rule 62 (primary -> TRUE .)
+    AND             reduce using rule 62 (primary -> TRUE .)
+    OR              reduce using rule 62 (primary -> TRUE .)
+    END             reduce using rule 62 (primary -> TRUE .)
+    IDENTIFIER      reduce using rule 62 (primary -> TRUE .)
+    PRINT           reduce using rule 62 (primary -> TRUE .)
+    READ            reduce using rule 62 (primary -> TRUE .)
+    IF              reduce using rule 62 (primary -> TRUE .)
+    DO              reduce using rule 62 (primary -> TRUE .)
+    GOTO            reduce using rule 62 (primary -> TRUE .)
+    CALL            reduce using rule 62 (primary -> TRUE .)
+    RETURN          reduce using rule 62 (primary -> TRUE .)
+    INTEGER         reduce using rule 62 (primary -> TRUE .)
+    REAL            reduce using rule 62 (primary -> TRUE .)
+    LOGICAL         reduce using rule 62 (primary -> TRUE .)
+    ENDIF           reduce using rule 62 (primary -> TRUE .)
+    ELSE            reduce using rule 62 (primary -> TRUE .)
+    NUMBER          reduce using rule 62 (primary -> TRUE .)
+    RPAREN          reduce using rule 62 (primary -> TRUE .)
+    COMMA           reduce using rule 62 (primary -> TRUE .)
+
+
+state 73
+
+    (63) primary -> FALSE .
+
+    TIMES           reduce using rule 63 (primary -> FALSE .)
+    DIVIDE          reduce using rule 63 (primary -> FALSE .)
+    EQ              reduce using rule 63 (primary -> FALSE .)
+    NE              reduce using rule 63 (primary -> FALSE .)
+    LT              reduce using rule 63 (primary -> FALSE .)
+    LE              reduce using rule 63 (primary -> FALSE .)
+    GT              reduce using rule 63 (primary -> FALSE .)
+    GE              reduce using rule 63 (primary -> FALSE .)
+    PLUS            reduce using rule 63 (primary -> FALSE .)
+    MINUS           reduce using rule 63 (primary -> FALSE .)
+    AND             reduce using rule 63 (primary -> FALSE .)
+    OR              reduce using rule 63 (primary -> FALSE .)
+    END             reduce using rule 63 (primary -> FALSE .)
+    IDENTIFIER      reduce using rule 63 (primary -> FALSE .)
+    PRINT           reduce using rule 63 (primary -> FALSE .)
+    READ            reduce using rule 63 (primary -> FALSE .)
+    IF              reduce using rule 63 (primary -> FALSE .)
+    DO              reduce using rule 63 (primary -> FALSE .)
+    GOTO            reduce using rule 63 (primary -> FALSE .)
+    CALL            reduce using rule 63 (primary -> FALSE .)
+    RETURN          reduce using rule 63 (primary -> FALSE .)
+    INTEGER         reduce using rule 63 (primary -> FALSE .)
+    REAL            reduce using rule 63 (primary -> FALSE .)
+    LOGICAL         reduce using rule 63 (primary -> FALSE .)
+    ENDIF           reduce using rule 63 (primary -> FALSE .)
+    ELSE            reduce using rule 63 (primary -> FALSE .)
+    NUMBER          reduce using rule 63 (primary -> FALSE .)
+    RPAREN          reduce using rule 63 (primary -> FALSE .)
+    COMMA           reduce using rule 63 (primary -> FALSE .)
+
+
+state 74
+
+    (65) primary -> LPAREN . expression RPAREN
+    (37) expression -> . expr_or
+    (38) expr_or -> . expr_and
+    (39) expr_or -> . expr_or OR expr_and
+    (40) expr_and -> . expr_not
+    (41) expr_and -> . expr_and AND expr_not
+    (42) expr_not -> . expr_rel
+    (43) expr_not -> . NOT expr_not
+    (44) expr_rel -> . expr_arith
+    (45) expr_rel -> . expr_arith EQ expr_arith
+    (46) expr_rel -> . expr_arith NE expr_arith
+    (47) expr_rel -> . expr_arith LT expr_arith
+    (48) expr_rel -> . expr_arith LE expr_arith
+    (49) expr_rel -> . expr_arith GT expr_arith
+    (50) expr_rel -> . expr_arith GE expr_arith
+    (51) expr_arith -> . term
+    (52) expr_arith -> . expr_arith PLUS term
+    (53) expr_arith -> . expr_arith MINUS term
+    (54) term -> . factor
+    (55) term -> . term TIMES factor
+    (56) term -> . term DIVIDE factor
+    (57) factor -> . primary
+    (58) factor -> . MINUS factor
+    (59) primary -> . NUMBER
+    (60) primary -> . REAL_NUMBER
+    (61) primary -> . STRING
+    (62) primary -> . TRUE
+    (63) primary -> . FALSE
+    (64) primary -> . IDENTIFIER
+    (65) primary -> . LPAREN expression RPAREN
+    (77) primary -> . IDENTIFIER LPAREN arg_list RPAREN
+
+    NOT             shift and go to state 63
+    MINUS           shift and go to state 66
+    NUMBER          shift and go to state 69
+    REAL_NUMBER     shift and go to state 70
+    STRING          shift and go to state 71
+    TRUE            shift and go to state 72
+    FALSE           shift and go to state 73
+    IDENTIFIER      shift and go to state 57
+    LPAREN          shift and go to state 74
+
+    expression                     shift and go to state 102
+    expr_or                        shift and go to state 59
+    expr_and                       shift and go to state 60
+    expr_not                       shift and go to state 61
+    expr_rel                       shift and go to state 62
+    expr_arith                     shift and go to state 64
+    term                           shift and go to state 65
+    factor                         shift and go to state 67
+    primary                        shift and go to state 68
+
+state 75
+
+    (25) var_list -> var_list COMMA . IDENTIFIER
+
+    IDENTIFIER      shift and go to state 103
+
+
+state 76
+
+    (27) print_stmt -> PRINT TIMES print_list .
+    (29) print_list -> print_list . COMMA expression
+
+    END             reduce using rule 27 (print_stmt -> PRINT TIMES print_list .)
+    IDENTIFIER      reduce using rule 27 (print_stmt -> PRINT TIMES print_list .)
+    PRINT           reduce using rule 27 (print_stmt -> PRINT TIMES print_list .)
+    READ            reduce using rule 27 (print_stmt -> PRINT TIMES print_list .)
+    IF              reduce using rule 27 (print_stmt -> PRINT TIMES print_list .)
+    DO              reduce using rule 27 (print_stmt -> PRINT TIMES print_list .)
+    GOTO            reduce using rule 27 (print_stmt -> PRINT TIMES print_list .)
+    CALL            reduce using rule 27 (print_stmt -> PRINT TIMES print_list .)
+    RETURN          reduce using rule 27 (print_stmt -> PRINT TIMES print_list .)
+    INTEGER         reduce using rule 27 (print_stmt -> PRINT TIMES print_list .)
+    REAL            reduce using rule 27 (print_stmt -> PRINT TIMES print_list .)
+    LOGICAL         reduce using rule 27 (print_stmt -> PRINT TIMES print_list .)
+    ENDIF           reduce using rule 27 (print_stmt -> PRINT TIMES print_list .)
+    ELSE            reduce using rule 27 (print_stmt -> PRINT TIMES print_list .)
+    NUMBER          reduce using rule 27 (print_stmt -> PRINT TIMES print_list .)
+    COMMA           shift and go to state 104
+
+
+state 77
+
+    (28) print_list -> COMMA . expression
+    (37) expression -> . expr_or
+    (38) expr_or -> . expr_and
+    (39) expr_or -> . expr_or OR expr_and
+    (40) expr_and -> . expr_not
+    (41) expr_and -> . expr_and AND expr_not
+    (42) expr_not -> . expr_rel
+    (43) expr_not -> . NOT expr_not
+    (44) expr_rel -> . expr_arith
+    (45) expr_rel -> . expr_arith EQ expr_arith
+    (46) expr_rel -> . expr_arith NE expr_arith
+    (47) expr_rel -> . expr_arith LT expr_arith
+    (48) expr_rel -> . expr_arith LE expr_arith
+    (49) expr_rel -> . expr_arith GT expr_arith
+    (50) expr_rel -> . expr_arith GE expr_arith
+    (51) expr_arith -> . term
+    (52) expr_arith -> . expr_arith PLUS term
+    (53) expr_arith -> . expr_arith MINUS term
+    (54) term -> . factor
+    (55) term -> . term TIMES factor
+    (56) term -> . term DIVIDE factor
+    (57) factor -> . primary
+    (58) factor -> . MINUS factor
+    (59) primary -> . NUMBER
+    (60) primary -> . REAL_NUMBER
+    (61) primary -> . STRING
+    (62) primary -> . TRUE
+    (63) primary -> . FALSE
+    (64) primary -> . IDENTIFIER
+    (65) primary -> . LPAREN expression RPAREN
+    (77) primary -> . IDENTIFIER LPAREN arg_list RPAREN
+
+    NOT             shift and go to state 63
+    MINUS           shift and go to state 66
+    NUMBER          shift and go to state 69
+    REAL_NUMBER     shift and go to state 70
+    STRING          shift and go to state 71
+    TRUE            shift and go to state 72
+    FALSE           shift and go to state 73
+    IDENTIFIER      shift and go to state 57
+    LPAREN          shift and go to state 74
+
+    expression                     shift and go to state 105
+    expr_or                        shift and go to state 59
+    expr_and                       shift and go to state 60
+    expr_not                       shift and go to state 61
+    expr_rel                       shift and go to state 62
+    expr_arith                     shift and go to state 64
+    term                           shift and go to state 65
+    factor                         shift and go to state 67
+    primary                        shift and go to state 68
+
+state 78
+
+    (30) read_stmt -> READ TIMES read_list .
+    (32) read_list -> read_list . COMMA IDENTIFIER
+
+    END             reduce using rule 30 (read_stmt -> READ TIMES read_list .)
+    IDENTIFIER      reduce using rule 30 (read_stmt -> READ TIMES read_list .)
+    PRINT           reduce using rule 30 (read_stmt -> READ TIMES read_list .)
+    READ            reduce using rule 30 (read_stmt -> READ TIMES read_list .)
+    IF              reduce using rule 30 (read_stmt -> READ TIMES read_list .)
+    DO              reduce using rule 30 (read_stmt -> READ TIMES read_list .)
+    GOTO            reduce using rule 30 (read_stmt -> READ TIMES read_list .)
+    CALL            reduce using rule 30 (read_stmt -> READ TIMES read_list .)
+    RETURN          reduce using rule 30 (read_stmt -> READ TIMES read_list .)
+    INTEGER         reduce using rule 30 (read_stmt -> READ TIMES read_list .)
+    REAL            reduce using rule 30 (read_stmt -> READ TIMES read_list .)
+    LOGICAL         reduce using rule 30 (read_stmt -> READ TIMES read_list .)
+    ENDIF           reduce using rule 30 (read_stmt -> READ TIMES read_list .)
+    ELSE            reduce using rule 30 (read_stmt -> READ TIMES read_list .)
+    NUMBER          reduce using rule 30 (read_stmt -> READ TIMES read_list .)
+    COMMA           shift and go to state 106
+
+
+state 79
+
+    (31) read_list -> COMMA . IDENTIFIER
+
+    IDENTIFIER      shift and go to state 107
+
+
+state 80
+
+    (33) if_stmt -> IF LPAREN expression . RPAREN THEN statements ENDIF
+    (34) if_stmt -> IF LPAREN expression . RPAREN THEN statements ELSE statements ENDIF
+
+    RPAREN          shift and go to state 108
+
+
+state 81
+
+    (35) do_loop -> DO NUMBER IDENTIFIER . ASSIGN expression COMMA expression statements NUMBER CONTINUE
+
+    ASSIGN          shift and go to state 109
+
+
+state 82
+
+    (72) call_stmt -> CALL IDENTIFIER LPAREN . arg_list RPAREN
+    (75) arg_list -> . expression
+    (76) arg_list -> . arg_list COMMA expression
+    (37) expression -> . expr_or
+    (38) expr_or -> . expr_and
+    (39) expr_or -> . expr_or OR expr_and
+    (40) expr_and -> . expr_not
+    (41) expr_and -> . expr_and AND expr_not
+    (42) expr_not -> . expr_rel
+    (43) expr_not -> . NOT expr_not
+    (44) expr_rel -> . expr_arith
+    (45) expr_rel -> . expr_arith EQ expr_arith
+    (46) expr_rel -> . expr_arith NE expr_arith
+    (47) expr_rel -> . expr_arith LT expr_arith
+    (48) expr_rel -> . expr_arith LE expr_arith
+    (49) expr_rel -> . expr_arith GT expr_arith
+    (50) expr_rel -> . expr_arith GE expr_arith
+    (51) expr_arith -> . term
+    (52) expr_arith -> . expr_arith PLUS term
+    (53) expr_arith -> . expr_arith MINUS term
+    (54) term -> . factor
+    (55) term -> . term TIMES factor
+    (56) term -> . term DIVIDE factor
+    (57) factor -> . primary
+    (58) factor -> . MINUS factor
+    (59) primary -> . NUMBER
+    (60) primary -> . REAL_NUMBER
+    (61) primary -> . STRING
+    (62) primary -> . TRUE
+    (63) primary -> . FALSE
+    (64) primary -> . IDENTIFIER
+    (65) primary -> . LPAREN expression RPAREN
+    (77) primary -> . IDENTIFIER LPAREN arg_list RPAREN
+
+    NOT             shift and go to state 63
+    MINUS           shift and go to state 66
+    NUMBER          shift and go to state 69
+    REAL_NUMBER     shift and go to state 70
+    STRING          shift and go to state 71
+    TRUE            shift and go to state 72
+    FALSE           shift and go to state 73
+    IDENTIFIER      shift and go to state 57
+    LPAREN          shift and go to state 74
+
+    arg_list                       shift and go to state 110
+    expression                     shift and go to state 111
+    expr_or                        shift and go to state 59
+    expr_and                       shift and go to state 60
+    expr_not                       shift and go to state 61
+    expr_rel                       shift and go to state 62
+    expr_arith                     shift and go to state 64
+    term                           shift and go to state 65
+    factor                         shift and go to state 67
+    primary                        shift and go to state 68
+
+state 83
+
+    (66) subroutine -> SUBROUTINE IDENTIFIER LPAREN param_list RPAREN . statements END
+    (9) statements -> . statement
+    (10) statements -> . statements statement
+    (11) statement -> . declaration
+    (12) statement -> . assignment
+    (13) statement -> . print_stmt
+    (14) statement -> . read_stmt
+    (15) statement -> . if_stmt
+    (16) statement -> . do_loop
+    (17) statement -> . goto_stmt
+    (18) statement -> . call_stmt
+    (19) statement -> . return_stmt
+    (20) declaration -> . type_spec var_list
+    (26) assignment -> . IDENTIFIER ASSIGN expression
+    (27) print_stmt -> . PRINT TIMES print_list
+    (30) read_stmt -> . READ TIMES read_list
+    (33) if_stmt -> . IF LPAREN expression RPAREN THEN statements ENDIF
+    (34) if_stmt -> . IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF
+    (35) do_loop -> . DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE
+    (36) goto_stmt -> . GOTO NUMBER
+    (72) call_stmt -> . CALL IDENTIFIER LPAREN arg_list RPAREN
+    (73) call_stmt -> . CALL IDENTIFIER
+    (74) return_stmt -> . RETURN
+    (21) type_spec -> . INTEGER
+    (22) type_spec -> . REAL
+    (23) type_spec -> . LOGICAL
+
+    IDENTIFIER      shift and go to state 17
+    PRINT           shift and go to state 31
+    READ            shift and go to state 32
+    IF              shift and go to state 33
+    DO              shift and go to state 34
+    GOTO            shift and go to state 35
+    CALL            shift and go to state 36
+    RETURN          shift and go to state 37
+    INTEGER         shift and go to state 10
+    REAL            shift and go to state 11
+    LOGICAL         shift and go to state 12
+
+    statements                     shift and go to state 112
+    statement                      shift and go to state 20
+    declaration                    shift and go to state 21
+    assignment                     shift and go to state 22
+    print_stmt                     shift and go to state 23
+    read_stmt                      shift and go to state 24
+    if_stmt                        shift and go to state 25
+    do_loop                        shift and go to state 26
+    goto_stmt                      shift and go to state 27
+    call_stmt                      shift and go to state 28
+    return_stmt                    shift and go to state 29
+    type_spec                      shift and go to state 30
+
+state 84
+
+    (71) param_list -> param_list COMMA . IDENTIFIER
+
+    IDENTIFIER      shift and go to state 113
+
+
+state 85
+
+    (68) function -> type_spec FUNCTION IDENTIFIER LPAREN param_list . RPAREN statements END
+    (71) param_list -> param_list . COMMA IDENTIFIER
+
+    RPAREN          shift and go to state 114
+    COMMA           shift and go to state 84
+
+
+state 86
+
+    (69) function -> type_spec FUNCTION IDENTIFIER statements END .
+
+    PROGRAM         reduce using rule 69 (function -> type_spec FUNCTION IDENTIFIER statements END .)
+    SUBROUTINE      reduce using rule 69 (function -> type_spec FUNCTION IDENTIFIER statements END .)
+    INTEGER         reduce using rule 69 (function -> type_spec FUNCTION IDENTIFIER statements END .)
+    REAL            reduce using rule 69 (function -> type_spec FUNCTION IDENTIFIER statements END .)
+    LOGICAL         reduce using rule 69 (function -> type_spec FUNCTION IDENTIFIER statements END .)
+    $end            reduce using rule 69 (function -> type_spec FUNCTION IDENTIFIER statements END .)
+
+
+state 87
+
+    (77) primary -> IDENTIFIER LPAREN . arg_list RPAREN
+    (75) arg_list -> . expression
+    (76) arg_list -> . arg_list COMMA expression
+    (37) expression -> . expr_or
+    (38) expr_or -> . expr_and
+    (39) expr_or -> . expr_or OR expr_and
+    (40) expr_and -> . expr_not
+    (41) expr_and -> . expr_and AND expr_not
+    (42) expr_not -> . expr_rel
+    (43) expr_not -> . NOT expr_not
+    (44) expr_rel -> . expr_arith
+    (45) expr_rel -> . expr_arith EQ expr_arith
+    (46) expr_rel -> . expr_arith NE expr_arith
+    (47) expr_rel -> . expr_arith LT expr_arith
+    (48) expr_rel -> . expr_arith LE expr_arith
+    (49) expr_rel -> . expr_arith GT expr_arith
+    (50) expr_rel -> . expr_arith GE expr_arith
+    (51) expr_arith -> . term
+    (52) expr_arith -> . expr_arith PLUS term
+    (53) expr_arith -> . expr_arith MINUS term
+    (54) term -> . factor
+    (55) term -> . term TIMES factor
+    (56) term -> . term DIVIDE factor
+    (57) factor -> . primary
+    (58) factor -> . MINUS factor
+    (59) primary -> . NUMBER
+    (60) primary -> . REAL_NUMBER
+    (61) primary -> . STRING
+    (62) primary -> . TRUE
+    (63) primary -> . FALSE
+    (64) primary -> . IDENTIFIER
+    (65) primary -> . LPAREN expression RPAREN
+    (77) primary -> . IDENTIFIER LPAREN arg_list RPAREN
+
+    NOT             shift and go to state 63
+    MINUS           shift and go to state 66
+    NUMBER          shift and go to state 69
+    REAL_NUMBER     shift and go to state 70
+    STRING          shift and go to state 71
+    TRUE            shift and go to state 72
+    FALSE           shift and go to state 73
+    IDENTIFIER      shift and go to state 57
+    LPAREN          shift and go to state 74
+
+    arg_list                       shift and go to state 115
+    expression                     shift and go to state 111
+    expr_or                        shift and go to state 59
+    expr_and                       shift and go to state 60
+    expr_not                       shift and go to state 61
+    expr_rel                       shift and go to state 62
+    expr_arith                     shift and go to state 64
+    term                           shift and go to state 65
+    factor                         shift and go to state 67
+    primary                        shift and go to state 68
+
+state 88
+
+    (39) expr_or -> expr_or OR . expr_and
+    (40) expr_and -> . expr_not
+    (41) expr_and -> . expr_and AND expr_not
+    (42) expr_not -> . expr_rel
+    (43) expr_not -> . NOT expr_not
+    (44) expr_rel -> . expr_arith
+    (45) expr_rel -> . expr_arith EQ expr_arith
+    (46) expr_rel -> . expr_arith NE expr_arith
+    (47) expr_rel -> . expr_arith LT expr_arith
+    (48) expr_rel -> . expr_arith LE expr_arith
+    (49) expr_rel -> . expr_arith GT expr_arith
+    (50) expr_rel -> . expr_arith GE expr_arith
+    (51) expr_arith -> . term
+    (52) expr_arith -> . expr_arith PLUS term
+    (53) expr_arith -> . expr_arith MINUS term
+    (54) term -> . factor
+    (55) term -> . term TIMES factor
+    (56) term -> . term DIVIDE factor
+    (57) factor -> . primary
+    (58) factor -> . MINUS factor
+    (59) primary -> . NUMBER
+    (60) primary -> . REAL_NUMBER
+    (61) primary -> . STRING
+    (62) primary -> . TRUE
+    (63) primary -> . FALSE
+    (64) primary -> . IDENTIFIER
+    (65) primary -> . LPAREN expression RPAREN
+    (77) primary -> . IDENTIFIER LPAREN arg_list RPAREN
+
+    NOT             shift and go to state 63
+    MINUS           shift and go to state 66
+    NUMBER          shift and go to state 69
+    REAL_NUMBER     shift and go to state 70
+    STRING          shift and go to state 71
+    TRUE            shift and go to state 72
+    FALSE           shift and go to state 73
+    IDENTIFIER      shift and go to state 57
+    LPAREN          shift and go to state 74
+
+    expr_and                       shift and go to state 116
+    expr_not                       shift and go to state 61
+    expr_rel                       shift and go to state 62
+    expr_arith                     shift and go to state 64
+    term                           shift and go to state 65
+    factor                         shift and go to state 67
+    primary                        shift and go to state 68
+
+state 89
+
+    (41) expr_and -> expr_and AND . expr_not
+    (42) expr_not -> . expr_rel
+    (43) expr_not -> . NOT expr_not
+    (44) expr_rel -> . expr_arith
+    (45) expr_rel -> . expr_arith EQ expr_arith
+    (46) expr_rel -> . expr_arith NE expr_arith
+    (47) expr_rel -> . expr_arith LT expr_arith
+    (48) expr_rel -> . expr_arith LE expr_arith
+    (49) expr_rel -> . expr_arith GT expr_arith
+    (50) expr_rel -> . expr_arith GE expr_arith
+    (51) expr_arith -> . term
+    (52) expr_arith -> . expr_arith PLUS term
+    (53) expr_arith -> . expr_arith MINUS term
+    (54) term -> . factor
+    (55) term -> . term TIMES factor
+    (56) term -> . term DIVIDE factor
+    (57) factor -> . primary
+    (58) factor -> . MINUS factor
+    (59) primary -> . NUMBER
+    (60) primary -> . REAL_NUMBER
+    (61) primary -> . STRING
+    (62) primary -> . TRUE
+    (63) primary -> . FALSE
+    (64) primary -> . IDENTIFIER
+    (65) primary -> . LPAREN expression RPAREN
+    (77) primary -> . IDENTIFIER LPAREN arg_list RPAREN
+
+    NOT             shift and go to state 63
+    MINUS           shift and go to state 66
+    NUMBER          shift and go to state 69
+    REAL_NUMBER     shift and go to state 70
+    STRING          shift and go to state 71
+    TRUE            shift and go to state 72
+    FALSE           shift and go to state 73
+    IDENTIFIER      shift and go to state 57
+    LPAREN          shift and go to state 74
+
+    expr_not                       shift and go to state 117
+    expr_rel                       shift and go to state 62
+    expr_arith                     shift and go to state 64
+    term                           shift and go to state 65
+    factor                         shift and go to state 67
+    primary                        shift and go to state 68
+
+state 90
+
+    (43) expr_not -> NOT expr_not .
+
+    AND             reduce using rule 43 (expr_not -> NOT expr_not .)
+    OR              reduce using rule 43 (expr_not -> NOT expr_not .)
+    END             reduce using rule 43 (expr_not -> NOT expr_not .)
+    IDENTIFIER      reduce using rule 43 (expr_not -> NOT expr_not .)
+    PRINT           reduce using rule 43 (expr_not -> NOT expr_not .)
+    READ            reduce using rule 43 (expr_not -> NOT expr_not .)
+    IF              reduce using rule 43 (expr_not -> NOT expr_not .)
+    DO              reduce using rule 43 (expr_not -> NOT expr_not .)
+    GOTO            reduce using rule 43 (expr_not -> NOT expr_not .)
+    CALL            reduce using rule 43 (expr_not -> NOT expr_not .)
+    RETURN          reduce using rule 43 (expr_not -> NOT expr_not .)
+    INTEGER         reduce using rule 43 (expr_not -> NOT expr_not .)
+    REAL            reduce using rule 43 (expr_not -> NOT expr_not .)
+    LOGICAL         reduce using rule 43 (expr_not -> NOT expr_not .)
+    ENDIF           reduce using rule 43 (expr_not -> NOT expr_not .)
+    ELSE            reduce using rule 43 (expr_not -> NOT expr_not .)
+    NUMBER          reduce using rule 43 (expr_not -> NOT expr_not .)
+    RPAREN          reduce using rule 43 (expr_not -> NOT expr_not .)
+    COMMA           reduce using rule 43 (expr_not -> NOT expr_not .)
+
+
+state 91
+
+    (45) expr_rel -> expr_arith EQ . expr_arith
+    (51) expr_arith -> . term
+    (52) expr_arith -> . expr_arith PLUS term
+    (53) expr_arith -> . expr_arith MINUS term
+    (54) term -> . factor
+    (55) term -> . term TIMES factor
+    (56) term -> . term DIVIDE factor
+    (57) factor -> . primary
+    (58) factor -> . MINUS factor
+    (59) primary -> . NUMBER
+    (60) primary -> . REAL_NUMBER
+    (61) primary -> . STRING
+    (62) primary -> . TRUE
+    (63) primary -> . FALSE
+    (64) primary -> . IDENTIFIER
+    (65) primary -> . LPAREN expression RPAREN
+    (77) primary -> . IDENTIFIER LPAREN arg_list RPAREN
+
+    MINUS           shift and go to state 66
+    NUMBER          shift and go to state 69
+    REAL_NUMBER     shift and go to state 70
+    STRING          shift and go to state 71
+    TRUE            shift and go to state 72
+    FALSE           shift and go to state 73
+    IDENTIFIER      shift and go to state 57
+    LPAREN          shift and go to state 74
+
+    expr_arith                     shift and go to state 118
+    term                           shift and go to state 65
+    factor                         shift and go to state 67
+    primary                        shift and go to state 68
+
+state 92
+
+    (46) expr_rel -> expr_arith NE . expr_arith
+    (51) expr_arith -> . term
+    (52) expr_arith -> . expr_arith PLUS term
+    (53) expr_arith -> . expr_arith MINUS term
+    (54) term -> . factor
+    (55) term -> . term TIMES factor
+    (56) term -> . term DIVIDE factor
+    (57) factor -> . primary
+    (58) factor -> . MINUS factor
+    (59) primary -> . NUMBER
+    (60) primary -> . REAL_NUMBER
+    (61) primary -> . STRING
+    (62) primary -> . TRUE
+    (63) primary -> . FALSE
+    (64) primary -> . IDENTIFIER
+    (65) primary -> . LPAREN expression RPAREN
+    (77) primary -> . IDENTIFIER LPAREN arg_list RPAREN
+
+    MINUS           shift and go to state 66
+    NUMBER          shift and go to state 69
+    REAL_NUMBER     shift and go to state 70
+    STRING          shift and go to state 71
+    TRUE            shift and go to state 72
+    FALSE           shift and go to state 73
+    IDENTIFIER      shift and go to state 57
+    LPAREN          shift and go to state 74
+
+    expr_arith                     shift and go to state 119
+    term                           shift and go to state 65
+    factor                         shift and go to state 67
+    primary                        shift and go to state 68
+
+state 93
+
+    (47) expr_rel -> expr_arith LT . expr_arith
+    (51) expr_arith -> . term
+    (52) expr_arith -> . expr_arith PLUS term
+    (53) expr_arith -> . expr_arith MINUS term
+    (54) term -> . factor
+    (55) term -> . term TIMES factor
+    (56) term -> . term DIVIDE factor
+    (57) factor -> . primary
+    (58) factor -> . MINUS factor
+    (59) primary -> . NUMBER
+    (60) primary -> . REAL_NUMBER
+    (61) primary -> . STRING
+    (62) primary -> . TRUE
+    (63) primary -> . FALSE
+    (64) primary -> . IDENTIFIER
+    (65) primary -> . LPAREN expression RPAREN
+    (77) primary -> . IDENTIFIER LPAREN arg_list RPAREN
+
+    MINUS           shift and go to state 66
+    NUMBER          shift and go to state 69
+    REAL_NUMBER     shift and go to state 70
+    STRING          shift and go to state 71
+    TRUE            shift and go to state 72
+    FALSE           shift and go to state 73
+    IDENTIFIER      shift and go to state 57
+    LPAREN          shift and go to state 74
+
+    expr_arith                     shift and go to state 120
+    term                           shift and go to state 65
+    factor                         shift and go to state 67
+    primary                        shift and go to state 68
+
+state 94
+
+    (48) expr_rel -> expr_arith LE . expr_arith
+    (51) expr_arith -> . term
+    (52) expr_arith -> . expr_arith PLUS term
+    (53) expr_arith -> . expr_arith MINUS term
+    (54) term -> . factor
+    (55) term -> . term TIMES factor
+    (56) term -> . term DIVIDE factor
+    (57) factor -> . primary
+    (58) factor -> . MINUS factor
+    (59) primary -> . NUMBER
+    (60) primary -> . REAL_NUMBER
+    (61) primary -> . STRING
+    (62) primary -> . TRUE
+    (63) primary -> . FALSE
+    (64) primary -> . IDENTIFIER
+    (65) primary -> . LPAREN expression RPAREN
+    (77) primary -> . IDENTIFIER LPAREN arg_list RPAREN
+
+    MINUS           shift and go to state 66
+    NUMBER          shift and go to state 69
+    REAL_NUMBER     shift and go to state 70
+    STRING          shift and go to state 71
+    TRUE            shift and go to state 72
+    FALSE           shift and go to state 73
+    IDENTIFIER      shift and go to state 57
+    LPAREN          shift and go to state 74
+
+    expr_arith                     shift and go to state 121
+    term                           shift and go to state 65
+    factor                         shift and go to state 67
+    primary                        shift and go to state 68
+
+state 95
+
+    (49) expr_rel -> expr_arith GT . expr_arith
+    (51) expr_arith -> . term
+    (52) expr_arith -> . expr_arith PLUS term
+    (53) expr_arith -> . expr_arith MINUS term
+    (54) term -> . factor
+    (55) term -> . term TIMES factor
+    (56) term -> . term DIVIDE factor
+    (57) factor -> . primary
+    (58) factor -> . MINUS factor
+    (59) primary -> . NUMBER
+    (60) primary -> . REAL_NUMBER
+    (61) primary -> . STRING
+    (62) primary -> . TRUE
+    (63) primary -> . FALSE
+    (64) primary -> . IDENTIFIER
+    (65) primary -> . LPAREN expression RPAREN
+    (77) primary -> . IDENTIFIER LPAREN arg_list RPAREN
+
+    MINUS           shift and go to state 66
+    NUMBER          shift and go to state 69
+    REAL_NUMBER     shift and go to state 70
+    STRING          shift and go to state 71
+    TRUE            shift and go to state 72
+    FALSE           shift and go to state 73
+    IDENTIFIER      shift and go to state 57
+    LPAREN          shift and go to state 74
+
+    expr_arith                     shift and go to state 122
+    term                           shift and go to state 65
+    factor                         shift and go to state 67
+    primary                        shift and go to state 68
+
+state 96
+
+    (50) expr_rel -> expr_arith GE . expr_arith
+    (51) expr_arith -> . term
+    (52) expr_arith -> . expr_arith PLUS term
+    (53) expr_arith -> . expr_arith MINUS term
+    (54) term -> . factor
+    (55) term -> . term TIMES factor
+    (56) term -> . term DIVIDE factor
+    (57) factor -> . primary
+    (58) factor -> . MINUS factor
+    (59) primary -> . NUMBER
+    (60) primary -> . REAL_NUMBER
+    (61) primary -> . STRING
+    (62) primary -> . TRUE
+    (63) primary -> . FALSE
+    (64) primary -> . IDENTIFIER
+    (65) primary -> . LPAREN expression RPAREN
+    (77) primary -> . IDENTIFIER LPAREN arg_list RPAREN
+
+    MINUS           shift and go to state 66
+    NUMBER          shift and go to state 69
+    REAL_NUMBER     shift and go to state 70
+    STRING          shift and go to state 71
+    TRUE            shift and go to state 72
+    FALSE           shift and go to state 73
+    IDENTIFIER      shift and go to state 57
+    LPAREN          shift and go to state 74
+
+    expr_arith                     shift and go to state 123
+    term                           shift and go to state 65
+    factor                         shift and go to state 67
+    primary                        shift and go to state 68
+
+state 97
+
+    (52) expr_arith -> expr_arith PLUS . term
+    (54) term -> . factor
+    (55) term -> . term TIMES factor
+    (56) term -> . term DIVIDE factor
+    (57) factor -> . primary
+    (58) factor -> . MINUS factor
+    (59) primary -> . NUMBER
+    (60) primary -> . REAL_NUMBER
+    (61) primary -> . STRING
+    (62) primary -> . TRUE
+    (63) primary -> . FALSE
+    (64) primary -> . IDENTIFIER
+    (65) primary -> . LPAREN expression RPAREN
+    (77) primary -> . IDENTIFIER LPAREN arg_list RPAREN
+
+    MINUS           shift and go to state 66
+    NUMBER          shift and go to state 69
+    REAL_NUMBER     shift and go to state 70
+    STRING          shift and go to state 71
+    TRUE            shift and go to state 72
+    FALSE           shift and go to state 73
+    IDENTIFIER      shift and go to state 57
+    LPAREN          shift and go to state 74
+
+    term                           shift and go to state 124
+    factor                         shift and go to state 67
+    primary                        shift and go to state 68
+
+state 98
+
+    (53) expr_arith -> expr_arith MINUS . term
+    (54) term -> . factor
+    (55) term -> . term TIMES factor
+    (56) term -> . term DIVIDE factor
+    (57) factor -> . primary
+    (58) factor -> . MINUS factor
+    (59) primary -> . NUMBER
+    (60) primary -> . REAL_NUMBER
+    (61) primary -> . STRING
+    (62) primary -> . TRUE
+    (63) primary -> . FALSE
+    (64) primary -> . IDENTIFIER
+    (65) primary -> . LPAREN expression RPAREN
+    (77) primary -> . IDENTIFIER LPAREN arg_list RPAREN
+
+    MINUS           shift and go to state 66
+    NUMBER          shift and go to state 69
+    REAL_NUMBER     shift and go to state 70
+    STRING          shift and go to state 71
+    TRUE            shift and go to state 72
+    FALSE           shift and go to state 73
+    IDENTIFIER      shift and go to state 57
+    LPAREN          shift and go to state 74
+
+    term                           shift and go to state 125
+    factor                         shift and go to state 67
+    primary                        shift and go to state 68
+
+state 99
+
+    (55) term -> term TIMES . factor
+    (57) factor -> . primary
+    (58) factor -> . MINUS factor
+    (59) primary -> . NUMBER
+    (60) primary -> . REAL_NUMBER
+    (61) primary -> . STRING
+    (62) primary -> . TRUE
+    (63) primary -> . FALSE
+    (64) primary -> . IDENTIFIER
+    (65) primary -> . LPAREN expression RPAREN
+    (77) primary -> . IDENTIFIER LPAREN arg_list RPAREN
+
+    MINUS           shift and go to state 66
+    NUMBER          shift and go to state 69
+    REAL_NUMBER     shift and go to state 70
+    STRING          shift and go to state 71
+    TRUE            shift and go to state 72
+    FALSE           shift and go to state 73
+    IDENTIFIER      shift and go to state 57
+    LPAREN          shift and go to state 74
+
+    factor                         shift and go to state 126
+    primary                        shift and go to state 68
+
+state 100
+
+    (56) term -> term DIVIDE . factor
+    (57) factor -> . primary
+    (58) factor -> . MINUS factor
+    (59) primary -> . NUMBER
+    (60) primary -> . REAL_NUMBER
+    (61) primary -> . STRING
+    (62) primary -> . TRUE
+    (63) primary -> . FALSE
+    (64) primary -> . IDENTIFIER
+    (65) primary -> . LPAREN expression RPAREN
+    (77) primary -> . IDENTIFIER LPAREN arg_list RPAREN
+
+    MINUS           shift and go to state 66
+    NUMBER          shift and go to state 69
+    REAL_NUMBER     shift and go to state 70
+    STRING          shift and go to state 71
+    TRUE            shift and go to state 72
+    FALSE           shift and go to state 73
+    IDENTIFIER      shift and go to state 57
+    LPAREN          shift and go to state 74
+
+    factor                         shift and go to state 127
+    primary                        shift and go to state 68
+
+state 101
+
+    (58) factor -> MINUS factor .
+
+    TIMES           reduce using rule 58 (factor -> MINUS factor .)
+    DIVIDE          reduce using rule 58 (factor -> MINUS factor .)
+    EQ              reduce using rule 58 (factor -> MINUS factor .)
+    NE              reduce using rule 58 (factor -> MINUS factor .)
+    LT              reduce using rule 58 (factor -> MINUS factor .)
+    LE              reduce using rule 58 (factor -> MINUS factor .)
+    GT              reduce using rule 58 (factor -> MINUS factor .)
+    GE              reduce using rule 58 (factor -> MINUS factor .)
+    PLUS            reduce using rule 58 (factor -> MINUS factor .)
+    MINUS           reduce using rule 58 (factor -> MINUS factor .)
+    AND             reduce using rule 58 (factor -> MINUS factor .)
+    OR              reduce using rule 58 (factor -> MINUS factor .)
+    END             reduce using rule 58 (factor -> MINUS factor .)
+    IDENTIFIER      reduce using rule 58 (factor -> MINUS factor .)
+    PRINT           reduce using rule 58 (factor -> MINUS factor .)
+    READ            reduce using rule 58 (factor -> MINUS factor .)
+    IF              reduce using rule 58 (factor -> MINUS factor .)
+    DO              reduce using rule 58 (factor -> MINUS factor .)
+    GOTO            reduce using rule 58 (factor -> MINUS factor .)
+    CALL            reduce using rule 58 (factor -> MINUS factor .)
+    RETURN          reduce using rule 58 (factor -> MINUS factor .)
+    INTEGER         reduce using rule 58 (factor -> MINUS factor .)
+    REAL            reduce using rule 58 (factor -> MINUS factor .)
+    LOGICAL         reduce using rule 58 (factor -> MINUS factor .)
+    ENDIF           reduce using rule 58 (factor -> MINUS factor .)
+    ELSE            reduce using rule 58 (factor -> MINUS factor .)
+    NUMBER          reduce using rule 58 (factor -> MINUS factor .)
+    RPAREN          reduce using rule 58 (factor -> MINUS factor .)
+    COMMA           reduce using rule 58 (factor -> MINUS factor .)
+
+
+state 102
+
+    (65) primary -> LPAREN expression . RPAREN
+
+    RPAREN          shift and go to state 128
+
+
+state 103
+
+    (25) var_list -> var_list COMMA IDENTIFIER .
+
+    COMMA           reduce using rule 25 (var_list -> var_list COMMA IDENTIFIER .)
+    END             reduce using rule 25 (var_list -> var_list COMMA IDENTIFIER .)
+    IDENTIFIER      reduce using rule 25 (var_list -> var_list COMMA IDENTIFIER .)
+    PRINT           reduce using rule 25 (var_list -> var_list COMMA IDENTIFIER .)
+    READ            reduce using rule 25 (var_list -> var_list COMMA IDENTIFIER .)
+    IF              reduce using rule 25 (var_list -> var_list COMMA IDENTIFIER .)
+    DO              reduce using rule 25 (var_list -> var_list COMMA IDENTIFIER .)
+    GOTO            reduce using rule 25 (var_list -> var_list COMMA IDENTIFIER .)
+    CALL            reduce using rule 25 (var_list -> var_list COMMA IDENTIFIER .)
+    RETURN          reduce using rule 25 (var_list -> var_list COMMA IDENTIFIER .)
+    INTEGER         reduce using rule 25 (var_list -> var_list COMMA IDENTIFIER .)
+    REAL            reduce using rule 25 (var_list -> var_list COMMA IDENTIFIER .)
+    LOGICAL         reduce using rule 25 (var_list -> var_list COMMA IDENTIFIER .)
+    ENDIF           reduce using rule 25 (var_list -> var_list COMMA IDENTIFIER .)
+    ELSE            reduce using rule 25 (var_list -> var_list COMMA IDENTIFIER .)
+    NUMBER          reduce using rule 25 (var_list -> var_list COMMA IDENTIFIER .)
+
+
+state 104
+
+    (29) print_list -> print_list COMMA . expression
+    (37) expression -> . expr_or
+    (38) expr_or -> . expr_and
+    (39) expr_or -> . expr_or OR expr_and
+    (40) expr_and -> . expr_not
+    (41) expr_and -> . expr_and AND expr_not
+    (42) expr_not -> . expr_rel
+    (43) expr_not -> . NOT expr_not
+    (44) expr_rel -> . expr_arith
+    (45) expr_rel -> . expr_arith EQ expr_arith
+    (46) expr_rel -> . expr_arith NE expr_arith
+    (47) expr_rel -> . expr_arith LT expr_arith
+    (48) expr_rel -> . expr_arith LE expr_arith
+    (49) expr_rel -> . expr_arith GT expr_arith
+    (50) expr_rel -> . expr_arith GE expr_arith
+    (51) expr_arith -> . term
+    (52) expr_arith -> . expr_arith PLUS term
+    (53) expr_arith -> . expr_arith MINUS term
+    (54) term -> . factor
+    (55) term -> . term TIMES factor
+    (56) term -> . term DIVIDE factor
+    (57) factor -> . primary
+    (58) factor -> . MINUS factor
+    (59) primary -> . NUMBER
+    (60) primary -> . REAL_NUMBER
+    (61) primary -> . STRING
+    (62) primary -> . TRUE
+    (63) primary -> . FALSE
+    (64) primary -> . IDENTIFIER
+    (65) primary -> . LPAREN expression RPAREN
+    (77) primary -> . IDENTIFIER LPAREN arg_list RPAREN
+
+    NOT             shift and go to state 63
+    MINUS           shift and go to state 66
+    NUMBER          shift and go to state 69
+    REAL_NUMBER     shift and go to state 70
+    STRING          shift and go to state 71
+    TRUE            shift and go to state 72
+    FALSE           shift and go to state 73
+    IDENTIFIER      shift and go to state 57
+    LPAREN          shift and go to state 74
+
+    expression                     shift and go to state 129
+    expr_or                        shift and go to state 59
+    expr_and                       shift and go to state 60
+    expr_not                       shift and go to state 61
+    expr_rel                       shift and go to state 62
+    expr_arith                     shift and go to state 64
+    term                           shift and go to state 65
+    factor                         shift and go to state 67
+    primary                        shift and go to state 68
+
+state 105
+
+    (28) print_list -> COMMA expression .
+
+    COMMA           reduce using rule 28 (print_list -> COMMA expression .)
+    END             reduce using rule 28 (print_list -> COMMA expression .)
+    IDENTIFIER      reduce using rule 28 (print_list -> COMMA expression .)
+    PRINT           reduce using rule 28 (print_list -> COMMA expression .)
+    READ            reduce using rule 28 (print_list -> COMMA expression .)
+    IF              reduce using rule 28 (print_list -> COMMA expression .)
+    DO              reduce using rule 28 (print_list -> COMMA expression .)
+    GOTO            reduce using rule 28 (print_list -> COMMA expression .)
+    CALL            reduce using rule 28 (print_list -> COMMA expression .)
+    RETURN          reduce using rule 28 (print_list -> COMMA expression .)
+    INTEGER         reduce using rule 28 (print_list -> COMMA expression .)
+    REAL            reduce using rule 28 (print_list -> COMMA expression .)
+    LOGICAL         reduce using rule 28 (print_list -> COMMA expression .)
+    ENDIF           reduce using rule 28 (print_list -> COMMA expression .)
+    ELSE            reduce using rule 28 (print_list -> COMMA expression .)
+    NUMBER          reduce using rule 28 (print_list -> COMMA expression .)
+
+
+state 106
+
+    (32) read_list -> read_list COMMA . IDENTIFIER
+
+    IDENTIFIER      shift and go to state 130
+
+
+state 107
+
+    (31) read_list -> COMMA IDENTIFIER .
+
+    COMMA           reduce using rule 31 (read_list -> COMMA IDENTIFIER .)
+    END             reduce using rule 31 (read_list -> COMMA IDENTIFIER .)
+    IDENTIFIER      reduce using rule 31 (read_list -> COMMA IDENTIFIER .)
+    PRINT           reduce using rule 31 (read_list -> COMMA IDENTIFIER .)
+    READ            reduce using rule 31 (read_list -> COMMA IDENTIFIER .)
+    IF              reduce using rule 31 (read_list -> COMMA IDENTIFIER .)
+    DO              reduce using rule 31 (read_list -> COMMA IDENTIFIER .)
+    GOTO            reduce using rule 31 (read_list -> COMMA IDENTIFIER .)
+    CALL            reduce using rule 31 (read_list -> COMMA IDENTIFIER .)
+    RETURN          reduce using rule 31 (read_list -> COMMA IDENTIFIER .)
+    INTEGER         reduce using rule 31 (read_list -> COMMA IDENTIFIER .)
+    REAL            reduce using rule 31 (read_list -> COMMA IDENTIFIER .)
+    LOGICAL         reduce using rule 31 (read_list -> COMMA IDENTIFIER .)
+    ENDIF           reduce using rule 31 (read_list -> COMMA IDENTIFIER .)
+    ELSE            reduce using rule 31 (read_list -> COMMA IDENTIFIER .)
+    NUMBER          reduce using rule 31 (read_list -> COMMA IDENTIFIER .)
+
+
+state 108
+
+    (33) if_stmt -> IF LPAREN expression RPAREN . THEN statements ENDIF
+    (34) if_stmt -> IF LPAREN expression RPAREN . THEN statements ELSE statements ENDIF
+
+    THEN            shift and go to state 131
+
+
+state 109
+
+    (35) do_loop -> DO NUMBER IDENTIFIER ASSIGN . expression COMMA expression statements NUMBER CONTINUE
+    (37) expression -> . expr_or
+    (38) expr_or -> . expr_and
+    (39) expr_or -> . expr_or OR expr_and
+    (40) expr_and -> . expr_not
+    (41) expr_and -> . expr_and AND expr_not
+    (42) expr_not -> . expr_rel
+    (43) expr_not -> . NOT expr_not
+    (44) expr_rel -> . expr_arith
+    (45) expr_rel -> . expr_arith EQ expr_arith
+    (46) expr_rel -> . expr_arith NE expr_arith
+    (47) expr_rel -> . expr_arith LT expr_arith
+    (48) expr_rel -> . expr_arith LE expr_arith
+    (49) expr_rel -> . expr_arith GT expr_arith
+    (50) expr_rel -> . expr_arith GE expr_arith
+    (51) expr_arith -> . term
+    (52) expr_arith -> . expr_arith PLUS term
+    (53) expr_arith -> . expr_arith MINUS term
+    (54) term -> . factor
+    (55) term -> . term TIMES factor
+    (56) term -> . term DIVIDE factor
+    (57) factor -> . primary
+    (58) factor -> . MINUS factor
+    (59) primary -> . NUMBER
+    (60) primary -> . REAL_NUMBER
+    (61) primary -> . STRING
+    (62) primary -> . TRUE
+    (63) primary -> . FALSE
+    (64) primary -> . IDENTIFIER
+    (65) primary -> . LPAREN expression RPAREN
+    (77) primary -> . IDENTIFIER LPAREN arg_list RPAREN
+
+    NOT             shift and go to state 63
+    MINUS           shift and go to state 66
+    NUMBER          shift and go to state 69
+    REAL_NUMBER     shift and go to state 70
+    STRING          shift and go to state 71
+    TRUE            shift and go to state 72
+    FALSE           shift and go to state 73
+    IDENTIFIER      shift and go to state 57
+    LPAREN          shift and go to state 74
+
+    expression                     shift and go to state 132
+    expr_or                        shift and go to state 59
+    expr_and                       shift and go to state 60
+    expr_not                       shift and go to state 61
+    expr_rel                       shift and go to state 62
+    expr_arith                     shift and go to state 64
+    term                           shift and go to state 65
+    factor                         shift and go to state 67
+    primary                        shift and go to state 68
+
+state 110
+
+    (72) call_stmt -> CALL IDENTIFIER LPAREN arg_list . RPAREN
+    (76) arg_list -> arg_list . COMMA expression
+
+    RPAREN          shift and go to state 133
+    COMMA           shift and go to state 134
+
+
+state 111
+
+    (75) arg_list -> expression .
+
+    RPAREN          reduce using rule 75 (arg_list -> expression .)
+    COMMA           reduce using rule 75 (arg_list -> expression .)
+
+
+state 112
+
+    (66) subroutine -> SUBROUTINE IDENTIFIER LPAREN param_list RPAREN statements . END
+    (10) statements -> statements . statement
+    (11) statement -> . declaration
+    (12) statement -> . assignment
+    (13) statement -> . print_stmt
+    (14) statement -> . read_stmt
+    (15) statement -> . if_stmt
+    (16) statement -> . do_loop
+    (17) statement -> . goto_stmt
+    (18) statement -> . call_stmt
+    (19) statement -> . return_stmt
+    (20) declaration -> . type_spec var_list
+    (26) assignment -> . IDENTIFIER ASSIGN expression
+    (27) print_stmt -> . PRINT TIMES print_list
+    (30) read_stmt -> . READ TIMES read_list
+    (33) if_stmt -> . IF LPAREN expression RPAREN THEN statements ENDIF
+    (34) if_stmt -> . IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF
+    (35) do_loop -> . DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE
+    (36) goto_stmt -> . GOTO NUMBER
+    (72) call_stmt -> . CALL IDENTIFIER LPAREN arg_list RPAREN
+    (73) call_stmt -> . CALL IDENTIFIER
+    (74) return_stmt -> . RETURN
+    (21) type_spec -> . INTEGER
+    (22) type_spec -> . REAL
+    (23) type_spec -> . LOGICAL
+
+    END             shift and go to state 135
+    IDENTIFIER      shift and go to state 17
+    PRINT           shift and go to state 31
+    READ            shift and go to state 32
+    IF              shift and go to state 33
+    DO              shift and go to state 34
+    GOTO            shift and go to state 35
+    CALL            shift and go to state 36
+    RETURN          shift and go to state 37
+    INTEGER         shift and go to state 10
+    REAL            shift and go to state 11
+    LOGICAL         shift and go to state 12
+
+    statement                      shift and go to state 43
+    declaration                    shift and go to state 21
+    assignment                     shift and go to state 22
+    print_stmt                     shift and go to state 23
+    read_stmt                      shift and go to state 24
+    if_stmt                        shift and go to state 25
+    do_loop                        shift and go to state 26
+    goto_stmt                      shift and go to state 27
+    call_stmt                      shift and go to state 28
+    return_stmt                    shift and go to state 29
+    type_spec                      shift and go to state 30
+
+state 113
+
+    (71) param_list -> param_list COMMA IDENTIFIER .
+
+    RPAREN          reduce using rule 71 (param_list -> param_list COMMA IDENTIFIER .)
+    COMMA           reduce using rule 71 (param_list -> param_list COMMA IDENTIFIER .)
+
+
+state 114
+
+    (68) function -> type_spec FUNCTION IDENTIFIER LPAREN param_list RPAREN . statements END
+    (9) statements -> . statement
+    (10) statements -> . statements statement
+    (11) statement -> . declaration
+    (12) statement -> . assignment
+    (13) statement -> . print_stmt
+    (14) statement -> . read_stmt
+    (15) statement -> . if_stmt
+    (16) statement -> . do_loop
+    (17) statement -> . goto_stmt
+    (18) statement -> . call_stmt
+    (19) statement -> . return_stmt
+    (20) declaration -> . type_spec var_list
+    (26) assignment -> . IDENTIFIER ASSIGN expression
+    (27) print_stmt -> . PRINT TIMES print_list
+    (30) read_stmt -> . READ TIMES read_list
+    (33) if_stmt -> . IF LPAREN expression RPAREN THEN statements ENDIF
+    (34) if_stmt -> . IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF
+    (35) do_loop -> . DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE
+    (36) goto_stmt -> . GOTO NUMBER
+    (72) call_stmt -> . CALL IDENTIFIER LPAREN arg_list RPAREN
+    (73) call_stmt -> . CALL IDENTIFIER
+    (74) return_stmt -> . RETURN
+    (21) type_spec -> . INTEGER
+    (22) type_spec -> . REAL
+    (23) type_spec -> . LOGICAL
+
+    IDENTIFIER      shift and go to state 17
+    PRINT           shift and go to state 31
+    READ            shift and go to state 32
+    IF              shift and go to state 33
+    DO              shift and go to state 34
+    GOTO            shift and go to state 35
+    CALL            shift and go to state 36
+    RETURN          shift and go to state 37
+    INTEGER         shift and go to state 10
+    REAL            shift and go to state 11
+    LOGICAL         shift and go to state 12
+
+    type_spec                      shift and go to state 30
+    statements                     shift and go to state 136
+    statement                      shift and go to state 20
+    declaration                    shift and go to state 21
+    assignment                     shift and go to state 22
+    print_stmt                     shift and go to state 23
+    read_stmt                      shift and go to state 24
+    if_stmt                        shift and go to state 25
+    do_loop                        shift and go to state 26
+    goto_stmt                      shift and go to state 27
+    call_stmt                      shift and go to state 28
+    return_stmt                    shift and go to state 29
+
+state 115
+
+    (77) primary -> IDENTIFIER LPAREN arg_list . RPAREN
+    (76) arg_list -> arg_list . COMMA expression
+
+    RPAREN          shift and go to state 137
+    COMMA           shift and go to state 134
+
+
+state 116
+
+    (39) expr_or -> expr_or OR expr_and .
+    (41) expr_and -> expr_and . AND expr_not
+
+    OR              reduce using rule 39 (expr_or -> expr_or OR expr_and .)
+    END             reduce using rule 39 (expr_or -> expr_or OR expr_and .)
+    IDENTIFIER      reduce using rule 39 (expr_or -> expr_or OR expr_and .)
+    PRINT           reduce using rule 39 (expr_or -> expr_or OR expr_and .)
+    READ            reduce using rule 39 (expr_or -> expr_or OR expr_and .)
+    IF              reduce using rule 39 (expr_or -> expr_or OR expr_and .)
+    DO              reduce using rule 39 (expr_or -> expr_or OR expr_and .)
+    GOTO            reduce using rule 39 (expr_or -> expr_or OR expr_and .)
+    CALL            reduce using rule 39 (expr_or -> expr_or OR expr_and .)
+    RETURN          reduce using rule 39 (expr_or -> expr_or OR expr_and .)
+    INTEGER         reduce using rule 39 (expr_or -> expr_or OR expr_and .)
+    REAL            reduce using rule 39 (expr_or -> expr_or OR expr_and .)
+    LOGICAL         reduce using rule 39 (expr_or -> expr_or OR expr_and .)
+    ENDIF           reduce using rule 39 (expr_or -> expr_or OR expr_and .)
+    ELSE            reduce using rule 39 (expr_or -> expr_or OR expr_and .)
+    NUMBER          reduce using rule 39 (expr_or -> expr_or OR expr_and .)
+    RPAREN          reduce using rule 39 (expr_or -> expr_or OR expr_and .)
+    COMMA           reduce using rule 39 (expr_or -> expr_or OR expr_and .)
+    AND             shift and go to state 89
+
+
+state 117
+
+    (41) expr_and -> expr_and AND expr_not .
+
+    AND             reduce using rule 41 (expr_and -> expr_and AND expr_not .)
+    OR              reduce using rule 41 (expr_and -> expr_and AND expr_not .)
+    END             reduce using rule 41 (expr_and -> expr_and AND expr_not .)
+    IDENTIFIER      reduce using rule 41 (expr_and -> expr_and AND expr_not .)
+    PRINT           reduce using rule 41 (expr_and -> expr_and AND expr_not .)
+    READ            reduce using rule 41 (expr_and -> expr_and AND expr_not .)
+    IF              reduce using rule 41 (expr_and -> expr_and AND expr_not .)
+    DO              reduce using rule 41 (expr_and -> expr_and AND expr_not .)
+    GOTO            reduce using rule 41 (expr_and -> expr_and AND expr_not .)
+    CALL            reduce using rule 41 (expr_and -> expr_and AND expr_not .)
+    RETURN          reduce using rule 41 (expr_and -> expr_and AND expr_not .)
+    INTEGER         reduce using rule 41 (expr_and -> expr_and AND expr_not .)
+    REAL            reduce using rule 41 (expr_and -> expr_and AND expr_not .)
+    LOGICAL         reduce using rule 41 (expr_and -> expr_and AND expr_not .)
+    ENDIF           reduce using rule 41 (expr_and -> expr_and AND expr_not .)
+    ELSE            reduce using rule 41 (expr_and -> expr_and AND expr_not .)
+    NUMBER          reduce using rule 41 (expr_and -> expr_and AND expr_not .)
+    RPAREN          reduce using rule 41 (expr_and -> expr_and AND expr_not .)
+    COMMA           reduce using rule 41 (expr_and -> expr_and AND expr_not .)
+
+
+state 118
+
+    (45) expr_rel -> expr_arith EQ expr_arith .
+    (52) expr_arith -> expr_arith . PLUS term
+    (53) expr_arith -> expr_arith . MINUS term
+
+    AND             reduce using rule 45 (expr_rel -> expr_arith EQ expr_arith .)
+    OR              reduce using rule 45 (expr_rel -> expr_arith EQ expr_arith .)
+    END             reduce using rule 45 (expr_rel -> expr_arith EQ expr_arith .)
+    IDENTIFIER      reduce using rule 45 (expr_rel -> expr_arith EQ expr_arith .)
+    PRINT           reduce using rule 45 (expr_rel -> expr_arith EQ expr_arith .)
+    READ            reduce using rule 45 (expr_rel -> expr_arith EQ expr_arith .)
+    IF              reduce using rule 45 (expr_rel -> expr_arith EQ expr_arith .)
+    DO              reduce using rule 45 (expr_rel -> expr_arith EQ expr_arith .)
+    GOTO            reduce using rule 45 (expr_rel -> expr_arith EQ expr_arith .)
+    CALL            reduce using rule 45 (expr_rel -> expr_arith EQ expr_arith .)
+    RETURN          reduce using rule 45 (expr_rel -> expr_arith EQ expr_arith .)
+    INTEGER         reduce using rule 45 (expr_rel -> expr_arith EQ expr_arith .)
+    REAL            reduce using rule 45 (expr_rel -> expr_arith EQ expr_arith .)
+    LOGICAL         reduce using rule 45 (expr_rel -> expr_arith EQ expr_arith .)
+    ENDIF           reduce using rule 45 (expr_rel -> expr_arith EQ expr_arith .)
+    ELSE            reduce using rule 45 (expr_rel -> expr_arith EQ expr_arith .)
+    NUMBER          reduce using rule 45 (expr_rel -> expr_arith EQ expr_arith .)
+    RPAREN          reduce using rule 45 (expr_rel -> expr_arith EQ expr_arith .)
+    COMMA           reduce using rule 45 (expr_rel -> expr_arith EQ expr_arith .)
+    PLUS            shift and go to state 97
+    MINUS           shift and go to state 98
+
+
+state 119
+
+    (46) expr_rel -> expr_arith NE expr_arith .
+    (52) expr_arith -> expr_arith . PLUS term
+    (53) expr_arith -> expr_arith . MINUS term
+
+    AND             reduce using rule 46 (expr_rel -> expr_arith NE expr_arith .)
+    OR              reduce using rule 46 (expr_rel -> expr_arith NE expr_arith .)
+    END             reduce using rule 46 (expr_rel -> expr_arith NE expr_arith .)
+    IDENTIFIER      reduce using rule 46 (expr_rel -> expr_arith NE expr_arith .)
+    PRINT           reduce using rule 46 (expr_rel -> expr_arith NE expr_arith .)
+    READ            reduce using rule 46 (expr_rel -> expr_arith NE expr_arith .)
+    IF              reduce using rule 46 (expr_rel -> expr_arith NE expr_arith .)
+    DO              reduce using rule 46 (expr_rel -> expr_arith NE expr_arith .)
+    GOTO            reduce using rule 46 (expr_rel -> expr_arith NE expr_arith .)
+    CALL            reduce using rule 46 (expr_rel -> expr_arith NE expr_arith .)
+    RETURN          reduce using rule 46 (expr_rel -> expr_arith NE expr_arith .)
+    INTEGER         reduce using rule 46 (expr_rel -> expr_arith NE expr_arith .)
+    REAL            reduce using rule 46 (expr_rel -> expr_arith NE expr_arith .)
+    LOGICAL         reduce using rule 46 (expr_rel -> expr_arith NE expr_arith .)
+    ENDIF           reduce using rule 46 (expr_rel -> expr_arith NE expr_arith .)
+    ELSE            reduce using rule 46 (expr_rel -> expr_arith NE expr_arith .)
+    NUMBER          reduce using rule 46 (expr_rel -> expr_arith NE expr_arith .)
+    RPAREN          reduce using rule 46 (expr_rel -> expr_arith NE expr_arith .)
+    COMMA           reduce using rule 46 (expr_rel -> expr_arith NE expr_arith .)
+    PLUS            shift and go to state 97
+    MINUS           shift and go to state 98
+
+
+state 120
+
+    (47) expr_rel -> expr_arith LT expr_arith .
+    (52) expr_arith -> expr_arith . PLUS term
+    (53) expr_arith -> expr_arith . MINUS term
+
+    AND             reduce using rule 47 (expr_rel -> expr_arith LT expr_arith .)
+    OR              reduce using rule 47 (expr_rel -> expr_arith LT expr_arith .)
+    END             reduce using rule 47 (expr_rel -> expr_arith LT expr_arith .)
+    IDENTIFIER      reduce using rule 47 (expr_rel -> expr_arith LT expr_arith .)
+    PRINT           reduce using rule 47 (expr_rel -> expr_arith LT expr_arith .)
+    READ            reduce using rule 47 (expr_rel -> expr_arith LT expr_arith .)
+    IF              reduce using rule 47 (expr_rel -> expr_arith LT expr_arith .)
+    DO              reduce using rule 47 (expr_rel -> expr_arith LT expr_arith .)
+    GOTO            reduce using rule 47 (expr_rel -> expr_arith LT expr_arith .)
+    CALL            reduce using rule 47 (expr_rel -> expr_arith LT expr_arith .)
+    RETURN          reduce using rule 47 (expr_rel -> expr_arith LT expr_arith .)
+    INTEGER         reduce using rule 47 (expr_rel -> expr_arith LT expr_arith .)
+    REAL            reduce using rule 47 (expr_rel -> expr_arith LT expr_arith .)
+    LOGICAL         reduce using rule 47 (expr_rel -> expr_arith LT expr_arith .)
+    ENDIF           reduce using rule 47 (expr_rel -> expr_arith LT expr_arith .)
+    ELSE            reduce using rule 47 (expr_rel -> expr_arith LT expr_arith .)
+    NUMBER          reduce using rule 47 (expr_rel -> expr_arith LT expr_arith .)
+    RPAREN          reduce using rule 47 (expr_rel -> expr_arith LT expr_arith .)
+    COMMA           reduce using rule 47 (expr_rel -> expr_arith LT expr_arith .)
+    PLUS            shift and go to state 97
+    MINUS           shift and go to state 98
+
+
+state 121
+
+    (48) expr_rel -> expr_arith LE expr_arith .
+    (52) expr_arith -> expr_arith . PLUS term
+    (53) expr_arith -> expr_arith . MINUS term
+
+    AND             reduce using rule 48 (expr_rel -> expr_arith LE expr_arith .)
+    OR              reduce using rule 48 (expr_rel -> expr_arith LE expr_arith .)
+    END             reduce using rule 48 (expr_rel -> expr_arith LE expr_arith .)
+    IDENTIFIER      reduce using rule 48 (expr_rel -> expr_arith LE expr_arith .)
+    PRINT           reduce using rule 48 (expr_rel -> expr_arith LE expr_arith .)
+    READ            reduce using rule 48 (expr_rel -> expr_arith LE expr_arith .)
+    IF              reduce using rule 48 (expr_rel -> expr_arith LE expr_arith .)
+    DO              reduce using rule 48 (expr_rel -> expr_arith LE expr_arith .)
+    GOTO            reduce using rule 48 (expr_rel -> expr_arith LE expr_arith .)
+    CALL            reduce using rule 48 (expr_rel -> expr_arith LE expr_arith .)
+    RETURN          reduce using rule 48 (expr_rel -> expr_arith LE expr_arith .)
+    INTEGER         reduce using rule 48 (expr_rel -> expr_arith LE expr_arith .)
+    REAL            reduce using rule 48 (expr_rel -> expr_arith LE expr_arith .)
+    LOGICAL         reduce using rule 48 (expr_rel -> expr_arith LE expr_arith .)
+    ENDIF           reduce using rule 48 (expr_rel -> expr_arith LE expr_arith .)
+    ELSE            reduce using rule 48 (expr_rel -> expr_arith LE expr_arith .)
+    NUMBER          reduce using rule 48 (expr_rel -> expr_arith LE expr_arith .)
+    RPAREN          reduce using rule 48 (expr_rel -> expr_arith LE expr_arith .)
+    COMMA           reduce using rule 48 (expr_rel -> expr_arith LE expr_arith .)
+    PLUS            shift and go to state 97
+    MINUS           shift and go to state 98
+
+
+state 122
+
+    (49) expr_rel -> expr_arith GT expr_arith .
+    (52) expr_arith -> expr_arith . PLUS term
+    (53) expr_arith -> expr_arith . MINUS term
+
+    AND             reduce using rule 49 (expr_rel -> expr_arith GT expr_arith .)
+    OR              reduce using rule 49 (expr_rel -> expr_arith GT expr_arith .)
+    END             reduce using rule 49 (expr_rel -> expr_arith GT expr_arith .)
+    IDENTIFIER      reduce using rule 49 (expr_rel -> expr_arith GT expr_arith .)
+    PRINT           reduce using rule 49 (expr_rel -> expr_arith GT expr_arith .)
+    READ            reduce using rule 49 (expr_rel -> expr_arith GT expr_arith .)
+    IF              reduce using rule 49 (expr_rel -> expr_arith GT expr_arith .)
+    DO              reduce using rule 49 (expr_rel -> expr_arith GT expr_arith .)
+    GOTO            reduce using rule 49 (expr_rel -> expr_arith GT expr_arith .)
+    CALL            reduce using rule 49 (expr_rel -> expr_arith GT expr_arith .)
+    RETURN          reduce using rule 49 (expr_rel -> expr_arith GT expr_arith .)
+    INTEGER         reduce using rule 49 (expr_rel -> expr_arith GT expr_arith .)
+    REAL            reduce using rule 49 (expr_rel -> expr_arith GT expr_arith .)
+    LOGICAL         reduce using rule 49 (expr_rel -> expr_arith GT expr_arith .)
+    ENDIF           reduce using rule 49 (expr_rel -> expr_arith GT expr_arith .)
+    ELSE            reduce using rule 49 (expr_rel -> expr_arith GT expr_arith .)
+    NUMBER          reduce using rule 49 (expr_rel -> expr_arith GT expr_arith .)
+    RPAREN          reduce using rule 49 (expr_rel -> expr_arith GT expr_arith .)
+    COMMA           reduce using rule 49 (expr_rel -> expr_arith GT expr_arith .)
+    PLUS            shift and go to state 97
+    MINUS           shift and go to state 98
+
+
+state 123
+
+    (50) expr_rel -> expr_arith GE expr_arith .
+    (52) expr_arith -> expr_arith . PLUS term
+    (53) expr_arith -> expr_arith . MINUS term
+
+    AND             reduce using rule 50 (expr_rel -> expr_arith GE expr_arith .)
+    OR              reduce using rule 50 (expr_rel -> expr_arith GE expr_arith .)
+    END             reduce using rule 50 (expr_rel -> expr_arith GE expr_arith .)
+    IDENTIFIER      reduce using rule 50 (expr_rel -> expr_arith GE expr_arith .)
+    PRINT           reduce using rule 50 (expr_rel -> expr_arith GE expr_arith .)
+    READ            reduce using rule 50 (expr_rel -> expr_arith GE expr_arith .)
+    IF              reduce using rule 50 (expr_rel -> expr_arith GE expr_arith .)
+    DO              reduce using rule 50 (expr_rel -> expr_arith GE expr_arith .)
+    GOTO            reduce using rule 50 (expr_rel -> expr_arith GE expr_arith .)
+    CALL            reduce using rule 50 (expr_rel -> expr_arith GE expr_arith .)
+    RETURN          reduce using rule 50 (expr_rel -> expr_arith GE expr_arith .)
+    INTEGER         reduce using rule 50 (expr_rel -> expr_arith GE expr_arith .)
+    REAL            reduce using rule 50 (expr_rel -> expr_arith GE expr_arith .)
+    LOGICAL         reduce using rule 50 (expr_rel -> expr_arith GE expr_arith .)
+    ENDIF           reduce using rule 50 (expr_rel -> expr_arith GE expr_arith .)
+    ELSE            reduce using rule 50 (expr_rel -> expr_arith GE expr_arith .)
+    NUMBER          reduce using rule 50 (expr_rel -> expr_arith GE expr_arith .)
+    RPAREN          reduce using rule 50 (expr_rel -> expr_arith GE expr_arith .)
+    COMMA           reduce using rule 50 (expr_rel -> expr_arith GE expr_arith .)
+    PLUS            shift and go to state 97
+    MINUS           shift and go to state 98
+
+
+state 124
+
+    (52) expr_arith -> expr_arith PLUS term .
+    (55) term -> term . TIMES factor
+    (56) term -> term . DIVIDE factor
+
+    EQ              reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    NE              reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    LT              reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    LE              reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    GT              reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    GE              reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    PLUS            reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    MINUS           reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    AND             reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    OR              reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    END             reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    IDENTIFIER      reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    PRINT           reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    READ            reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    IF              reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    DO              reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    GOTO            reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    CALL            reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    RETURN          reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    INTEGER         reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    REAL            reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    LOGICAL         reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    ENDIF           reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    ELSE            reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    NUMBER          reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    RPAREN          reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    COMMA           reduce using rule 52 (expr_arith -> expr_arith PLUS term .)
+    TIMES           shift and go to state 99
+    DIVIDE          shift and go to state 100
+
+
+state 125
+
+    (53) expr_arith -> expr_arith MINUS term .
+    (55) term -> term . TIMES factor
+    (56) term -> term . DIVIDE factor
+
+    EQ              reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    NE              reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    LT              reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    LE              reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    GT              reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    GE              reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    PLUS            reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    MINUS           reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    AND             reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    OR              reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    END             reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    IDENTIFIER      reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    PRINT           reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    READ            reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    IF              reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    DO              reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    GOTO            reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    CALL            reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    RETURN          reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    INTEGER         reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    REAL            reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    LOGICAL         reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    ENDIF           reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    ELSE            reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    NUMBER          reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    RPAREN          reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    COMMA           reduce using rule 53 (expr_arith -> expr_arith MINUS term .)
+    TIMES           shift and go to state 99
+    DIVIDE          shift and go to state 100
+
+
+state 126
+
+    (55) term -> term TIMES factor .
+
+    TIMES           reduce using rule 55 (term -> term TIMES factor .)
+    DIVIDE          reduce using rule 55 (term -> term TIMES factor .)
+    EQ              reduce using rule 55 (term -> term TIMES factor .)
+    NE              reduce using rule 55 (term -> term TIMES factor .)
+    LT              reduce using rule 55 (term -> term TIMES factor .)
+    LE              reduce using rule 55 (term -> term TIMES factor .)
+    GT              reduce using rule 55 (term -> term TIMES factor .)
+    GE              reduce using rule 55 (term -> term TIMES factor .)
+    PLUS            reduce using rule 55 (term -> term TIMES factor .)
+    MINUS           reduce using rule 55 (term -> term TIMES factor .)
+    AND             reduce using rule 55 (term -> term TIMES factor .)
+    OR              reduce using rule 55 (term -> term TIMES factor .)
+    END             reduce using rule 55 (term -> term TIMES factor .)
+    IDENTIFIER      reduce using rule 55 (term -> term TIMES factor .)
+    PRINT           reduce using rule 55 (term -> term TIMES factor .)
+    READ            reduce using rule 55 (term -> term TIMES factor .)
+    IF              reduce using rule 55 (term -> term TIMES factor .)
+    DO              reduce using rule 55 (term -> term TIMES factor .)
+    GOTO            reduce using rule 55 (term -> term TIMES factor .)
+    CALL            reduce using rule 55 (term -> term TIMES factor .)
+    RETURN          reduce using rule 55 (term -> term TIMES factor .)
+    INTEGER         reduce using rule 55 (term -> term TIMES factor .)
+    REAL            reduce using rule 55 (term -> term TIMES factor .)
+    LOGICAL         reduce using rule 55 (term -> term TIMES factor .)
+    ENDIF           reduce using rule 55 (term -> term TIMES factor .)
+    ELSE            reduce using rule 55 (term -> term TIMES factor .)
+    NUMBER          reduce using rule 55 (term -> term TIMES factor .)
+    RPAREN          reduce using rule 55 (term -> term TIMES factor .)
+    COMMA           reduce using rule 55 (term -> term TIMES factor .)
+
+
+state 127
+
+    (56) term -> term DIVIDE factor .
+
+    TIMES           reduce using rule 56 (term -> term DIVIDE factor .)
+    DIVIDE          reduce using rule 56 (term -> term DIVIDE factor .)
+    EQ              reduce using rule 56 (term -> term DIVIDE factor .)
+    NE              reduce using rule 56 (term -> term DIVIDE factor .)
+    LT              reduce using rule 56 (term -> term DIVIDE factor .)
+    LE              reduce using rule 56 (term -> term DIVIDE factor .)
+    GT              reduce using rule 56 (term -> term DIVIDE factor .)
+    GE              reduce using rule 56 (term -> term DIVIDE factor .)
+    PLUS            reduce using rule 56 (term -> term DIVIDE factor .)
+    MINUS           reduce using rule 56 (term -> term DIVIDE factor .)
+    AND             reduce using rule 56 (term -> term DIVIDE factor .)
+    OR              reduce using rule 56 (term -> term DIVIDE factor .)
+    END             reduce using rule 56 (term -> term DIVIDE factor .)
+    IDENTIFIER      reduce using rule 56 (term -> term DIVIDE factor .)
+    PRINT           reduce using rule 56 (term -> term DIVIDE factor .)
+    READ            reduce using rule 56 (term -> term DIVIDE factor .)
+    IF              reduce using rule 56 (term -> term DIVIDE factor .)
+    DO              reduce using rule 56 (term -> term DIVIDE factor .)
+    GOTO            reduce using rule 56 (term -> term DIVIDE factor .)
+    CALL            reduce using rule 56 (term -> term DIVIDE factor .)
+    RETURN          reduce using rule 56 (term -> term DIVIDE factor .)
+    INTEGER         reduce using rule 56 (term -> term DIVIDE factor .)
+    REAL            reduce using rule 56 (term -> term DIVIDE factor .)
+    LOGICAL         reduce using rule 56 (term -> term DIVIDE factor .)
+    ENDIF           reduce using rule 56 (term -> term DIVIDE factor .)
+    ELSE            reduce using rule 56 (term -> term DIVIDE factor .)
+    NUMBER          reduce using rule 56 (term -> term DIVIDE factor .)
+    RPAREN          reduce using rule 56 (term -> term DIVIDE factor .)
+    COMMA           reduce using rule 56 (term -> term DIVIDE factor .)
+
+
+state 128
+
+    (65) primary -> LPAREN expression RPAREN .
+
+    TIMES           reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    DIVIDE          reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    EQ              reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    NE              reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    LT              reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    LE              reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    GT              reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    GE              reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    PLUS            reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    MINUS           reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    AND             reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    OR              reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    END             reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    IDENTIFIER      reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    PRINT           reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    READ            reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    IF              reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    DO              reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    GOTO            reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    CALL            reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    RETURN          reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    INTEGER         reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    REAL            reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    LOGICAL         reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    ENDIF           reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    ELSE            reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    NUMBER          reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    RPAREN          reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+    COMMA           reduce using rule 65 (primary -> LPAREN expression RPAREN .)
+
+
+state 129
+
+    (29) print_list -> print_list COMMA expression .
+
+    COMMA           reduce using rule 29 (print_list -> print_list COMMA expression .)
+    END             reduce using rule 29 (print_list -> print_list COMMA expression .)
+    IDENTIFIER      reduce using rule 29 (print_list -> print_list COMMA expression .)
+    PRINT           reduce using rule 29 (print_list -> print_list COMMA expression .)
+    READ            reduce using rule 29 (print_list -> print_list COMMA expression .)
+    IF              reduce using rule 29 (print_list -> print_list COMMA expression .)
+    DO              reduce using rule 29 (print_list -> print_list COMMA expression .)
+    GOTO            reduce using rule 29 (print_list -> print_list COMMA expression .)
+    CALL            reduce using rule 29 (print_list -> print_list COMMA expression .)
+    RETURN          reduce using rule 29 (print_list -> print_list COMMA expression .)
+    INTEGER         reduce using rule 29 (print_list -> print_list COMMA expression .)
+    REAL            reduce using rule 29 (print_list -> print_list COMMA expression .)
+    LOGICAL         reduce using rule 29 (print_list -> print_list COMMA expression .)
+    ENDIF           reduce using rule 29 (print_list -> print_list COMMA expression .)
+    ELSE            reduce using rule 29 (print_list -> print_list COMMA expression .)
+    NUMBER          reduce using rule 29 (print_list -> print_list COMMA expression .)
+
+
+state 130
+
+    (32) read_list -> read_list COMMA IDENTIFIER .
+
+    COMMA           reduce using rule 32 (read_list -> read_list COMMA IDENTIFIER .)
+    END             reduce using rule 32 (read_list -> read_list COMMA IDENTIFIER .)
+    IDENTIFIER      reduce using rule 32 (read_list -> read_list COMMA IDENTIFIER .)
+    PRINT           reduce using rule 32 (read_list -> read_list COMMA IDENTIFIER .)
+    READ            reduce using rule 32 (read_list -> read_list COMMA IDENTIFIER .)
+    IF              reduce using rule 32 (read_list -> read_list COMMA IDENTIFIER .)
+    DO              reduce using rule 32 (read_list -> read_list COMMA IDENTIFIER .)
+    GOTO            reduce using rule 32 (read_list -> read_list COMMA IDENTIFIER .)
+    CALL            reduce using rule 32 (read_list -> read_list COMMA IDENTIFIER .)
+    RETURN          reduce using rule 32 (read_list -> read_list COMMA IDENTIFIER .)
+    INTEGER         reduce using rule 32 (read_list -> read_list COMMA IDENTIFIER .)
+    REAL            reduce using rule 32 (read_list -> read_list COMMA IDENTIFIER .)
+    LOGICAL         reduce using rule 32 (read_list -> read_list COMMA IDENTIFIER .)
+    ENDIF           reduce using rule 32 (read_list -> read_list COMMA IDENTIFIER .)
+    ELSE            reduce using rule 32 (read_list -> read_list COMMA IDENTIFIER .)
+    NUMBER          reduce using rule 32 (read_list -> read_list COMMA IDENTIFIER .)
+
+
+state 131
+
+    (33) if_stmt -> IF LPAREN expression RPAREN THEN . statements ENDIF
+    (34) if_stmt -> IF LPAREN expression RPAREN THEN . statements ELSE statements ENDIF
+    (9) statements -> . statement
+    (10) statements -> . statements statement
+    (11) statement -> . declaration
+    (12) statement -> . assignment
+    (13) statement -> . print_stmt
+    (14) statement -> . read_stmt
+    (15) statement -> . if_stmt
+    (16) statement -> . do_loop
+    (17) statement -> . goto_stmt
+    (18) statement -> . call_stmt
+    (19) statement -> . return_stmt
+    (20) declaration -> . type_spec var_list
+    (26) assignment -> . IDENTIFIER ASSIGN expression
+    (27) print_stmt -> . PRINT TIMES print_list
+    (30) read_stmt -> . READ TIMES read_list
+    (33) if_stmt -> . IF LPAREN expression RPAREN THEN statements ENDIF
+    (34) if_stmt -> . IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF
+    (35) do_loop -> . DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE
+    (36) goto_stmt -> . GOTO NUMBER
+    (72) call_stmt -> . CALL IDENTIFIER LPAREN arg_list RPAREN
+    (73) call_stmt -> . CALL IDENTIFIER
+    (74) return_stmt -> . RETURN
+    (21) type_spec -> . INTEGER
+    (22) type_spec -> . REAL
+    (23) type_spec -> . LOGICAL
+
+    IDENTIFIER      shift and go to state 17
+    PRINT           shift and go to state 31
+    READ            shift and go to state 32
+    IF              shift and go to state 33
+    DO              shift and go to state 34
+    GOTO            shift and go to state 35
+    CALL            shift and go to state 36
+    RETURN          shift and go to state 37
+    INTEGER         shift and go to state 10
+    REAL            shift and go to state 11
+    LOGICAL         shift and go to state 12
+
+    statements                     shift and go to state 138
+    statement                      shift and go to state 20
+    declaration                    shift and go to state 21
+    assignment                     shift and go to state 22
+    print_stmt                     shift and go to state 23
+    read_stmt                      shift and go to state 24
+    if_stmt                        shift and go to state 25
+    do_loop                        shift and go to state 26
+    goto_stmt                      shift and go to state 27
+    call_stmt                      shift and go to state 28
+    return_stmt                    shift and go to state 29
+    type_spec                      shift and go to state 30
+
+state 132
+
+    (35) do_loop -> DO NUMBER IDENTIFIER ASSIGN expression . COMMA expression statements NUMBER CONTINUE
+
+    COMMA           shift and go to state 139
+
+
+state 133
+
+    (72) call_stmt -> CALL IDENTIFIER LPAREN arg_list RPAREN .
+
+    END             reduce using rule 72 (call_stmt -> CALL IDENTIFIER LPAREN arg_list RPAREN .)
+    IDENTIFIER      reduce using rule 72 (call_stmt -> CALL IDENTIFIER LPAREN arg_list RPAREN .)
+    PRINT           reduce using rule 72 (call_stmt -> CALL IDENTIFIER LPAREN arg_list RPAREN .)
+    READ            reduce using rule 72 (call_stmt -> CALL IDENTIFIER LPAREN arg_list RPAREN .)
+    IF              reduce using rule 72 (call_stmt -> CALL IDENTIFIER LPAREN arg_list RPAREN .)
+    DO              reduce using rule 72 (call_stmt -> CALL IDENTIFIER LPAREN arg_list RPAREN .)
+    GOTO            reduce using rule 72 (call_stmt -> CALL IDENTIFIER LPAREN arg_list RPAREN .)
+    CALL            reduce using rule 72 (call_stmt -> CALL IDENTIFIER LPAREN arg_list RPAREN .)
+    RETURN          reduce using rule 72 (call_stmt -> CALL IDENTIFIER LPAREN arg_list RPAREN .)
+    INTEGER         reduce using rule 72 (call_stmt -> CALL IDENTIFIER LPAREN arg_list RPAREN .)
+    REAL            reduce using rule 72 (call_stmt -> CALL IDENTIFIER LPAREN arg_list RPAREN .)
+    LOGICAL         reduce using rule 72 (call_stmt -> CALL IDENTIFIER LPAREN arg_list RPAREN .)
+    ENDIF           reduce using rule 72 (call_stmt -> CALL IDENTIFIER LPAREN arg_list RPAREN .)
+    ELSE            reduce using rule 72 (call_stmt -> CALL IDENTIFIER LPAREN arg_list RPAREN .)
+    NUMBER          reduce using rule 72 (call_stmt -> CALL IDENTIFIER LPAREN arg_list RPAREN .)
+
+
+state 134
+
+    (76) arg_list -> arg_list COMMA . expression
+    (37) expression -> . expr_or
+    (38) expr_or -> . expr_and
+    (39) expr_or -> . expr_or OR expr_and
+    (40) expr_and -> . expr_not
+    (41) expr_and -> . expr_and AND expr_not
+    (42) expr_not -> . expr_rel
+    (43) expr_not -> . NOT expr_not
+    (44) expr_rel -> . expr_arith
+    (45) expr_rel -> . expr_arith EQ expr_arith
+    (46) expr_rel -> . expr_arith NE expr_arith
+    (47) expr_rel -> . expr_arith LT expr_arith
+    (48) expr_rel -> . expr_arith LE expr_arith
+    (49) expr_rel -> . expr_arith GT expr_arith
+    (50) expr_rel -> . expr_arith GE expr_arith
+    (51) expr_arith -> . term
+    (52) expr_arith -> . expr_arith PLUS term
+    (53) expr_arith -> . expr_arith MINUS term
+    (54) term -> . factor
+    (55) term -> . term TIMES factor
+    (56) term -> . term DIVIDE factor
+    (57) factor -> . primary
+    (58) factor -> . MINUS factor
+    (59) primary -> . NUMBER
+    (60) primary -> . REAL_NUMBER
+    (61) primary -> . STRING
+    (62) primary -> . TRUE
+    (63) primary -> . FALSE
+    (64) primary -> . IDENTIFIER
+    (65) primary -> . LPAREN expression RPAREN
+    (77) primary -> . IDENTIFIER LPAREN arg_list RPAREN
+
+    NOT             shift and go to state 63
+    MINUS           shift and go to state 66
+    NUMBER          shift and go to state 69
+    REAL_NUMBER     shift and go to state 70
+    STRING          shift and go to state 71
+    TRUE            shift and go to state 72
+    FALSE           shift and go to state 73
+    IDENTIFIER      shift and go to state 57
+    LPAREN          shift and go to state 74
+
+    expression                     shift and go to state 140
+    expr_or                        shift and go to state 59
+    expr_and                       shift and go to state 60
+    expr_not                       shift and go to state 61
+    expr_rel                       shift and go to state 62
+    expr_arith                     shift and go to state 64
+    term                           shift and go to state 65
+    factor                         shift and go to state 67
+    primary                        shift and go to state 68
+
+state 135
+
+    (66) subroutine -> SUBROUTINE IDENTIFIER LPAREN param_list RPAREN statements END .
+
+    PROGRAM         reduce using rule 66 (subroutine -> SUBROUTINE IDENTIFIER LPAREN param_list RPAREN statements END .)
+    SUBROUTINE      reduce using rule 66 (subroutine -> SUBROUTINE IDENTIFIER LPAREN param_list RPAREN statements END .)
+    INTEGER         reduce using rule 66 (subroutine -> SUBROUTINE IDENTIFIER LPAREN param_list RPAREN statements END .)
+    REAL            reduce using rule 66 (subroutine -> SUBROUTINE IDENTIFIER LPAREN param_list RPAREN statements END .)
+    LOGICAL         reduce using rule 66 (subroutine -> SUBROUTINE IDENTIFIER LPAREN param_list RPAREN statements END .)
+    $end            reduce using rule 66 (subroutine -> SUBROUTINE IDENTIFIER LPAREN param_list RPAREN statements END .)
+
+
+state 136
+
+    (68) function -> type_spec FUNCTION IDENTIFIER LPAREN param_list RPAREN statements . END
+    (10) statements -> statements . statement
+    (11) statement -> . declaration
+    (12) statement -> . assignment
+    (13) statement -> . print_stmt
+    (14) statement -> . read_stmt
+    (15) statement -> . if_stmt
+    (16) statement -> . do_loop
+    (17) statement -> . goto_stmt
+    (18) statement -> . call_stmt
+    (19) statement -> . return_stmt
+    (20) declaration -> . type_spec var_list
+    (26) assignment -> . IDENTIFIER ASSIGN expression
+    (27) print_stmt -> . PRINT TIMES print_list
+    (30) read_stmt -> . READ TIMES read_list
+    (33) if_stmt -> . IF LPAREN expression RPAREN THEN statements ENDIF
+    (34) if_stmt -> . IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF
+    (35) do_loop -> . DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE
+    (36) goto_stmt -> . GOTO NUMBER
+    (72) call_stmt -> . CALL IDENTIFIER LPAREN arg_list RPAREN
+    (73) call_stmt -> . CALL IDENTIFIER
+    (74) return_stmt -> . RETURN
+    (21) type_spec -> . INTEGER
+    (22) type_spec -> . REAL
+    (23) type_spec -> . LOGICAL
+
+    END             shift and go to state 141
+    IDENTIFIER      shift and go to state 17
+    PRINT           shift and go to state 31
+    READ            shift and go to state 32
+    IF              shift and go to state 33
+    DO              shift and go to state 34
+    GOTO            shift and go to state 35
+    CALL            shift and go to state 36
+    RETURN          shift and go to state 37
+    INTEGER         shift and go to state 10
+    REAL            shift and go to state 11
+    LOGICAL         shift and go to state 12
+
+    type_spec                      shift and go to state 30
+    statement                      shift and go to state 43
+    declaration                    shift and go to state 21
+    assignment                     shift and go to state 22
+    print_stmt                     shift and go to state 23
+    read_stmt                      shift and go to state 24
+    if_stmt                        shift and go to state 25
+    do_loop                        shift and go to state 26
+    goto_stmt                      shift and go to state 27
+    call_stmt                      shift and go to state 28
+    return_stmt                    shift and go to state 29
+
+state 137
+
+    (77) primary -> IDENTIFIER LPAREN arg_list RPAREN .
+
+    TIMES           reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    DIVIDE          reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    EQ              reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    NE              reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    LT              reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    LE              reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    GT              reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    GE              reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    PLUS            reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    MINUS           reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    AND             reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    OR              reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    END             reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    IDENTIFIER      reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    PRINT           reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    READ            reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    IF              reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    DO              reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    GOTO            reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    CALL            reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    RETURN          reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    INTEGER         reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    REAL            reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    LOGICAL         reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    ENDIF           reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    ELSE            reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    NUMBER          reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    RPAREN          reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+    COMMA           reduce using rule 77 (primary -> IDENTIFIER LPAREN arg_list RPAREN .)
+
+
+state 138
+
+    (33) if_stmt -> IF LPAREN expression RPAREN THEN statements . ENDIF
+    (34) if_stmt -> IF LPAREN expression RPAREN THEN statements . ELSE statements ENDIF
+    (10) statements -> statements . statement
+    (11) statement -> . declaration
+    (12) statement -> . assignment
+    (13) statement -> . print_stmt
+    (14) statement -> . read_stmt
+    (15) statement -> . if_stmt
+    (16) statement -> . do_loop
+    (17) statement -> . goto_stmt
+    (18) statement -> . call_stmt
+    (19) statement -> . return_stmt
+    (20) declaration -> . type_spec var_list
+    (26) assignment -> . IDENTIFIER ASSIGN expression
+    (27) print_stmt -> . PRINT TIMES print_list
+    (30) read_stmt -> . READ TIMES read_list
+    (33) if_stmt -> . IF LPAREN expression RPAREN THEN statements ENDIF
+    (34) if_stmt -> . IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF
+    (35) do_loop -> . DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE
+    (36) goto_stmt -> . GOTO NUMBER
+    (72) call_stmt -> . CALL IDENTIFIER LPAREN arg_list RPAREN
+    (73) call_stmt -> . CALL IDENTIFIER
+    (74) return_stmt -> . RETURN
+    (21) type_spec -> . INTEGER
+    (22) type_spec -> . REAL
+    (23) type_spec -> . LOGICAL
+
+    ENDIF           shift and go to state 142
+    ELSE            shift and go to state 143
+    IDENTIFIER      shift and go to state 17
+    PRINT           shift and go to state 31
+    READ            shift and go to state 32
+    IF              shift and go to state 33
+    DO              shift and go to state 34
+    GOTO            shift and go to state 35
+    CALL            shift and go to state 36
+    RETURN          shift and go to state 37
+    INTEGER         shift and go to state 10
+    REAL            shift and go to state 11
+    LOGICAL         shift and go to state 12
+
+    statement                      shift and go to state 43
+    declaration                    shift and go to state 21
+    assignment                     shift and go to state 22
+    print_stmt                     shift and go to state 23
+    read_stmt                      shift and go to state 24
+    if_stmt                        shift and go to state 25
+    do_loop                        shift and go to state 26
+    goto_stmt                      shift and go to state 27
+    call_stmt                      shift and go to state 28
+    return_stmt                    shift and go to state 29
+    type_spec                      shift and go to state 30
+
+state 139
+
+    (35) do_loop -> DO NUMBER IDENTIFIER ASSIGN expression COMMA . expression statements NUMBER CONTINUE
+    (37) expression -> . expr_or
+    (38) expr_or -> . expr_and
+    (39) expr_or -> . expr_or OR expr_and
+    (40) expr_and -> . expr_not
+    (41) expr_and -> . expr_and AND expr_not
+    (42) expr_not -> . expr_rel
+    (43) expr_not -> . NOT expr_not
+    (44) expr_rel -> . expr_arith
+    (45) expr_rel -> . expr_arith EQ expr_arith
+    (46) expr_rel -> . expr_arith NE expr_arith
+    (47) expr_rel -> . expr_arith LT expr_arith
+    (48) expr_rel -> . expr_arith LE expr_arith
+    (49) expr_rel -> . expr_arith GT expr_arith
+    (50) expr_rel -> . expr_arith GE expr_arith
+    (51) expr_arith -> . term
+    (52) expr_arith -> . expr_arith PLUS term
+    (53) expr_arith -> . expr_arith MINUS term
+    (54) term -> . factor
+    (55) term -> . term TIMES factor
+    (56) term -> . term DIVIDE factor
+    (57) factor -> . primary
+    (58) factor -> . MINUS factor
+    (59) primary -> . NUMBER
+    (60) primary -> . REAL_NUMBER
+    (61) primary -> . STRING
+    (62) primary -> . TRUE
+    (63) primary -> . FALSE
+    (64) primary -> . IDENTIFIER
+    (65) primary -> . LPAREN expression RPAREN
+    (77) primary -> . IDENTIFIER LPAREN arg_list RPAREN
+
+    NOT             shift and go to state 63
+    MINUS           shift and go to state 66
+    NUMBER          shift and go to state 69
+    REAL_NUMBER     shift and go to state 70
+    STRING          shift and go to state 71
+    TRUE            shift and go to state 72
+    FALSE           shift and go to state 73
+    IDENTIFIER      shift and go to state 57
+    LPAREN          shift and go to state 74
+
+    expression                     shift and go to state 144
+    expr_or                        shift and go to state 59
+    expr_and                       shift and go to state 60
+    expr_not                       shift and go to state 61
+    expr_rel                       shift and go to state 62
+    expr_arith                     shift and go to state 64
+    term                           shift and go to state 65
+    factor                         shift and go to state 67
+    primary                        shift and go to state 68
+
+state 140
+
+    (76) arg_list -> arg_list COMMA expression .
+
+    RPAREN          reduce using rule 76 (arg_list -> arg_list COMMA expression .)
+    COMMA           reduce using rule 76 (arg_list -> arg_list COMMA expression .)
+
+
+state 141
+
+    (68) function -> type_spec FUNCTION IDENTIFIER LPAREN param_list RPAREN statements END .
+
+    PROGRAM         reduce using rule 68 (function -> type_spec FUNCTION IDENTIFIER LPAREN param_list RPAREN statements END .)
+    SUBROUTINE      reduce using rule 68 (function -> type_spec FUNCTION IDENTIFIER LPAREN param_list RPAREN statements END .)
+    INTEGER         reduce using rule 68 (function -> type_spec FUNCTION IDENTIFIER LPAREN param_list RPAREN statements END .)
+    REAL            reduce using rule 68 (function -> type_spec FUNCTION IDENTIFIER LPAREN param_list RPAREN statements END .)
+    LOGICAL         reduce using rule 68 (function -> type_spec FUNCTION IDENTIFIER LPAREN param_list RPAREN statements END .)
+    $end            reduce using rule 68 (function -> type_spec FUNCTION IDENTIFIER LPAREN param_list RPAREN statements END .)
+
+
+state 142
+
+    (33) if_stmt -> IF LPAREN expression RPAREN THEN statements ENDIF .
+
+    END             reduce using rule 33 (if_stmt -> IF LPAREN expression RPAREN THEN statements ENDIF .)
+    IDENTIFIER      reduce using rule 33 (if_stmt -> IF LPAREN expression RPAREN THEN statements ENDIF .)
+    PRINT           reduce using rule 33 (if_stmt -> IF LPAREN expression RPAREN THEN statements ENDIF .)
+    READ            reduce using rule 33 (if_stmt -> IF LPAREN expression RPAREN THEN statements ENDIF .)
+    IF              reduce using rule 33 (if_stmt -> IF LPAREN expression RPAREN THEN statements ENDIF .)
+    DO              reduce using rule 33 (if_stmt -> IF LPAREN expression RPAREN THEN statements ENDIF .)
+    GOTO            reduce using rule 33 (if_stmt -> IF LPAREN expression RPAREN THEN statements ENDIF .)
+    CALL            reduce using rule 33 (if_stmt -> IF LPAREN expression RPAREN THEN statements ENDIF .)
+    RETURN          reduce using rule 33 (if_stmt -> IF LPAREN expression RPAREN THEN statements ENDIF .)
+    INTEGER         reduce using rule 33 (if_stmt -> IF LPAREN expression RPAREN THEN statements ENDIF .)
+    REAL            reduce using rule 33 (if_stmt -> IF LPAREN expression RPAREN THEN statements ENDIF .)
+    LOGICAL         reduce using rule 33 (if_stmt -> IF LPAREN expression RPAREN THEN statements ENDIF .)
+    ENDIF           reduce using rule 33 (if_stmt -> IF LPAREN expression RPAREN THEN statements ENDIF .)
+    ELSE            reduce using rule 33 (if_stmt -> IF LPAREN expression RPAREN THEN statements ENDIF .)
+    NUMBER          reduce using rule 33 (if_stmt -> IF LPAREN expression RPAREN THEN statements ENDIF .)
+
+
+state 143
+
+    (34) if_stmt -> IF LPAREN expression RPAREN THEN statements ELSE . statements ENDIF
+    (9) statements -> . statement
+    (10) statements -> . statements statement
+    (11) statement -> . declaration
+    (12) statement -> . assignment
+    (13) statement -> . print_stmt
+    (14) statement -> . read_stmt
+    (15) statement -> . if_stmt
+    (16) statement -> . do_loop
+    (17) statement -> . goto_stmt
+    (18) statement -> . call_stmt
+    (19) statement -> . return_stmt
+    (20) declaration -> . type_spec var_list
+    (26) assignment -> . IDENTIFIER ASSIGN expression
+    (27) print_stmt -> . PRINT TIMES print_list
+    (30) read_stmt -> . READ TIMES read_list
+    (33) if_stmt -> . IF LPAREN expression RPAREN THEN statements ENDIF
+    (34) if_stmt -> . IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF
+    (35) do_loop -> . DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE
+    (36) goto_stmt -> . GOTO NUMBER
+    (72) call_stmt -> . CALL IDENTIFIER LPAREN arg_list RPAREN
+    (73) call_stmt -> . CALL IDENTIFIER
+    (74) return_stmt -> . RETURN
+    (21) type_spec -> . INTEGER
+    (22) type_spec -> . REAL
+    (23) type_spec -> . LOGICAL
+
+    IDENTIFIER      shift and go to state 17
+    PRINT           shift and go to state 31
+    READ            shift and go to state 32
+    IF              shift and go to state 33
+    DO              shift and go to state 34
+    GOTO            shift and go to state 35
+    CALL            shift and go to state 36
+    RETURN          shift and go to state 37
+    INTEGER         shift and go to state 10
+    REAL            shift and go to state 11
+    LOGICAL         shift and go to state 12
+
+    statements                     shift and go to state 145
+    statement                      shift and go to state 20
+    declaration                    shift and go to state 21
+    assignment                     shift and go to state 22
+    print_stmt                     shift and go to state 23
+    read_stmt                      shift and go to state 24
+    if_stmt                        shift and go to state 25
+    do_loop                        shift and go to state 26
+    goto_stmt                      shift and go to state 27
+    call_stmt                      shift and go to state 28
+    return_stmt                    shift and go to state 29
+    type_spec                      shift and go to state 30
+
+state 144
+
+    (35) do_loop -> DO NUMBER IDENTIFIER ASSIGN expression COMMA expression . statements NUMBER CONTINUE
+    (9) statements -> . statement
+    (10) statements -> . statements statement
+    (11) statement -> . declaration
+    (12) statement -> . assignment
+    (13) statement -> . print_stmt
+    (14) statement -> . read_stmt
+    (15) statement -> . if_stmt
+    (16) statement -> . do_loop
+    (17) statement -> . goto_stmt
+    (18) statement -> . call_stmt
+    (19) statement -> . return_stmt
+    (20) declaration -> . type_spec var_list
+    (26) assignment -> . IDENTIFIER ASSIGN expression
+    (27) print_stmt -> . PRINT TIMES print_list
+    (30) read_stmt -> . READ TIMES read_list
+    (33) if_stmt -> . IF LPAREN expression RPAREN THEN statements ENDIF
+    (34) if_stmt -> . IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF
+    (35) do_loop -> . DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE
+    (36) goto_stmt -> . GOTO NUMBER
+    (72) call_stmt -> . CALL IDENTIFIER LPAREN arg_list RPAREN
+    (73) call_stmt -> . CALL IDENTIFIER
+    (74) return_stmt -> . RETURN
+    (21) type_spec -> . INTEGER
+    (22) type_spec -> . REAL
+    (23) type_spec -> . LOGICAL
+
+    IDENTIFIER      shift and go to state 17
+    PRINT           shift and go to state 31
+    READ            shift and go to state 32
+    IF              shift and go to state 33
+    DO              shift and go to state 34
+    GOTO            shift and go to state 35
+    CALL            shift and go to state 36
+    RETURN          shift and go to state 37
+    INTEGER         shift and go to state 10
+    REAL            shift and go to state 11
+    LOGICAL         shift and go to state 12
+
+    statements                     shift and go to state 146
+    statement                      shift and go to state 20
+    declaration                    shift and go to state 21
+    assignment                     shift and go to state 22
+    print_stmt                     shift and go to state 23
+    read_stmt                      shift and go to state 24
+    if_stmt                        shift and go to state 25
+    do_loop                        shift and go to state 26
+    goto_stmt                      shift and go to state 27
+    call_stmt                      shift and go to state 28
+    return_stmt                    shift and go to state 29
+    type_spec                      shift and go to state 30
+
+state 145
+
+    (34) if_stmt -> IF LPAREN expression RPAREN THEN statements ELSE statements . ENDIF
+    (10) statements -> statements . statement
+    (11) statement -> . declaration
+    (12) statement -> . assignment
+    (13) statement -> . print_stmt
+    (14) statement -> . read_stmt
+    (15) statement -> . if_stmt
+    (16) statement -> . do_loop
+    (17) statement -> . goto_stmt
+    (18) statement -> . call_stmt
+    (19) statement -> . return_stmt
+    (20) declaration -> . type_spec var_list
+    (26) assignment -> . IDENTIFIER ASSIGN expression
+    (27) print_stmt -> . PRINT TIMES print_list
+    (30) read_stmt -> . READ TIMES read_list
+    (33) if_stmt -> . IF LPAREN expression RPAREN THEN statements ENDIF
+    (34) if_stmt -> . IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF
+    (35) do_loop -> . DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE
+    (36) goto_stmt -> . GOTO NUMBER
+    (72) call_stmt -> . CALL IDENTIFIER LPAREN arg_list RPAREN
+    (73) call_stmt -> . CALL IDENTIFIER
+    (74) return_stmt -> . RETURN
+    (21) type_spec -> . INTEGER
+    (22) type_spec -> . REAL
+    (23) type_spec -> . LOGICAL
+
+    ENDIF           shift and go to state 147
+    IDENTIFIER      shift and go to state 17
+    PRINT           shift and go to state 31
+    READ            shift and go to state 32
+    IF              shift and go to state 33
+    DO              shift and go to state 34
+    GOTO            shift and go to state 35
+    CALL            shift and go to state 36
+    RETURN          shift and go to state 37
+    INTEGER         shift and go to state 10
+    REAL            shift and go to state 11
+    LOGICAL         shift and go to state 12
+
+    statement                      shift and go to state 43
+    declaration                    shift and go to state 21
+    assignment                     shift and go to state 22
+    print_stmt                     shift and go to state 23
+    read_stmt                      shift and go to state 24
+    if_stmt                        shift and go to state 25
+    do_loop                        shift and go to state 26
+    goto_stmt                      shift and go to state 27
+    call_stmt                      shift and go to state 28
+    return_stmt                    shift and go to state 29
+    type_spec                      shift and go to state 30
+
+state 146
+
+    (35) do_loop -> DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements . NUMBER CONTINUE
+    (10) statements -> statements . statement
+    (11) statement -> . declaration
+    (12) statement -> . assignment
+    (13) statement -> . print_stmt
+    (14) statement -> . read_stmt
+    (15) statement -> . if_stmt
+    (16) statement -> . do_loop
+    (17) statement -> . goto_stmt
+    (18) statement -> . call_stmt
+    (19) statement -> . return_stmt
+    (20) declaration -> . type_spec var_list
+    (26) assignment -> . IDENTIFIER ASSIGN expression
+    (27) print_stmt -> . PRINT TIMES print_list
+    (30) read_stmt -> . READ TIMES read_list
+    (33) if_stmt -> . IF LPAREN expression RPAREN THEN statements ENDIF
+    (34) if_stmt -> . IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF
+    (35) do_loop -> . DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE
+    (36) goto_stmt -> . GOTO NUMBER
+    (72) call_stmt -> . CALL IDENTIFIER LPAREN arg_list RPAREN
+    (73) call_stmt -> . CALL IDENTIFIER
+    (74) return_stmt -> . RETURN
+    (21) type_spec -> . INTEGER
+    (22) type_spec -> . REAL
+    (23) type_spec -> . LOGICAL
+
+    NUMBER          shift and go to state 148
+    IDENTIFIER      shift and go to state 17
+    PRINT           shift and go to state 31
+    READ            shift and go to state 32
+    IF              shift and go to state 33
+    DO              shift and go to state 34
+    GOTO            shift and go to state 35
+    CALL            shift and go to state 36
+    RETURN          shift and go to state 37
+    INTEGER         shift and go to state 10
+    REAL            shift and go to state 11
+    LOGICAL         shift and go to state 12
+
+    statement                      shift and go to state 43
+    declaration                    shift and go to state 21
+    assignment                     shift and go to state 22
+    print_stmt                     shift and go to state 23
+    read_stmt                      shift and go to state 24
+    if_stmt                        shift and go to state 25
+    do_loop                        shift and go to state 26
+    goto_stmt                      shift and go to state 27
+    call_stmt                      shift and go to state 28
+    return_stmt                    shift and go to state 29
+    type_spec                      shift and go to state 30
+
+state 147
+
+    (34) if_stmt -> IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF .
+
+    END             reduce using rule 34 (if_stmt -> IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF .)
+    IDENTIFIER      reduce using rule 34 (if_stmt -> IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF .)
+    PRINT           reduce using rule 34 (if_stmt -> IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF .)
+    READ            reduce using rule 34 (if_stmt -> IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF .)
+    IF              reduce using rule 34 (if_stmt -> IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF .)
+    DO              reduce using rule 34 (if_stmt -> IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF .)
+    GOTO            reduce using rule 34 (if_stmt -> IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF .)
+    CALL            reduce using rule 34 (if_stmt -> IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF .)
+    RETURN          reduce using rule 34 (if_stmt -> IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF .)
+    INTEGER         reduce using rule 34 (if_stmt -> IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF .)
+    REAL            reduce using rule 34 (if_stmt -> IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF .)
+    LOGICAL         reduce using rule 34 (if_stmt -> IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF .)
+    ENDIF           reduce using rule 34 (if_stmt -> IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF .)
+    ELSE            reduce using rule 34 (if_stmt -> IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF .)
+    NUMBER          reduce using rule 34 (if_stmt -> IF LPAREN expression RPAREN THEN statements ELSE statements ENDIF .)
+
+
+state 148
+
+    (35) do_loop -> DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER . CONTINUE
+
+    CONTINUE        shift and go to state 149
+
+
+state 149
+
+    (35) do_loop -> DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE .
+
+    END             reduce using rule 35 (do_loop -> DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE .)
+    IDENTIFIER      reduce using rule 35 (do_loop -> DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE .)
+    PRINT           reduce using rule 35 (do_loop -> DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE .)
+    READ            reduce using rule 35 (do_loop -> DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE .)
+    IF              reduce using rule 35 (do_loop -> DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE .)
+    DO              reduce using rule 35 (do_loop -> DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE .)
+    GOTO            reduce using rule 35 (do_loop -> DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE .)
+    CALL            reduce using rule 35 (do_loop -> DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE .)
+    RETURN          reduce using rule 35 (do_loop -> DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE .)
+    INTEGER         reduce using rule 35 (do_loop -> DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE .)
+    REAL            reduce using rule 35 (do_loop -> DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE .)
+    LOGICAL         reduce using rule 35 (do_loop -> DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE .)
+    ENDIF           reduce using rule 35 (do_loop -> DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE .)
+    ELSE            reduce using rule 35 (do_loop -> DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE .)
+    NUMBER          reduce using rule 35 (do_loop -> DO NUMBER IDENTIFIER ASSIGN expression COMMA expression statements NUMBER CONTINUE .)
+

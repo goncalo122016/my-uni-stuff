@@ -1,0 +1,12 @@
+{
+    "IDEN" : "[A-Za-z]+",
+    "INT" : "\\d+",
+    "ADD" : "\\+",
+    "MUL" : "\\*",
+    "SUB" : "-",
+    "DIV" : "/",
+    "LPAREN" : "\\(",
+    "RPAREN" : "\\)",
+    "IGNORE" : "[ \\t]+",
+    "NEWLINE" : "\\n"
+}

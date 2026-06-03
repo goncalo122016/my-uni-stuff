@@ -1,0 +1,15 @@
+{
+    "name": "cg-solar-system",
+    "version": "1.0.0",
+    "dependencies": [
+        "glfw3",
+        "opengl",
+        "tinyxml2",
+        "zlib",
+        {
+            "name": "imgui",
+            "features": ["glfw-binding", "opengl2-binding"]
+        },
+        "glew"
+    ]
+}

@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/generator.dir/src/main.cpp.o CMakeFiles/generator.dir/src/Generator.cpp.o CMakeFiles/generator.dir/__/common/Mat.cpp.o -o generator   -L/home/goncalo/vcpkg/packages/imgui_x64-linux/lib  -L/home/goncalo/vcpkg/packages/glfw3_x64-linux/lib  -L/home/goncalo/vcpkg/packages/glew_x64-linux/lib  -L/home/goncalo/vcpkg/packages/tinyxml2_x64-linux/lib 

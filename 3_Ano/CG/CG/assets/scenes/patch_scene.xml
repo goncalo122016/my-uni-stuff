@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<world>
+    <window width="800" height="600" />
+
+    <camera>
+        <position x="5" y="5" z="5" />
+        <lookAt x="0" y="0" z="0" />
+        <up x="0" y="1" z="0" />
+        <projection fov="60" near="1" far="1000" />
+    </camera>
+
+    <group>
+        <transform>
+            <!-- Center the patch and apply a slow rotation -->
+            <translate x="0" y="-1" z="0" />
+            <rotate time="15" x="0" y="1" z="0" />
+            <scale x="3" y="3" z="3" />
+        </transform>
+
+        <models>
+            <!-- Make sure to generate this model first using: -->
+            <!-- ./generator patch teapot.patch 10 assets/models/bezier_10.3d -->
+            <model file="assets/models/bezier_10.3d" />
+        </models>
+    </group>
+</world>

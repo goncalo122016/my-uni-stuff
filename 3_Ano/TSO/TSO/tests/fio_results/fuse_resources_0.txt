@@ -1,0 +1,80 @@
+Linux 6.14.0-37-generic (ubuntu) 	05/15/2026 	_x86_64_	(6 CPU)
+
+02:16:17 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+02:16:18 PM  1000      7149    1.98   54.46    0.00    0.00   56.44     0  passthrough
+
+02:16:17 PM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+02:16:18 PM  1000      7149   1143.56      0.00  237960   10172   0.24  passthrough
+
+02:16:18 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+02:16:19 PM  1000      7149    4.00  102.00    0.00    0.00  106.00     0  passthrough
+
+02:16:18 PM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+02:16:19 PM  1000      7149  12386.00      0.00  237960   13928   0.33  passthrough
+
+02:16:19 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+02:16:20 PM  1000      7149    7.00  102.00    0.00    0.00  109.00     0  passthrough
+
+02:16:19 PM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+02:16:20 PM  1000      7149  26711.00      0.00  237960   14592   0.34  passthrough
+
+02:16:20 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+02:16:21 PM  1000      7149    6.00   98.00    0.00    0.00  104.00     0  passthrough
+
+02:16:20 PM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+02:16:21 PM  1000      7149  22219.00      0.00  237960   15840   0.37  passthrough
+
+02:16:21 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+02:16:22 PM  1000      7149    8.00   97.00    0.00    0.00  105.00     0  passthrough
+
+02:16:21 PM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+02:16:22 PM  1000      7149  14020.00      0.00  237960   16552   0.39  passthrough
+
+02:16:22 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+02:16:23 PM  1000      7149    9.00   92.00    0.00    0.00  101.00     0  passthrough
+
+02:16:22 PM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+02:16:23 PM  1000      7149   9781.00      0.00  237960   17360   0.41  passthrough
+
+02:16:23 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+02:16:24 PM  1000      7149    9.00   99.00    0.00    0.00  108.00     0  passthrough
+
+02:16:23 PM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+02:16:24 PM  1000      7149  54511.00      0.00  237960   18056   0.42  passthrough
+
+02:16:24 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+02:16:25 PM  1000      7149    7.00  100.00    0.00    0.00  107.00     0  passthrough
+
+02:16:24 PM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+02:16:25 PM  1000      7149  56308.00      0.00  237960   18196   0.43  passthrough
+
+02:16:25 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+02:16:26 PM  1000      7149   11.88   91.09    0.00    0.00  102.97     0  passthrough
+
+02:16:25 PM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+02:16:26 PM  1000      7149  43686.14      0.00  237960   21380   0.50  passthrough
+
+02:16:26 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+02:16:27 PM  1000      7149   13.00   92.00    0.00    0.00  105.00     0  passthrough
+
+02:16:26 PM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+02:16:27 PM  1000      7149  53560.00      0.00  237960   21084   0.50  passthrough
+
+02:16:27 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+02:16:28 PM  1000      7149   12.00   95.00    0.00    0.00  107.00     0  passthrough
+
+02:16:27 PM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+02:16:28 PM  1000      7149  63483.00      0.00  237960   20088   0.47  passthrough
+
+02:16:28 PM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+02:16:29 PM  1000      7149   14.00   94.00    0.00    0.00  108.00     0  passthrough
+
+02:16:28 PM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+02:16:29 PM  1000      7149  47185.00      0.00  237960   22536   0.53  passthrough
+
+
+Average:      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+Average:     1000      7149    8.57   93.01    0.00    0.00  101.58     -  passthrough
+
+Average:      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command
+Average:     1000      7149  33730.62      0.00  237960   17482   0.41  passthrough

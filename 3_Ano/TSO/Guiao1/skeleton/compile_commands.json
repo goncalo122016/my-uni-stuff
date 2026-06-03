@@ -1,0 +1,32 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-Wall",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/x86_64-linux-gnu/glib-2.0/include",
+      "-o",
+      "metanode.o",
+      "metanode.c"
+    ],
+    "directory": "/home/goncalo/UMinho/3_Ano/TSO/skeleton",
+    "file": "/home/goncalo/UMinho/3_Ano/TSO/skeleton/metanode.c",
+    "output": "/home/goncalo/UMinho/3_Ano/TSO/skeleton/metanode.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-Wall",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/x86_64-linux-gnu/glib-2.0/include",
+      "-o",
+      "metaindex.o",
+      "metaindex.c"
+    ],
+    "directory": "/home/goncalo/UMinho/3_Ano/TSO/skeleton",
+    "file": "/home/goncalo/UMinho/3_Ano/TSO/skeleton/metaindex.c",
+    "output": "/home/goncalo/UMinho/3_Ano/TSO/skeleton/metaindex.o"
+  }
+]

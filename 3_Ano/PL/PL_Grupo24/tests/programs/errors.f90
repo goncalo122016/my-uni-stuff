@@ -1,0 +1,7 @@
+PROGRAM ERRORS
+    INTEGER X, Y
+    X = 5
+    PRINT *, X, UNDEFINED
+    Z = Y + 10
+    INTEGER W
+END

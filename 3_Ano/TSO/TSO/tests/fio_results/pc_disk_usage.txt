@@ -1,0 +1,17 @@
+Blocos únicos: 25600
+Espaço usado: 105M	/backend/.dedupblocks/
+Resumo de I/O BPF (Layer 0=Syscall, Layer 2=EXT4):
+  VFS Escrito (Bytes): 108494848
+  Block/EXT4 Escrito (Bytes): 104853504
+Blocos únicos: 12684
+Espaço usado: 52M	/backend/.dedupblocks/
+Resumo de I/O BPF (Layer 0=Syscall, Layer 2=EXT4):
+  VFS Escrito (Bytes): 55631872
+  Block/EXT4 Escrito (Bytes): 51945472
+Blocos únicos: 1
+Espaço usado: 8.0K	/backend/.dedupblocks/
+Resumo de I/O BPF (Layer 0=Syscall, Layer 2=EXT4):
+  VFS Escrito (Bytes): 3739648
+  Block/EXT4 Escrito (Bytes): 4096
+Blocos únicos manuais: 2560
+Espaço usado manual: 11M	/backend/.dedupblocks/

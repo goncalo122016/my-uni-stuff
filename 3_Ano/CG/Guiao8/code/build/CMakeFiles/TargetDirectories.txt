@@ -1,0 +1,3 @@
+/home/goncalo/UMinho/3_Ano/CG/Guiao8/code/build/CMakeFiles/class8.dir
+/home/goncalo/UMinho/3_Ano/CG/Guiao8/code/build/CMakeFiles/edit_cache.dir
+/home/goncalo/UMinho/3_Ano/CG/Guiao8/code/build/CMakeFiles/rebuild_cache.dir

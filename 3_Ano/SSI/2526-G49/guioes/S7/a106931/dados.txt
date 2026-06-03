@@ -1,0 +1,1 @@
+Ficheiro de teste para cifras autenticadas SSI

@@ -1,0 +1,20 @@
+Commands: Comands Comand
+        | Comand
+
+Comand: IDEN EQ Expr
+        | EXCLAMATION Expr
+        | QUESTION IDEN
+        | STAR 
+        | HASH
+
+Expr: Expr ADD Term
+        | Expr SUB Term
+        | Term
+
+Term:| Expr MUL Factor
+        | Expr DIV Factor
+        | Factor
+
+Factor: INT
+        | ( Expr )
+        | IDEN         

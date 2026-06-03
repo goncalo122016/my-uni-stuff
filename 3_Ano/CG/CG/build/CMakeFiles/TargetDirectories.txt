@@ -1,0 +1,8 @@
+/home/goncalo/UMinho/3_Ano/CG/CG/build/CMakeFiles/edit_cache.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/build/CMakeFiles/rebuild_cache.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/build/engine/CMakeFiles/system.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/build/engine/CMakeFiles/edit_cache.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/build/engine/CMakeFiles/rebuild_cache.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/build/generator/CMakeFiles/generator.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/build/generator/CMakeFiles/edit_cache.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/build/generator/CMakeFiles/rebuild_cache.dir

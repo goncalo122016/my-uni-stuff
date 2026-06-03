@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<world>
+    <window width="1024" height="768" />
+
+    <camera>
+        <position x="18" y="9" z="18" />
+        <lookAt x="0" y="0" z="0" />
+        <up x="0" y="1" z="0" />
+        <projection fov="60" near="0.1" far="500" />
+    </camera>
+
+    <lights>
+        <!-- Sun: point light far to the right, warm white -->
+        <light type="point"
+               posX="80" posY="20" posZ="40"
+               diffuseR="1.0"  diffuseG="0.98" diffuseB="0.92"
+               specularR="1.0" specularG="0.98" specularB="0.92"
+               ambientR="0.05" ambientG="0.05" ambientB="0.07" />
+
+        <!-- Dim fill from opposite side so night side isn't pitch black -->
+        <light type="directional"
+               dirX="-1" dirY="-0.2" dirZ="-0.5"
+               diffuseR="0.08" diffuseG="0.09" diffuseB="0.14"
+               specularR="0.02" specularG="0.02" specularB="0.04"
+               ambientR="0.03" ambientG="0.03" ambientB="0.05" />
+    </lights>
+
+    <group>
+
+        <!-- ── Skybox ─────────────────────────────────────────────────────── -->
+        <group>
+            <transform>
+                <scale x="400" y="400" z="400" />
+            </transform>
+            <models>
+                <model file="assets/models/sphere.3d" skybox="true">
+                    <texture file="2k_stars_milky_way.jpg" />
+                    <color>
+                        <diffuse  R="200" G="200" B="200" />
+                        <ambient  R="200" G="200" B="200" />
+                        <specular R="0"   G="0"   B="0"   />
+                        <emissive R="200" G="200" B="200" />
+                        <shininess value="0" />
+                    </color>
+                </model>
+            </models>
+        </group>
+
+        <!-- ── Earth ─────────────────────────────────────────────────────── -->
+        <group>
+            <transform>
+                <!-- Axial tilt ~23.5° -->
+                <rotate angle="23.5" x="0" y="0" z="1" />
+                <!-- Daily rotation: period 2s -->
+                <rotate time="2" x="0" y="1" z="0" />
+            </transform>
+            <models>
+                <model file="assets/models/sphere.3d">
+                    <texture file="2k_earth_daymap.jpg" />
+                    <color>
+                        <diffuse  R="110" G="150" B="210" />
+                        <ambient  R="25"  G="35"  B="50"  />
+                        <specular R="160" G="170" B="210" />
+                        <emissive R="0"   G="0"   B="0"   />
+                        <shininess value="90" />
+                    </color>
+                </model>
+            </models>
+        </group>
+
+        <!-- ── Moon ──────────────────────────────────────────────────────── -->
+        <group>
+            <!-- Orbital rotation around Earth -->
+            <transform>
+                <rotate time="8" x="0" y="1" z="0" />
+            </transform>
+            <transform>
+                <translate x="8" y="0" z="0" />
+            </transform>
+            <!-- Self-rotation (tidally locked: same period as orbit) -->
+            <group>
+                <transform>
+                    <rotate time="8" x="0" y="1" z="0" />
+                    <scale x="0.27" y="0.27" z="0.27" />
+                </transform>
+                <models>
+                    <model file="assets/models/sphere.3d">
+                        <texture file="2k_moon.jpg" />
+                        <color>
+                            <diffuse  R="200" G="200" B="200" />
+                            <ambient  R="45"  G="45"  B="45"  />
+                            <specular R="70"  G="70"  B="70"  />
+                            <emissive R="0"   G="0"   B="0"   />
+                            <shininess value="20" />
+                        </color>
+                    </model>
+                </models>
+            </group>
+        </group>
+
+        <!-- ── Satellite ─────────────────────────────────────────────────── -->
+        <!--
+            Polar-ish orbit: axis tilted so the satellite passes over the poles.
+            Period 1.5s (much faster than the Moon — LEO analogy).
+            Distance: 3 units from Earth centre.
+        -->
+        <group>
+            <transform>
+                <rotate time="1.5" x="0.4" y="1" z="0.1" />
+            </transform>
+            <transform>
+                <translate x="3" y="0" z="0" />
+            </transform>
+            <group>
+                <!-- Keep satellite oriented in its orbital frame -->
+                <transform>
+                    <rotate time="1.5" x="0" y="1" z="0" />
+                </transform>
+
+                <!-- Body: small metallic cylinder-like box -->
+                <group>
+                    <transform>
+                        <scale x="0.06" y="0.06" z="0.18" />
+                    </transform>
+                    <models>
+                        <model file="assets/models/cylinder.3d">
+                            <color>
+                                <diffuse  R="200" G="200" B="210" />
+                                <ambient  R="50"  G="50"  B="55"  />
+                                <specular R="240" G="240" B="255" />
+                                <emissive R="0"   G="0"   B="0"   />
+                                <shininess value="128" />
+                            </color>
+                        </model>
+                    </models>
+                </group>
+
+                <!-- Solar panel — left -->
+                <group>
+                    <transform>
+                        <translate x="-0.22" y="0" z="0" />
+                        <scale x="0.18" y="0.01" z="0.08" />
+                    </transform>
+                    <models>
+                        <model file="assets/models/box.3d">
+                            <color>
+                                <diffuse  R="20"  G="40"  B="130" />
+                                <ambient  R="5"   G="10"  B="32"  />
+                                <specular R="80"  G="100" B="200" />
+                                <emissive R="5"   G="10"  B="30"  />
+                                <shininess value="60" />
+                            </color>
+                        </model>
+                    </models>
+                </group>
+
+                <!-- Solar panel — right -->
+                <group>
+                    <transform>
+                        <translate x="0.22" y="0" z="0" />
+                        <scale x="0.18" y="0.01" z="0.08" />
+                    </transform>
+                    <models>
+                        <model file="assets/models/box.3d">
+                            <color>
+                                <diffuse  R="20"  G="40"  B="130" />
+                                <ambient  R="5"   G="10"  B="32"  />
+                                <specular R="80"  G="100" B="200" />
+                                <emissive R="5"   G="10"  B="30"  />
+                                <shininess value="60" />
+                            </color>
+                        </model>
+                    </models>
+                </group>
+
+                <!-- Antenna dish: small cone pointing outward -->
+                <group>
+                    <transform>
+                        <translate x="0" y="0" z="0.12" />
+                        <rotate angle="90" x="1" y="0" z="0" />
+                        <scale x="0.04" y="0.06" z="0.04" />
+                    </transform>
+                    <models>
+                        <model file="assets/models/cone.3d">
+                            <color>
+                                <diffuse  R="220" G="220" B="220" />
+                                <ambient  R="55"  G="55"  B="55"  />
+                                <specular R="240" G="240" B="240" />
+                                <emissive R="0"   G="0"   B="0"   />
+                                <shininess value="100" />
+                            </color>
+                        </model>
+                    </models>
+                </group>
+
+            </group>
+        </group>
+
+    </group>
+</world>

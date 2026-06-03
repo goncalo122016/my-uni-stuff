@@ -1,0 +1,17 @@
+cinema: [ Lista ]
+
+Lista: Lista , Filme
+      | Filme
+
+Filme: { Titulo , Ano , Elenco , Generos }
+
+Titulo: TITLE STR
+
+Ano: YEAR INT
+
+Elenco: CAST [ ListaStr ]
+
+ListaStr: ListaStr , STR
+          | STR
+
+Generos: GENRES ListaStr
