@@ -1,0 +1,7 @@
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/tinyxml2_x64-linux/lib/libtinyxml2.a
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/tinyxml2_x64-linux/lib/cmake/tinyxml2/tinyxml2-static-targets.cmake
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/tinyxml2_x64-linux/lib/cmake/tinyxml2/tinyxml2-static-targets-release.cmake
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/tinyxml2_x64-linux/lib/cmake/tinyxml2/tinyxml2-config.cmake
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/tinyxml2_x64-linux/lib/cmake/tinyxml2/tinyxml2-config-version.cmake
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/tinyxml2_x64-linux/include/tinyxml2.h
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/tinyxml2_x64-linux/lib/pkgconfig/tinyxml2.pc

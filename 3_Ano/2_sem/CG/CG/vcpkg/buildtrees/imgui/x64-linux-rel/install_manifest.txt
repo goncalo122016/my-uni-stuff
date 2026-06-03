@@ -1,0 +1,13 @@
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/imgui_x64-linux/lib/libimgui.a
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/imgui_x64-linux/include/imgui.h
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/imgui_x64-linux/include/imconfig.h
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/imgui_x64-linux/include/imgui_internal.h
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/imgui_x64-linux/include/imstb_textedit.h
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/imgui_x64-linux/include/imstb_rectpack.h
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/imgui_x64-linux/include/imstb_truetype.h
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/imgui_x64-linux/include/imgui_stdlib.h
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/imgui_x64-linux/include/imgui_impl_glfw.h
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/imgui_x64-linux/include/imgui_impl_opengl2.h
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/imgui_x64-linux/share/imgui/imgui-config.cmake
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/imgui_x64-linux/share/imgui/imgui-targets.cmake
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/imgui_x64-linux/share/imgui/imgui-targets-release.cmake

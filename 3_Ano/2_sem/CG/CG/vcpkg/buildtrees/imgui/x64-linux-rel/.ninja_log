@@ -1,0 +1,11 @@
+# ninja log v7
+4	231	1772203164737142938	CMakeFiles/imgui.dir/backends/imgui_impl_opengl2.cpp.o	f5a62d4e5855179d
+3	341	1772203164736769650	CMakeFiles/imgui.dir/backends/imgui_impl_glfw.cpp.o	8716e91a294f6331
+3	399	1772203164736364756	CMakeFiles/imgui.dir/misc/cpp/imgui_stdlib.cpp.o	f2f720115675288e
+2	1844	1772203164735545559	CMakeFiles/imgui.dir/imgui_tables.cpp.o	f752c61613d0d72c
+2	3933	1772203164735150323	CMakeFiles/imgui.dir/imgui_draw.cpp.o	c6758c6eec8a1a29
+1	4089	1772203164734636017	CMakeFiles/imgui.dir/imgui_demo.cpp.o	19beb547fceed846
+3	4247	1772203164736029420	CMakeFiles/imgui.dir/imgui_widgets.cpp.o	792c192837a82827
+1	6689	1772203164733124033	CMakeFiles/imgui.dir/imgui.cpp.o	da51de3c02295716
+6689	6706	1772203171421108885	libimgui.a	723a15ea229ef78
+6706	6720	1772203171438707999	CMakeFiles/install.util	38a62887fec4d380

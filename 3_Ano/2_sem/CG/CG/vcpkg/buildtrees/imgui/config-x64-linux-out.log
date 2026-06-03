@@ -1,0 +1,42 @@
+[1/2] "/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/downloads/tools/cmake-3.31.10-linux/cmake-3.31.10-linux-x86_64/bin/cmake" -E chdir ".." "/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/downloads/tools/cmake-3.31.10-linux/cmake-3.31.10-linux-x86_64/bin/cmake" "/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/imgui/src/v1.90.2-4442117b09.clean" "-G" "Ninja" "-DCMAKE_BUILD_TYPE=Release" "-DCMAKE_INSTALL_PREFIX=/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/imgui_x64-linux" "-DFETCHCONTENT_FULLY_DISCONNECTED=ON" "-DIMGUI_BUILD_ALLEGRO5_BINDING=OFF" "-DIMGUI_BUILD_ANDROID_BINDING=OFF" "-DIMGUI_BUILD_DX9_BINDING=OFF" "-DIMGUI_BUILD_DX10_BINDING=OFF" "-DIMGUI_BUILD_DX11_BINDING=OFF" "-DIMGUI_BUILD_DX12_BINDING=OFF" "-DIMGUI_BUILD_GLFW_BINDING=ON" "-DIMGUI_BUILD_GLUT_BINDING=OFF" "-DIMGUI_BUILD_METAL_BINDING=OFF" "-DIMGUI_BUILD_OPENGL2_BINDING=ON" "-DIMGUI_BUILD_OPENGL3_BINDING=OFF" "-DIMGUI_BUILD_OSX_BINDING=OFF" "-DIMGUI_BUILD_SDL2_BINDING=OFF" "-DIMGUI_BUILD_SDL2_RENDERER_BINDING=OFF" "-DIMGUI_BUILD_VULKAN_BINDING=OFF" "-DIMGUI_BUILD_WIN32_BINDING=OFF" "-DIMGUI_FREETYPE=OFF" "-DIMGUI_FREETYPE_LUNASVG=OFF" "-DIMGUI_USE_WCHAR32=OFF" "-DCMAKE_MAKE_PROGRAM=/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/downloads/tools/ninja-1.13.2-linux/ninja" "-DCMAKE_SYSTEM_NAME=Linux" "-DBUILD_SHARED_LIBS=OFF" "-DVCPKG_CHAINLOAD_TOOLCHAIN_FILE=/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/scripts/toolchains/linux.cmake" "-DVCPKG_TARGET_TRIPLET=x64-linux" "-DVCPKG_SET_CHARSET_FLAG=ON" "-DVCPKG_PLATFORM_TOOLSET=external" "-DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON" "-DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON" "-DCMAKE_FIND_PACKAGE_NO_SYSTEM_PACKAGE_REGISTRY=ON" "-DCMAKE_INSTALL_SYSTEM_RUNTIME_LIBS_SKIP=TRUE" "-DCMAKE_VERBOSE_MAKEFILE=ON" "-DVCPKG_APPLOCAL_DEPS=OFF" "-DCMAKE_TOOLCHAIN_FILE=/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/scripts/buildsystems/vcpkg.cmake" "-DCMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION=ON" "-DVCPKG_CXX_FLAGS=" "-DVCPKG_CXX_FLAGS_RELEASE=" "-DVCPKG_CXX_FLAGS_DEBUG=" "-DVCPKG_C_FLAGS=" "-DVCPKG_C_FLAGS_RELEASE=" "-DVCPKG_C_FLAGS_DEBUG=" "-DVCPKG_CRT_LINKAGE=dynamic" "-DVCPKG_LINKER_FLAGS=" "-DVCPKG_LINKER_FLAGS_RELEASE=" "-DVCPKG_LINKER_FLAGS_DEBUG=" "-DVCPKG_TARGET_ARCHITECTURE=x64" "-DCMAKE_INSTALL_LIBDIR:STRING=lib" "-DCMAKE_INSTALL_BINDIR:STRING=bin" "-D_VCPKG_ROOT_DIR=/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg" "-D_VCPKG_INSTALLED_DIR=/home/goncalo/UMinho/3_Ano/CG/CG/build/vcpkg_installed" "-DVCPKG_MANIFEST_INSTALL=OFF"
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_INSTALL_BINDIR
+    CMAKE_INSTALL_LIBDIR
+    FETCHCONTENT_FULLY_DISCONNECTED
+    VCPKG_PLATFORM_TOOLSET
+    VCPKG_SET_CHARSET_FLAG
+    _VCPKG_ROOT_DIR
+
+
+-- Build files have been written to: /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/imgui/x64-linux-rel
+[2/2] "/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/downloads/tools/cmake-3.31.10-linux/cmake-3.31.10-linux-x86_64/bin/cmake" -E chdir "../../x64-linux-dbg" "/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/downloads/tools/cmake-3.31.10-linux/cmake-3.31.10-linux-x86_64/bin/cmake" "/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/imgui/src/v1.90.2-4442117b09.clean" "-G" "Ninja" "-DCMAKE_BUILD_TYPE=Debug" "-DCMAKE_INSTALL_PREFIX=/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/imgui_x64-linux/debug" "-DFETCHCONTENT_FULLY_DISCONNECTED=ON" "-DIMGUI_BUILD_ALLEGRO5_BINDING=OFF" "-DIMGUI_BUILD_ANDROID_BINDING=OFF" "-DIMGUI_BUILD_DX9_BINDING=OFF" "-DIMGUI_BUILD_DX10_BINDING=OFF" "-DIMGUI_BUILD_DX11_BINDING=OFF" "-DIMGUI_BUILD_DX12_BINDING=OFF" "-DIMGUI_BUILD_GLFW_BINDING=ON" "-DIMGUI_BUILD_GLUT_BINDING=OFF" "-DIMGUI_BUILD_METAL_BINDING=OFF" "-DIMGUI_BUILD_OPENGL2_BINDING=ON" "-DIMGUI_BUILD_OPENGL3_BINDING=OFF" "-DIMGUI_BUILD_OSX_BINDING=OFF" "-DIMGUI_BUILD_SDL2_BINDING=OFF" "-DIMGUI_BUILD_SDL2_RENDERER_BINDING=OFF" "-DIMGUI_BUILD_VULKAN_BINDING=OFF" "-DIMGUI_BUILD_WIN32_BINDING=OFF" "-DIMGUI_FREETYPE=OFF" "-DIMGUI_FREETYPE_LUNASVG=OFF" "-DIMGUI_USE_WCHAR32=OFF" "-DCMAKE_MAKE_PROGRAM=/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/downloads/tools/ninja-1.13.2-linux/ninja" "-DCMAKE_SYSTEM_NAME=Linux" "-DBUILD_SHARED_LIBS=OFF" "-DVCPKG_CHAINLOAD_TOOLCHAIN_FILE=/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/scripts/toolchains/linux.cmake" "-DVCPKG_TARGET_TRIPLET=x64-linux" "-DVCPKG_SET_CHARSET_FLAG=ON" "-DVCPKG_PLATFORM_TOOLSET=external" "-DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON" "-DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON" "-DCMAKE_FIND_PACKAGE_NO_SYSTEM_PACKAGE_REGISTRY=ON" "-DCMAKE_INSTALL_SYSTEM_RUNTIME_LIBS_SKIP=TRUE" "-DCMAKE_VERBOSE_MAKEFILE=ON" "-DVCPKG_APPLOCAL_DEPS=OFF" "-DCMAKE_TOOLCHAIN_FILE=/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/scripts/buildsystems/vcpkg.cmake" "-DCMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION=ON" "-DVCPKG_CXX_FLAGS=" "-DVCPKG_CXX_FLAGS_RELEASE=" "-DVCPKG_CXX_FLAGS_DEBUG=" "-DVCPKG_C_FLAGS=" "-DVCPKG_C_FLAGS_RELEASE=" "-DVCPKG_C_FLAGS_DEBUG=" "-DVCPKG_CRT_LINKAGE=dynamic" "-DVCPKG_LINKER_FLAGS=" "-DVCPKG_LINKER_FLAGS_RELEASE=" "-DVCPKG_LINKER_FLAGS_DEBUG=" "-DVCPKG_TARGET_ARCHITECTURE=x64" "-DCMAKE_INSTALL_LIBDIR:STRING=lib" "-DCMAKE_INSTALL_BINDIR:STRING=bin" "-D_VCPKG_ROOT_DIR=/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg" "-D_VCPKG_INSTALLED_DIR=/home/goncalo/UMinho/3_Ano/CG/CG/build/vcpkg_installed" "-DVCPKG_MANIFEST_INSTALL=OFF" "-DIMGUI_SKIP_HEADERS=ON"
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_INSTALL_BINDIR
+    CMAKE_INSTALL_LIBDIR
+    FETCHCONTENT_FULLY_DISCONNECTED
+    VCPKG_PLATFORM_TOOLSET
+    VCPKG_SET_CHARSET_FLAG
+    _VCPKG_ROOT_DIR
+
+
+-- Build files have been written to: /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/imgui/x64-linux-dbg

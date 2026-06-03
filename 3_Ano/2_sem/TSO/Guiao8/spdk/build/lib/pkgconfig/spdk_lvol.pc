@@ -1,0 +1,7 @@
+Description: SPDK lvol library
+Name: spdk_lvol
+Version: 12.0
+Libs: -L/home/goncalo/Guiao8/spdk/build/lib  -lspdk_lvol
+Requires: spdk_log spdk_util spdk_blob spdk_thread 
+Libs.private: 
+Cflags: -I/home/goncalo/Guiao8/spdk/build/include

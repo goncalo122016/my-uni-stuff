@@ -1,0 +1,15 @@
+Change Dir: '/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/tinyxml2/x64-linux-dbg'
+
+Run Build Command(s): /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/downloads/tools/ninja-1.13.2-linux/ninja -v -v -j13 install
+[1/3] /usr/bin/c++ -DTINYXML2_DEBUG -I/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/tinyxml2/src/9.0.0-b11083b41f.clean -fPIC -g -MD -MT CMakeFiles/tinyxml2.dir/tinyxml2.cpp.o -MF CMakeFiles/tinyxml2.dir/tinyxml2.cpp.o.d -o CMakeFiles/tinyxml2.dir/tinyxml2.cpp.o -c /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/tinyxml2/src/9.0.0-b11083b41f.clean/tinyxml2.cpp
+[2/3] : && /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/downloads/tools/cmake-3.31.10-linux/cmake-3.31.10-linux-x86_64/bin/cmake -E rm -f libtinyxml2.a && /usr/bin/ar qc libtinyxml2.a  CMakeFiles/tinyxml2.dir/tinyxml2.cpp.o && /usr/bin/ranlib libtinyxml2.a && :
+[2/3] cd /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/tinyxml2/x64-linux-dbg && /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/downloads/tools/cmake-3.31.10-linux/cmake-3.31.10-linux-x86_64/bin/cmake -P cmake_install.cmake
+-- Install configuration: "Debug"
+-- Installing: /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/tinyxml2_x64-linux/debug/lib/libtinyxml2.a
+-- Installing: /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/tinyxml2_x64-linux/debug/lib/cmake/tinyxml2/tinyxml2-static-targets.cmake
+-- Installing: /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/tinyxml2_x64-linux/debug/lib/cmake/tinyxml2/tinyxml2-static-targets-debug.cmake
+-- Installing: /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/tinyxml2_x64-linux/debug/lib/cmake/tinyxml2/tinyxml2-config.cmake
+-- Installing: /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/tinyxml2_x64-linux/debug/lib/cmake/tinyxml2/tinyxml2-config-version.cmake
+-- Installing: /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/tinyxml2_x64-linux/debug/include/tinyxml2.h
+-- Installing: /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/tinyxml2_x64-linux/debug/lib/pkgconfig/tinyxml2.pc
+

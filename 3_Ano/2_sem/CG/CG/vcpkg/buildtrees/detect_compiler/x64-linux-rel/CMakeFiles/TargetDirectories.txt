@@ -1,0 +1,2 @@
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/detect_compiler/x64-linux-rel/CMakeFiles/edit_cache.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/detect_compiler/x64-linux-rel/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,7 @@
+Description: SPDK util library
+Name: spdk_util
+Version: 11.0
+Libs: -L/home/goncalo/Guiao8/spdk/build/lib  -lspdk_util
+Requires: spdk_log 
+Libs.private: 
+Cflags: -I/home/goncalo/Guiao8/spdk/build/include

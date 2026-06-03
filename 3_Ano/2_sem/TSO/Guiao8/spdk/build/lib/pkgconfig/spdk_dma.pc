@@ -1,0 +1,7 @@
+Description: SPDK dma library
+Name: spdk_dma
+Version: 6.0
+Libs: -L/home/goncalo/Guiao8/spdk/build/lib  -lspdk_dma
+Requires: spdk_log 
+Libs.private: 
+Cflags: -I/home/goncalo/Guiao8/spdk/build/include

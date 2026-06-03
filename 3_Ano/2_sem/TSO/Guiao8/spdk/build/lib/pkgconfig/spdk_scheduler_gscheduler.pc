@@ -1,0 +1,7 @@
+Description: SPDK scheduler_gscheduler library
+Name: spdk_scheduler_gscheduler
+Version: 5.0
+Libs: -L/home/goncalo/Guiao8/spdk/build/lib  -lspdk_scheduler_gscheduler
+Requires: spdk_event spdk_log spdk_util 
+Libs.private: 
+Cflags: -I/home/goncalo/Guiao8/spdk/build/include

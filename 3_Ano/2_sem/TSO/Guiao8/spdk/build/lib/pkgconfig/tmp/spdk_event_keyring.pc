@@ -1,0 +1,7 @@
+Description: SPDK event_keyring library
+Name: spdk_event_keyring
+Version: 2.0
+Libs: -L/usr/local/lib  -lspdk_event_keyring
+Requires: spdk_init spdk_json spdk_keyring 
+Libs.private: 
+Cflags: -I/usr/local/include

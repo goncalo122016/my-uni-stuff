@@ -1,0 +1,7 @@
+Description: SPDK bdev library
+Name: spdk_bdev
+Version: 19.0
+Libs: -L/home/goncalo/Guiao8/spdk/build/lib  -lspdk_bdev
+Requires: spdk_accel spdk_log spdk_util spdk_thread spdk_json spdk_jsonrpc spdk_rpc spdk_notify spdk_trace spdk_dma spdk_bdev_modules
+Libs.private: 
+Cflags: -I/home/goncalo/Guiao8/spdk/build/include

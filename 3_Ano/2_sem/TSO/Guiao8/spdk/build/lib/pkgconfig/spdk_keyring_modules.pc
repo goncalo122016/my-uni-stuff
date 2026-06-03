@@ -1,0 +1,4 @@
+Description: SPDK keyring modules
+Name: spdk_keyring_modules
+Version: 1.0
+Requires: spdk_event_keyring spdk_keyring_file spdk_keyring_linux

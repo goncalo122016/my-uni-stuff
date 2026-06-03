@@ -1,0 +1,7 @@
+Description: SPDK init library
+Name: spdk_init
+Version: 7.0
+Libs: -L/home/goncalo/Guiao8/spdk/build/lib  -lspdk_init
+Requires: spdk_jsonrpc spdk_json spdk_log spdk_rpc spdk_thread spdk_util 
+Libs.private: 
+Cflags: -I/home/goncalo/Guiao8/spdk/build/include

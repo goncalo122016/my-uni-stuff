@@ -1,0 +1,7 @@
+Description: SPDK vmd library
+Name: spdk_vmd
+Version: 7.0
+Libs: -L/home/goncalo/Guiao8/spdk/build/lib  -lspdk_vmd
+Requires: spdk_log spdk_util 
+Libs.private: 
+Cflags: -I/home/goncalo/Guiao8/spdk/build/include

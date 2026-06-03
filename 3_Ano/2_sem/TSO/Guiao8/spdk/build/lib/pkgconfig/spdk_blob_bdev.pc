@@ -1,0 +1,7 @@
+Description: SPDK blob_bdev library
+Name: spdk_blob_bdev
+Version: 13.0
+Libs: -L/home/goncalo/Guiao8/spdk/build/lib  -lspdk_blob_bdev
+Requires: spdk_log spdk_thread spdk_bdev 
+Libs.private: 
+Cflags: -I/home/goncalo/Guiao8/spdk/build/include

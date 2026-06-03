@@ -1,0 +1,7 @@
+Description: SPDK accel_ioat library
+Name: spdk_accel_ioat
+Version: 7.0
+Libs: -L/home/goncalo/Guiao8/spdk/build/lib  -lspdk_accel_ioat
+Requires: spdk_log spdk_ioat spdk_thread spdk_json spdk_jsonrpc spdk_rpc spdk_accel 
+Libs.private: 
+Cflags: -I/home/goncalo/Guiao8/spdk/build/include

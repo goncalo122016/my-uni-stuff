@@ -1,0 +1,7 @@
+Description: SPDK accel_ae4dma library
+Name: spdk_accel_ae4dma
+Version: 1.0
+Libs: -L/usr/local/lib  -lspdk_accel_ae4dma
+Requires: spdk_log spdk_ae4dma spdk_thread spdk_json spdk_jsonrpc spdk_rpc spdk_accel 
+Libs.private: 
+Cflags: -I/usr/local/include

@@ -1,0 +1,7 @@
+Description: SPDK blob library
+Name: spdk_blob
+Version: 13.1
+Libs: -L/usr/local/lib  -lspdk_blob
+Requires: spdk_log spdk_util spdk_thread spdk_dma spdk_trace 
+Libs.private: 
+Cflags: -I/usr/local/include

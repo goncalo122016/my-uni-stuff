@@ -1,0 +1,7 @@
+Description: SPDK event_vhost_scsi library
+Name: spdk_event_vhost_scsi
+Version: 4.0
+Libs: -L/home/goncalo/Guiao8/spdk/build/lib  -lspdk_event_vhost_scsi
+Requires: spdk_init spdk_vhost spdk_event_scheduler spdk_event_scsi 
+Libs.private: 
+Cflags: -I/home/goncalo/Guiao8/spdk/build/include

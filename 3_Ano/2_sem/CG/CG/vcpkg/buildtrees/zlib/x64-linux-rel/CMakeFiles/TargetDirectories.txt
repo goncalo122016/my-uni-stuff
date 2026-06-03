@@ -1,0 +1,8 @@
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/zlib/x64-linux-rel/CMakeFiles/zlib.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/zlib/x64-linux-rel/CMakeFiles/test.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/zlib/x64-linux-rel/CMakeFiles/edit_cache.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/zlib/x64-linux-rel/CMakeFiles/rebuild_cache.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/zlib/x64-linux-rel/CMakeFiles/list_install_components.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/zlib/x64-linux-rel/CMakeFiles/install.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/zlib/x64-linux-rel/CMakeFiles/install/local.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/zlib/x64-linux-rel/CMakeFiles/install/strip.dir

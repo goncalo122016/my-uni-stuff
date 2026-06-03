@@ -1,0 +1,7 @@
+Description: SPDK ut library
+Name: spdk_ut
+Version: 3.0
+Libs: -L/usr/local/lib  -lspdk_ut
+Requires:  
+Libs.private: 
+Cflags: -I/usr/local/include

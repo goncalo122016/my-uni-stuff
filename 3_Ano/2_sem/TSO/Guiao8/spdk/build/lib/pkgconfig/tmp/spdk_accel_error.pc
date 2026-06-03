@@ -1,0 +1,7 @@
+Description: SPDK accel_error library
+Name: spdk_accel_error
+Version: 3.0
+Libs: -L/usr/local/lib  -lspdk_accel_error
+Requires: spdk_accel spdk_json spdk_jsonrpc spdk_rpc spdk_thread spdk_util 
+Libs.private: 
+Cflags: -I/usr/local/include

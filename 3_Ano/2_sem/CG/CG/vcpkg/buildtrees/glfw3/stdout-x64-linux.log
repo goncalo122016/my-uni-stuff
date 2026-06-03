@@ -1,0 +1,22 @@
+-- Using cached glfw-glfw-3.3.9.tar.gz
+-- Extracting source /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/downloads/glfw-glfw-3.3.9.tar.gz
+-- Using source at /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/glfw3/src/3.3.9-5e1d739809.clean
+GLFW3 currently requires the following libraries from the system package manager:
+    xinerama
+    xcursor
+    xorg
+    libglu1-mesa
+    pkg-config
+
+These can be installed on Ubuntu systems via sudo apt install libxinerama-dev libxcursor-dev xorg-dev libglu1-mesa-dev pkg-config
+
+Alternatively, when targeting the Wayland display server, use the packages listed in the GLFW documentation here:
+
+https://www.glfw.org/docs/3.3/compile.html#compile_deps_wayland
+-- Configuring x64-linux
+-- Building x64-linux-dbg
+-- Building x64-linux-rel
+-- Fixing pkgconfig file: /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/glfw3_x64-linux/lib/pkgconfig/glfw3.pc
+-- Fixing pkgconfig file: /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/glfw3_x64-linux/debug/lib/pkgconfig/glfw3.pc
+-- Installing: /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/glfw3_x64-linux/share/glfw3/copyright
+-- Performing post-build validation

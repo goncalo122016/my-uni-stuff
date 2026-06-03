@@ -1,0 +1,7 @@
+Description: SPDK fsdev library
+Name: spdk_fsdev
+Version: 3.0
+Libs: -L/home/goncalo/Guiao8/spdk/build/lib  -lspdk_fsdev
+Requires: spdk_log spdk_thread spdk_util spdk_json spdk_jsonrpc spdk_rpc spdk_notify 
+Libs.private: 
+Cflags: -I/home/goncalo/Guiao8/spdk/build/include

@@ -1,0 +1,9 @@
+Downloading https://github.com/ocornut/imgui/archive/v1.90.2.tar.gz -> ocornut-imgui-v1.90.2.tar.gz
+Successfully downloaded ocornut-imgui-v1.90.2.tar.gz
+-- Extracting source /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/downloads/ocornut-imgui-v1.90.2.tar.gz
+-- Using source at /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/imgui/src/v1.90.2-4442117b09.clean
+-- Configuring x64-linux
+-- Building x64-linux-dbg
+-- Building x64-linux-rel
+-- Installing: /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/imgui_x64-linux/share/imgui/copyright
+-- Performing post-build validation

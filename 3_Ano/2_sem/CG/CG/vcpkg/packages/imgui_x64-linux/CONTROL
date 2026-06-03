@@ -1,0 +1,20 @@
+Package: imgui
+Version: 1.90.2
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-linux
+Multi-Arch: same
+Abi: 0fce338b8f09a8160ceb18af195dac15dae104f5b114423a3812bedf60a845ad
+Description: Bloat-free Immediate Mode Graphical User interface for C++ with minimal dependencies.
+
+Package: imgui
+Feature: glfw-binding
+Depends: glfw3
+Architecture: x64-linux
+Multi-Arch: same
+Description: Make available GLFW binding
+
+Package: imgui
+Feature: opengl2-binding
+Architecture: x64-linux
+Multi-Arch: same
+Description: Make available OpenGL (legacy) binding

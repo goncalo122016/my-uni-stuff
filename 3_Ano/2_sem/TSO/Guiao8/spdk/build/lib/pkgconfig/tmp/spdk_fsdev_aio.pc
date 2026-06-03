@@ -1,0 +1,7 @@
+Description: SPDK fsdev_aio library
+Name: spdk_fsdev_aio
+Version: 2.0
+Libs: -L/usr/local/lib  -lspdk_fsdev_aio
+Requires: spdk_log spdk_util spdk_json spdk_jsonrpc spdk_rpc spdk_fsdev spdk_thread 
+Libs.private: 
+Cflags: -I/usr/local/include

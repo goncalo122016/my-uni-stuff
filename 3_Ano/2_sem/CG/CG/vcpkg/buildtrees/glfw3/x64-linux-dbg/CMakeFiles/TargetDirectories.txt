@@ -1,0 +1,15 @@
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/glfw3/x64-linux-dbg/CMakeFiles/uninstall.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/glfw3/x64-linux-dbg/CMakeFiles/edit_cache.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/glfw3/x64-linux-dbg/CMakeFiles/rebuild_cache.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/glfw3/x64-linux-dbg/CMakeFiles/list_install_components.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/glfw3/x64-linux-dbg/CMakeFiles/install.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/glfw3/x64-linux-dbg/CMakeFiles/install/local.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/glfw3/x64-linux-dbg/CMakeFiles/install/strip.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/glfw3/x64-linux-dbg/src/CMakeFiles/update_mappings.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/glfw3/x64-linux-dbg/src/CMakeFiles/glfw.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/glfw3/x64-linux-dbg/src/CMakeFiles/edit_cache.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/glfw3/x64-linux-dbg/src/CMakeFiles/rebuild_cache.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/glfw3/x64-linux-dbg/src/CMakeFiles/list_install_components.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/glfw3/x64-linux-dbg/src/CMakeFiles/install.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/glfw3/x64-linux-dbg/src/CMakeFiles/install/local.dir
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/glfw3/x64-linux-dbg/src/CMakeFiles/install/strip.dir

@@ -1,0 +1,4 @@
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/imgui_x64-linux/debug/lib/libimguid.a
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/imgui_x64-linux/debug/share/imgui/imgui-config.cmake
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/imgui_x64-linux/debug/share/imgui/imgui-targets.cmake
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/imgui_x64-linux/debug/share/imgui/imgui-targets-debug.cmake

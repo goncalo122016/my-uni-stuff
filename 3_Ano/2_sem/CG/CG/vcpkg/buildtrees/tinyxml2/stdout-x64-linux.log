@@ -1,0 +1,13 @@
+Downloading https://github.com/leethomason/tinyxml2/archive/9.0.0.tar.gz -> leethomason-tinyxml2-9.0.0.tar.gz
+Successfully downloaded leethomason-tinyxml2-9.0.0.tar.gz
+-- Extracting source /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/downloads/leethomason-tinyxml2-9.0.0.tar.gz
+-- Applying patch 0001-fix-do-not-force-export-the-symbols-when-building-st.patch
+-- Applying patch 0002-fix-check-for-TINYXML2_EXPORT-on-non-windows.patch
+-- Using source at /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/buildtrees/tinyxml2/src/9.0.0-b11083b41f.clean
+-- Configuring x64-linux
+-- Building x64-linux-dbg
+-- Building x64-linux-rel
+-- Fixing pkgconfig file: /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/tinyxml2_x64-linux/lib/pkgconfig/tinyxml2.pc
+-- Fixing pkgconfig file: /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/tinyxml2_x64-linux/debug/lib/pkgconfig/tinyxml2.pc
+-- Installing: /home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/tinyxml2_x64-linux/share/tinyxml2/copyright
+-- Performing post-build validation

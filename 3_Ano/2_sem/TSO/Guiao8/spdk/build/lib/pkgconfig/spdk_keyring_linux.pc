@@ -1,0 +1,7 @@
+Description: SPDK keyring_linux library
+Name: spdk_keyring_linux
+Version: 2.0
+Libs: -L/home/goncalo/Guiao8/spdk/build/lib  -lspdk_keyring_linux
+Requires: spdk_log spdk_keyring spdk_util spdk_json spdk_jsonrpc spdk_rpc 
+Libs.private: 
+Cflags: -I/home/goncalo/Guiao8/spdk/build/include

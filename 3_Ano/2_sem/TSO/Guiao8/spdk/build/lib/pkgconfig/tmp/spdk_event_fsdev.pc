@@ -1,0 +1,7 @@
+Description: SPDK event_fsdev library
+Name: spdk_event_fsdev
+Version: 2.0
+Libs: -L/usr/local/lib  -lspdk_event_fsdev
+Requires: spdk_init spdk_fsdev 
+Libs.private: 
+Cflags: -I/usr/local/include

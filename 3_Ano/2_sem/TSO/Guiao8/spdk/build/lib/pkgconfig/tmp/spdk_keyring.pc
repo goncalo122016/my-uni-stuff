@@ -1,0 +1,7 @@
+Description: SPDK keyring library
+Name: spdk_keyring
+Version: 3.0
+Libs: -L/usr/local/lib  -lspdk_keyring
+Requires: spdk_log spdk_util spdk_json spdk_jsonrpc spdk_rpc 
+Libs.private: 
+Cflags: -I/usr/local/include

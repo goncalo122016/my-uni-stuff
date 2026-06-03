@@ -1,0 +1,8 @@
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/glfw3_x64-linux/debug/lib/libglfw3.a
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/glfw3_x64-linux/debug/include/GLFW/glfw3native.h
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/glfw3_x64-linux/debug/include/GLFW/glfw3.h
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/glfw3_x64-linux/debug/lib/cmake/glfw3/glfw3Config.cmake
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/glfw3_x64-linux/debug/lib/cmake/glfw3/glfw3ConfigVersion.cmake
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/glfw3_x64-linux/debug/lib/cmake/glfw3/glfw3Targets.cmake
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/glfw3_x64-linux/debug/lib/cmake/glfw3/glfw3Targets-debug.cmake
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/glfw3_x64-linux/debug/lib/pkgconfig/glfw3.pc

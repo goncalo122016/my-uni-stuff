@@ -1,0 +1,7 @@
+Description: SPDK scheduler_dpdk_governor library
+Name: spdk_scheduler_dpdk_governor
+Version: 5.0
+Libs: -L/home/goncalo/Guiao8/spdk/build/lib  -lspdk_scheduler_dpdk_governor
+Requires: spdk_event spdk_json spdk_log spdk_util 
+Libs.private: 
+Cflags: -I/home/goncalo/Guiao8/spdk/build/include

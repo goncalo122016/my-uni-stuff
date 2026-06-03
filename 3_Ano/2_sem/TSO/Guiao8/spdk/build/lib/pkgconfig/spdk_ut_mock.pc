@@ -1,0 +1,7 @@
+Description: SPDK ut_mock library
+Name: spdk_ut_mock
+Version: 7.0
+Libs: -L/home/goncalo/Guiao8/spdk/build/lib  -lspdk_ut_mock
+Requires:  
+Libs.private: 
+Cflags: -I/home/goncalo/Guiao8/spdk/build/include

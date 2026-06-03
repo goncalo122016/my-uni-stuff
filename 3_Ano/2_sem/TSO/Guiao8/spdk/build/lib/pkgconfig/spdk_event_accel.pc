@@ -1,0 +1,7 @@
+Description: SPDK event_accel library
+Name: spdk_event_accel
+Version: 7.0
+Libs: -L/home/goncalo/Guiao8/spdk/build/lib  -lspdk_event_accel
+Requires: spdk_init spdk_accel spdk_event_iobuf 
+Libs.private: 
+Cflags: -I/home/goncalo/Guiao8/spdk/build/include

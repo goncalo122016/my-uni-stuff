@@ -1,0 +1,7 @@
+Description: SPDK bdev_ftl library
+Name: spdk_bdev_ftl
+Version: 7.0
+Libs: -L/home/goncalo/Guiao8/spdk/build/lib  -lspdk_bdev_ftl
+Requires: spdk_log spdk_util spdk_json spdk_jsonrpc spdk_rpc spdk_bdev spdk_ftl 
+Libs.private: 
+Cflags: -I/home/goncalo/Guiao8/spdk/build/include

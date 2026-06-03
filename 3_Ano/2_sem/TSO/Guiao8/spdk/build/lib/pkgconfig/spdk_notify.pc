@@ -1,0 +1,7 @@
+Description: SPDK notify library
+Name: spdk_notify
+Version: 7.0
+Libs: -L/home/goncalo/Guiao8/spdk/build/lib  -lspdk_notify
+Requires: spdk_log spdk_util spdk_json spdk_jsonrpc spdk_rpc 
+Libs.private: 
+Cflags: -I/home/goncalo/Guiao8/spdk/build/include

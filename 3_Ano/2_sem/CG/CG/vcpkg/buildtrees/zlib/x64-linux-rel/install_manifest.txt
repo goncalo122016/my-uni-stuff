@@ -1,0 +1,3 @@
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/zlib_x64-linux/lib/libz.a
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/zlib_x64-linux/include/zconf.h
+/home/goncalo/UMinho/3_Ano/CG/CG/vcpkg/packages/zlib_x64-linux/include/zlib.h

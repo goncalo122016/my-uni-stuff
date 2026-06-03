@@ -1,0 +1,7 @@
+Description: SPDK ae4dma library
+Name: spdk_ae4dma
+Version: 1.0
+Libs: -L/usr/local/lib  -lspdk_ae4dma
+Requires: spdk_log spdk_util 
+Libs.private: 
+Cflags: -I/usr/local/include
